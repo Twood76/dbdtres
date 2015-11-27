@@ -1,10 +1,12 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.MonsterType;
+
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_C implements MagicItemTable {
-
+    MonsterType mT;
     public String getItem(int number) {
         String magicItem;
 
@@ -44,7 +46,7 @@ public class MagicItemTable_C implements MagicItemTable {
         } else if (number < 85) {
             magicItem = "Quaal's feather token";
         } else if (number < 88) {
-            magicItem = "Scroll of protection";
+            magicItem = "Scroll of protection from " + mT.getMonsterType();
         } else if (number < 90) {
             magicItem = "Bag of beans";
         } else if (number < 92) {

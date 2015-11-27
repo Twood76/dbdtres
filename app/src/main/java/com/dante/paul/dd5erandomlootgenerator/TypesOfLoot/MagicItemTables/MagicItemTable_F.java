@@ -53,13 +53,10 @@ public class MagicItemTable_F implements MagicItemTable {
         } else if (number < 58) {
             magicItem = "Trident of fish command";
         } else if (number < 60) {
-            //TODO charges
             magicItem = "Wand of magic missiles";
         } else if (number < 62) {
-            //TODO charges
             magicItem = "Wand of the war mage, +1";
         } else if (number < 64) {
-            //TODO charges
             magicItem = "Wand of web";
         } else if (number < 66) {
             //TODO determine what type

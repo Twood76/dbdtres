@@ -21,7 +21,6 @@ public class MagicItemTable_E implements MagicItemTable {
         } else if (number < 94) {
             magicItem = "Universal solvent";
         } else if (number < 99) {
-            //TODO determine how many
             magicItem = "Arrow of slaying";
         } else {
             magicItem = "Sovereign glue";

@@ -1,9 +1,12 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
+
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_B implements MagicItemTable{
+    DamageType damageType;
 
     public String getItem(int number) {
         String magicItem;
@@ -13,8 +16,7 @@ public class MagicItemTable_B implements MagicItemTable{
         } else if (number < 23) {
             magicItem = "Potion of fire breath";
         } else if (number < 30) {
-            //TODO check if potion needs a type of resistance rolled
-            magicItem = "Potion of resistance";
+            magicItem = "Potion of " + damageType.getDamageType() + " resistance";
         } else if (number < 35) {
             //TODO determine what type of ammo and how much and how much
             magicItem = "Ammunition, +1";
