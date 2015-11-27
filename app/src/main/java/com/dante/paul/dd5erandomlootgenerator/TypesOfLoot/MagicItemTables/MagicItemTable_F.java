@@ -9,10 +9,8 @@ public class MagicItemTable_F implements MagicItemTable {
         String magicItem;
 
         if (number < 16) {
-            //TODO determine what type
-            magicItem = "Weapon, +1";
+            magicItem = "Weapon (any), +1";
         } else if (number < 19) {
-            //TODO determine what type
             magicItem = "Shield,+1";
         } else if (number < 22) {
             magicItem = "Sentinel shield";

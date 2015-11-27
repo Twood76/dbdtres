@@ -1,159 +1,167 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
+
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_H implements MagicItemTable{
+public class MagicItemTable_H implements MagicItemTable {
+    DamageType damageType;
+    Dice d;
+    int secondary;
 
     public String getItem(int number) {
         String magicItem;
 
         if (number < 11) {
-            //TODO determine what type
-            magicItem = "Weapon, +1";
+            magicItem = "Weapon (any), +3";
         } else if (number < 13) {
-            //TODO determine what type
-            magicItem = "Shield,+1";
+            magicItem = "Amulet of the planes";
         } else if (number < 15) {
-            magicItem = "Sentinel shield";
+            magicItem = "Carpet of flying";
         } else if (number < 17) {
-            magicItem = "Amulet of proof against detection and location";
+            magicItem = "Crystal ball (very rare version)";
         } else if (number < 19) {
-            magicItem = "Boots of elvenkind";
+            magicItem = "Ring of regeneration";
         } else if (number < 21) {
-            magicItem = "Boots of striding and springing";
+            magicItem = "Ring of shooting stars";
         } else if (number < 23) {
-            magicItem = "Bracers of archery";
+            magicItem = "Ring of telekinesis";
         } else if (number < 25) {
-            magicItem = "Brooch of shielding";
+            magicItem = "Robe of scintillating colors";
         } else if (number < 27) {
-            magicItem = "Broom of flying";
+            magicItem = "Robe of stars";
         } else if (number < 29) {
-            magicItem = "Cloak of elvenkind";
+            magicItem = "Rod of absorption";
         } else if (number < 31) {
-            magicItem = "Cloak of protection";
+            magicItem = "Rod of alertness";
         } else if (number < 33) {
-            magicItem = "Gauntlets of ogre power";
+            magicItem = "Rod of security";
         } else if (number < 35) {
-            magicItem = "Hat of disguise";
+            magicItem = "Rod of the pact keeper, +3";
         } else if (number < 37) {
-            magicItem = "Javelin of lightning";
+            magicItem = "Scimitar of speed";
         } else if (number < 39) {
-            magicItem = "Pearl of power";
+            magicItem = "Shield, +3";
         } else if (number < 41) {
-            magicItem = "Rod of the pact keeper, +1";
+            magicItem = "Staff of fire";
         } else if (number < 43) {
-            magicItem = "Slippers of spider climbing";
+            magicItem = "Staff of frost";
         } else if (number < 45) {
-            magicItem = "Staff of the adder";
+            magicItem = "Staff of power";
         } else if (number < 47) {
-            magicItem = "Staff of the python";
+            magicItem = "Staff of striking";
         } else if (number < 49) {
-            magicItem = "Sword of vengeance";
+            magicItem = "Staff of thunder and lightning";
         } else if (number < 51) {
-            magicItem = "Trident of fish command";
+            magicItem = "Sword of sharpness";
         } else if (number < 53) {
-            magicItem = "Wand of magic missiles";
+            magicItem = "Wand of polymorph";
         } else if (number < 55) {
-            magicItem = "Wand of the war mage, +1";
+            magicItem = "Wand of the war mage, +3";
         } else if (number == 55) {
-            magicItem = "Iron bands of Bilarro";
+            magicItem = "Adamantine armor (half plate)";
         } else if (number == 56) {
-            magicItem = "Armor, +1 leather";
+            magicItem = "Adamantine armor (plate)";
         } else if (number == 57) {
-            //TODO type of resistance
-            magicItem = "Armor of resistance (leather)";
+            magicItem = "Animated shield";
         } else if (number == 58) {
-            magicItem = "Mace of disruption";
+            magicItem = "Belt of fire giant strength";
         } else if (number == 59) {
-            magicItem = "Mace of smiting";
+            magicItem = "Belt of frost (or stone) giant strength";
         } else if (number == 60) {
-            magicItem = "Mace of terror";
+            magicItem = "Armor, +1 breastplate";
         } else if (number == 61) {
-            //TODO check item
-            magicItem = "Mantle of spell resistance";
+            magicItem = "Armor of " + damageType.getDamageType() + " resistance (breastplate)";
         } else if (number == 62) {
-            magicItem = "Necklace of prayer beads";
+            magicItem = "Candle of invocation";
         } else if (number == 63) {
-            magicItem = "Periapt of proof against poison";
+            magicItem = "Armor, +2 chain mail";
         } else if (number == 64) {
-            magicItem = "Ring of animal influence";
+            magicItem = "Armor, +2 chain shirt";
         } else if (number == 65) {
-            magicItem = "Ring of evasion";
+            magicItem = "Cloak of arachnida";
         } else if (number == 66) {
-            magicItem = "Ring of feather falling";
+            magicItem = "Dancing sword";
         } else if (number == 67) {
-            magicItem = "Ring of free action";
+            magicItem = "Demon armor";
         } else if (number == 68) {
-            magicItem = "Ring of protection";
+            magicItem = "Dragon scale mail";
         } else if (number == 69) {
-            //TODO type of resistance
-            magicItem = "Ring of resistance";
+            magicItem = "Dwarven plate";
         } else if (number == 70) {
-            magicItem = "Ring of spell storing";
+            magicItem = "Dwarven thrower";
         } else if (number == 71) {
-            magicItem = "Ring of the ram";
+            magicItem = "Efreeti bottle";
         } else if (number == 72) {
-            magicItem = "Ring of X-ray vision";
+            magicItem = "Figurine of wondrous power (obsidian steed)";
         } else if (number == 73) {
-            magicItem = "Robe of eyes";
+            magicItem = "Frost brand";
         } else if (number == 74) {
-            magicItem = "Rod of rulership";
+            magicItem = "Helm of brilliance";
         } else if (number == 75) {
-            magicItem = "Rod of the pact keeper, +2";
+            magicItem = "Horn of Valhalla (bronze)";
         } else if (number == 76) {
-            magicItem = "Rope of entanglement";
+            magicItem = "Instrument of the bards (Anstruth harp)";
         } else if (number == 77) {
-            magicItem = "Armor, +1 scale mail";
+            magicItem = "loun stone (absorption)";
         } else if (number == 78) {
-            //TODO type of resistance
-            magicItem = "Armor of resistance (scale mail)";
+            magicItem = "loun stone (agility)";
         } else if (number == 79) {
-            //TODO type
-            magicItem = "Shield, +2";
+            magicItem = "loun stone (fortitude)";
         } else if (number == 80) {
-            magicItem = "Shield of missile attraction";
+            magicItem = "loun stone (insight)";
         } else if (number == 81) {
-            magicItem = "Staff of charming";
+            magicItem = "loun stone (intellect)";
         } else if (number == 82) {
-            magicItem = "Staff of healing";
+            magicItem = "loun stone (leadership)";
         } else if (number == 83) {
-            magicItem = "Staff of swarming insects";
+            magicItem = "loun stone (strength)";
         } else if (number == 84) {
-            magicItem = "Staff of the woodlands";
+            magicItem = "Armor, +2 leather";
         } else if (number == 85) {
-            magicItem = "Staff of withering";
+            magicItem = "Manual of bodily health";
         } else if (number == 86) {
-            magicItem = "Stone of controlling earth elementals";
+            magicItem = "Manual of gainful exercise";
         } else if (number == 87) {
-            magicItem = "Sun blade";
+            secondary = d.roll(20);
+            magicItem = "Manual of golems";
+            if (secondary < 6)
+                magicItem += " (clay";
+            else if (secondary < 18)
+                magicItem += " (flesh";
+            else if (secondary == 18)
+                magicItem += " (iron";
+            else
+                magicItem += " (stone";
+            magicItem += " or DM decides)";
         } else if (number == 88) {
-            magicItem = "Sword of life stealing";
+            magicItem = "Manual of quickness of action";
         } else if (number == 89) {
-            magicItem = "Sword of life stealing";
+            magicItem = "Mirror of life trapping";
         } else if (number == 90) {
-            magicItem = "Tentacle rod";
+            magicItem = "Nine lives stealer";
         } else if (number == 91) {
-            //TODO see item description
-            magicItem = "Vicious weapon";
+            magicItem = "Oath bow";
         } else if (number == 92) {
-            magicItem = "Wand of binding";
+            magicItem = "Armor, +2 scale mail";
         } else if (number == 93) {
-            magicItem = "Wand of enemy detection";
+            magicItem = "Spellguard shield";
         } else if (number == 94) {
-            magicItem = "Wand of fear";
+            magicItem = "Armor, +1 splint";
         } else if (number == 95) {
-            magicItem = "Wand of fireballs";
+            magicItem = "Armor of resistance (splint)";
         } else if (number == 96) {
-            magicItem = "Wand of lightning bolts";
+            magicItem = "Armor, +1 studded leather";
         } else if (number == 97) {
-            magicItem = "Wand of paralysis";
+            magicItem = "Armor of " + damageType.getDamageType() + " resistance (studded leather)";
         } else if (number == 98) {
-            magicItem = "Wand of the war mage, +2";
+            magicItem = "Tome of clear thought";
         } else if (number == 99) {
-            magicItem = "Wand of wonder";
+            magicItem = "Tome of leadership and influence";
         } else {
-            magicItem = "Wings of flying";
+            magicItem = "Tome of understanding";
         }
         return magicItem;
     }

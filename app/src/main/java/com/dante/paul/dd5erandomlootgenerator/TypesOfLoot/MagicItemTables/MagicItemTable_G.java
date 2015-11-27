@@ -1,19 +1,19 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_G implements MagicItemTable {
     Dice d;
-
+    DamageType damageType;
     public String getItem(int number) {
         String magicItem = null;
 
         if (number < 12) {
-            //TODO determine what type
-            magicItem = "Weapon, +2";
+            magicItem = "Weapon (any), +2";
         } else if (number < 15) {
             int secondary = d.roll(8);
             if (secondary == 1)
@@ -109,7 +109,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 51) {
             magicItem = "loun stone (awareness)";
         } else if (number == 52) {
-            //TODO type of protection
+
             magicItem = "loun stone (protection)";
         } else if (number == 53) {
             magicItem = "loun stone (reserve)";
@@ -120,8 +120,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 56) {
             magicItem = "Armor, +1 leather";
         } else if (number == 57) {
-           //TODO type of resistance
-            magicItem = "Armor of resistance (leather)";
+            magicItem = "Armor of " + damageType.getDamageType() + " resistance (leather)";
         } else if (number == 58) {
             magicItem = "Mace of disruption";
         } else if (number == 59) {
@@ -129,7 +128,6 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 60) {
             magicItem = "Mace of terror";
         } else if (number == 61) {
-            //TODO check item
             magicItem = "Mantle of spell resistance";
         } else if (number == 62) {
             magicItem = "Necklace of prayer beads";
@@ -146,8 +144,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 68) {
             magicItem = "Ring of protection";
         } else if (number == 69) {
-            //TODO type of resistance
-            magicItem = "Ring of resistance";
+            magicItem = "Ring of " + damageType.getDamageType() + " resistance";
         } else if (number == 70) {
             magicItem = "Ring of spell storing";
         } else if (number == 71) {
@@ -165,8 +162,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 77) {
             magicItem = "Armor, +1 scale mail";
         } else if (number == 78) {
-            //TODO type of resistance
-            magicItem = "Armor of resistance (scale mail)";
+            magicItem = "Armor of " + damageType.getDamageType() + " resistance (scale mail)";
         } else if (number == 79) {
             //TODO type
             magicItem = "Shield, +2";
@@ -193,8 +189,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 90) {
             magicItem = "Tentacle rod";
         } else if (number == 91) {
-            //TODO see item description
-            magicItem = "Vicious weapon";
+            magicItem = "Vicious weapon (Any type)";
         } else if (number == 92) {
             magicItem = "Wand of binding";
         } else if (number == 93) {
