@@ -6,7 +6,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_C implements MagicItemTable {
+public class MagicItemTable_C extends GenerateSpell implements MagicItemTable {
 
     public String getItem(int number) {
         MonsterType monsterType = new MonsterType();
@@ -17,8 +17,7 @@ public class MagicItemTable_C implements MagicItemTable {
         if (number < 16) {
             magicItem = "Potion of superior healing";
         } else if (number < 23) {
-            //TODO spell
-            magicItem = "Spell scroll (4th level)";
+            magicItem = generateSpell(4);
         } else if (number < 28) {
             int secondary = d.roll(4);
             magicItem = secondary + " Ammunition, +2";
@@ -39,8 +38,7 @@ public class MagicItemTable_C implements MagicItemTable {
         } else if (number < 68) {
             magicItem = "Potion of mind reading";
         } else if (number < 73) {
-            //TODO spell
-            magicItem = "Spell scroll (5th level)";
+            magicItem = generateSpell(5);
         } else if (number < 76) {
             magicItem = "Elixir of health";
         } else if (number < 79) {

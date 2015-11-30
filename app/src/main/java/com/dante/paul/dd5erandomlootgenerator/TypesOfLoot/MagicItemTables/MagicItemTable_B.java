@@ -6,7 +6,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_B implements MagicItemTable {
+public class MagicItemTable_B extends GenerateSpell implements MagicItemTable {
     DamageType damageType = new DamageType();
     Dice d = new Dice();
 
@@ -32,11 +32,9 @@ public class MagicItemTable_B implements MagicItemTable {
         } else if (number < 55) {
             magicItem = "Potion of water breathing";
         } else if (number < 60) {
-            //TODO spell
-            magicItem = "Spell scroll (2nd level)";
+            magicItem = generateSpell(2);
         } else if (number < 65) {
-            //TODO spell
-            magicItem = "Spell scroll (3rd level)";
+            magicItem = generateSpell(3);
         } else if (number < 68) {
             magicItem = "Bag of holding";
         } else if (number < 71) {
