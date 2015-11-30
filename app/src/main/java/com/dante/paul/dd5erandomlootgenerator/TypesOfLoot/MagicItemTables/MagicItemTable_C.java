@@ -70,6 +70,8 @@ public class MagicItemTable_C implements MagicItemTable {
         } else {
             magicItem = "Sending stones";
         }
+
+        magicItem += " (Table C)";
         return magicItem;
     }
 }

@@ -28,6 +28,8 @@ public class MagicItemTable_A implements MagicItemTable{
         } else {
             magicItem = "Driftglobe";
         }
+
+        magicItem += " (Table A)";
         return magicItem;
     }
 }

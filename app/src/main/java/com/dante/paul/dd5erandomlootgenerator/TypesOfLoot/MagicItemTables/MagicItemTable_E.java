@@ -25,6 +25,8 @@ public class MagicItemTable_E implements MagicItemTable {
         } else {
             magicItem = "Sovereign glue";
         }
+
+        magicItem += " (Table E)";
         return magicItem;
     }
 }

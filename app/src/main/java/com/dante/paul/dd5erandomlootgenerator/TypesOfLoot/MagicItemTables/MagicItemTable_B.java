@@ -86,6 +86,8 @@ public class MagicItemTable_B implements MagicItemTable{
         } else {
             magicItem = "Wand of secrets";
         }
+
+        magicItem += " (Table B)";
         return magicItem;
     }
 }

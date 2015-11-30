@@ -130,6 +130,8 @@ public class MagicItemTable_F implements MagicItemTable {
         } else {
             magicItem = "Winged boots";
         }
+
+        magicItem += " (Table F)";
         return magicItem;
     }
 }

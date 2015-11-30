@@ -209,6 +209,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else {
             magicItem = "Wings of flying";
         }
+        magicItem += " (Table G)";
         return magicItem;
     }
 }

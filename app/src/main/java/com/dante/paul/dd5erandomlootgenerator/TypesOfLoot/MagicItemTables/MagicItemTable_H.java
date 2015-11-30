@@ -163,6 +163,7 @@ public class MagicItemTable_H implements MagicItemTable {
         } else {
             magicItem = "Tome of understanding";
         }
+        magicItem += " (Table H)";
         return magicItem;
     }
 }

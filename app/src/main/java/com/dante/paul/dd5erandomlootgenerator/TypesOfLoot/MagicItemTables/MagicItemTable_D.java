@@ -45,6 +45,8 @@ public class MagicItemTable_D implements MagicItemTable {
         } else {
             magicItem = "Portable hole";
         }
+
+        magicItem += " (Table D)";
         return magicItem;
     }
 }
