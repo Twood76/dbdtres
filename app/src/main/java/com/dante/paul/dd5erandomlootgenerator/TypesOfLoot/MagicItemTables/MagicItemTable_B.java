@@ -1,12 +1,15 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_B implements MagicItemTable{
-    DamageType damageType;
+public class MagicItemTable_B implements MagicItemTable {
+    DamageType damageType = new DamageType();
+    Dice d = new Dice();
+
 
     public String getItem(int number) {
         String magicItem;
@@ -18,8 +21,8 @@ public class MagicItemTable_B implements MagicItemTable{
         } else if (number < 30) {
             magicItem = "Potion of " + damageType.getDamageType() + " resistance";
         } else if (number < 35) {
-            //TODO determine what type of ammo and how much and how much
-            magicItem = "Ammunition, +1";
+            int secondary=d.roll(4);
+            magicItem = secondary + " Ammunition, +1";
         } else if (number < 40) {
             magicItem = "Potion of animal friendship";
         } else if (number < 45) {
@@ -47,8 +50,15 @@ public class MagicItemTable_B implements MagicItemTable{
         } else if (number < 80) {
             magicItem = "Dust of sneezing and choking";
         } else if (number < 82) {
-            //TODO gem type
-            magicItem = "Elemental gem";
+            int secondary = d.roll(4);
+            if (secondary == 1)
+                magicItem = "Blue sapphire elemental gem (air elemental)";
+            else if (secondary == 2)
+                magicItem = "Yellow diamond elemental gem (earth elemental)";
+            else if (secondary == 3)
+                magicItem = "Red corundum elemental gem (fire elemental)";
+            else
+                magicItem = "Emerald elemental gem (water elemental)";
         } else if (number < 84) {
             magicItem = "Philter of love";
         } else if (number == 84) {

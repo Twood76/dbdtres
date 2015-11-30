@@ -10,6 +10,9 @@ public class MonsterType {
     String monsterType;
     int number;
 
+    public MonsterType() {
+    }
+
     public String getMonsterType(){
         number = d.roll(100);
 

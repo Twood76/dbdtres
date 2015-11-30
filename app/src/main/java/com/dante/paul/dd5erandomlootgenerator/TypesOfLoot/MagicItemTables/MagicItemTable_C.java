@@ -1,14 +1,18 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.MonsterType;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_C implements MagicItemTable {
-    MonsterType mT;
+
     public String getItem(int number) {
+        MonsterType monsterType = new MonsterType();
         String magicItem;
+        Dice d = new Dice();
+
 
         if (number < 16) {
             magicItem = "Potion of superior healing";
@@ -16,8 +20,8 @@ public class MagicItemTable_C implements MagicItemTable {
             //TODO spell
             magicItem = "Spell scroll (4th level)";
         } else if (number < 28) {
-            //TODO determine what type of ammo and how much and how much
-            magicItem = "Ammunition, +2";
+            int secondary = d.roll(4);
+            magicItem = secondary + " Ammunition, +2";
         } else if (number < 33) {
             magicItem = "Potion of clairvoyance";
         } else if (number < 38) {
@@ -46,7 +50,7 @@ public class MagicItemTable_C implements MagicItemTable {
         } else if (number < 85) {
             magicItem = "Quaal's feather token";
         } else if (number < 88) {
-            magicItem = "Scroll of protection from " + mT.getMonsterType();
+            magicItem = "Scroll of protection from " + monsterType.getMonsterType();
         } else if (number < 90) {
             magicItem = "Bag of beans";
         } else if (number < 92) {

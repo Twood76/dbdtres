@@ -10,6 +10,10 @@ public class DamageType {
     int number;
     String damageType;
 
+    public DamageType() {
+        d = new Dice();
+    }
+
     public String getDamageType() {
         number = d.roll(10);
         switch (number) {

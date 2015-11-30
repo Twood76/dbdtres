@@ -7,8 +7,9 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_G implements MagicItemTable {
-    Dice d;
-    DamageType damageType;
+    Dice d = new Dice();
+    DamageType damageType = new DamageType();
+
     public String getItem(int number) {
         String magicItem = null;
 
@@ -109,7 +110,6 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 51) {
             magicItem = "loun stone (awareness)";
         } else if (number == 52) {
-
             magicItem = "loun stone (protection)";
         } else if (number == 53) {
             magicItem = "loun stone (reserve)";
@@ -164,7 +164,6 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 78) {
             magicItem = "Armor of " + damageType.getDamageType() + " resistance (scale mail)";
         } else if (number == 79) {
-            //TODO type
             magicItem = "Shield, +2";
         } else if (number == 80) {
             magicItem = "Shield of missile attraction";

@@ -1,5 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
+
 /**
  * Created by PaulD on 2015-11-26.
  */
@@ -7,6 +9,7 @@ public class MagicItemTable_D implements MagicItemTable {
 
     public String getItem(int number) {
         String magicItem;
+        Dice d = new Dice();
 
         if (number < 21) {
             magicItem = "Potion of supreme healing";
@@ -21,8 +24,8 @@ public class MagicItemTable_D implements MagicItemTable {
             //TODO spell
             magicItem = "Spell scroll (7th level)";
         } else if (number < 63) {
-            //TODO determine what type of ammo and how much and how much
-            magicItem = "Ammunition, +3";
+            int secondary = d.roll(4);
+            magicItem = secondary + " Ammunition, +3";
         } else if (number < 68) {
             magicItem = "Oil of sharpness";
         } else if (number < 73) {

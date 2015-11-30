@@ -57,8 +57,7 @@ public class MagicItemTable_F implements MagicItemTable {
         } else if (number < 64) {
             magicItem = "Wand of web";
         } else if (number < 66) {
-            //TODO determine what type
-            magicItem = "Weapon of warning";
+            magicItem = "Weapon (any) of warning";
         } else if (number == 66) {
             magicItem = "Adamantine armor (chain mail)";
         } else if (number == 67) {

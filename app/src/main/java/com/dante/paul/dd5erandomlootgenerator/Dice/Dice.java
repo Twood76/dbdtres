@@ -6,6 +6,9 @@ import java.util.Random;
  * Created by PaulD on 2015-11-20.
  */
 public class Dice implements Roll {
+    public Dice() {
+    }
+
     @Override
     public int roll(int numberOfDice, int dieType) {
         int score=0;

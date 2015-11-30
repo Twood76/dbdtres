@@ -8,7 +8,6 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
  */
 public class MagicItemTable_I implements MagicItemTable {
     Dice d;
-    int secondary;
     DamageType damageType;
 
     public String getItem(int number) {
@@ -70,7 +69,7 @@ public class MagicItemTable_I implements MagicItemTable {
         } else if (number < 76) {
             magicItem = "Well of many worlds";
         } else if (number == 76) {
-            secondary = d.roll(12);
+            int secondary = d.roll(12);
             if (secondary < 3)
                 magicItem = "Armor, +2 half plate";
             else if (secondary < 5)
