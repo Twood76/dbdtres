@@ -17,4 +17,5 @@ public class WarlockSpells extends AbstractSpells implements Spells {
     private String[] level7 = {};
     private String[] level8 = {};
     private String[] level9 = {};
+    //TODO spell levels 0-9
 }
