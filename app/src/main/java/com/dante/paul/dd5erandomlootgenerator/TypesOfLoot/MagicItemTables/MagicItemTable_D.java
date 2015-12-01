@@ -9,7 +9,7 @@ public class MagicItemTable_D extends GenerateSpell implements MagicItemTable {
 
     public String getItem(int number) {
         String magicItem;
-        Dice d = new Dice();
+
 
         if (number < 21) {
             magicItem = "Potion of supreme healing";
@@ -22,8 +22,7 @@ public class MagicItemTable_D extends GenerateSpell implements MagicItemTable {
         } else if (number < 58) {
             magicItem = generateSpell(7);
         } else if (number < 63) {
-            int secondary = d.roll(4);
-            magicItem = secondary + " Ammunition, +3";
+            magicItem = " Ammunition, +3";
         } else if (number < 68) {
             magicItem = "Oil of sharpness";
         } else if (number < 73) {
@@ -45,7 +44,6 @@ public class MagicItemTable_D extends GenerateSpell implements MagicItemTable {
         } else {
             magicItem = "Portable hole";
         }
-
         magicItem += " (Table D)";
         return magicItem;
     }

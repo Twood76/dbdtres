@@ -14,14 +14,15 @@ public abstract class Loot implements CreateLoot{
     int d100;
     Dice d;
     TypesOfCoins t;
+    Boolean typeOfEncounter;
 
-    public Loot(ChallengeRating challengeRating, LootList lootList, int d100){
+    public Loot(ChallengeRating challengeRating, LootList lootList, int d100, Boolean typeOfEncounter){
         this.challenge=challengeRating;
         this.list=lootList;
         this.d100=d100;
+        this.typeOfEncounter = typeOfEncounter;
     }
 
-    @Override
     public LootList createStuff() {
         return null;
     }

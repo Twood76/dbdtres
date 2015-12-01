@@ -6,9 +6,9 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_H implements MagicItemTable {
+public class MagicItemTable_H extends GenerateSpell implements MagicItemTable {
     DamageType damageType;
-    Dice d;
+
 
     public String getItem(int number) {
         String magicItem;
@@ -124,7 +124,7 @@ public class MagicItemTable_H implements MagicItemTable {
         } else if (number == 86) {
             magicItem = "Manual of gainful exercise";
         } else if (number == 87) {
-            int secondary = d.roll(20);
+            secondary = d.roll(20);
             magicItem = "Manual of golems";
             if (secondary < 6)
                 magicItem += " (clay";

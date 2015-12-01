@@ -8,7 +8,6 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
  */
 public class MagicItemTable_B extends GenerateSpell implements MagicItemTable {
     DamageType damageType = new DamageType();
-    Dice d = new Dice();
 
 
     public String getItem(int number) {
@@ -21,7 +20,7 @@ public class MagicItemTable_B extends GenerateSpell implements MagicItemTable {
         } else if (number < 30) {
             magicItem = "Potion of " + damageType.getDamageType() + " resistance";
         } else if (number < 35) {
-            int secondary=d.roll(4);
+            int secondary=d.roll(6);
             magicItem = secondary + " Ammunition, +1";
         } else if (number < 40) {
             magicItem = "Potion of animal friendship";

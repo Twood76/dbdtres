@@ -15,11 +15,12 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpel
  * Created by PaulD on 2015-11-30.
  */
 public abstract class GenerateSpell {
-
+    Dice d = new Dice();
+    int secondary;
     protected String generateSpell(int level){
-        int secondary;
+
         AbstractSpells spell;
-        Dice d = new Dice();
+
         String scroll;
         String spellType;
         String spellName;

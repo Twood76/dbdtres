@@ -11,7 +11,6 @@ public class MagicItemTable_C extends GenerateSpell implements MagicItemTable {
     public String getItem(int number) {
         MonsterType monsterType = new MonsterType();
         String magicItem;
-        Dice d = new Dice();
 
 
         if (number < 16) {

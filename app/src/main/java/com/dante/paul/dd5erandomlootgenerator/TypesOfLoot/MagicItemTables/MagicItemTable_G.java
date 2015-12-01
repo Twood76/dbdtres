@@ -6,8 +6,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_G implements MagicItemTable {
-    Dice d = new Dice();
+public class MagicItemTable_G extends GenerateSpell implements MagicItemTable {
     DamageType damageType = new DamageType();
 
     public String getItem(int number) {
@@ -16,7 +15,7 @@ public class MagicItemTable_G implements MagicItemTable {
         if (number < 12) {
             magicItem = "Weapon (any), +2";
         } else if (number < 15) {
-            int secondary = d.roll(8);
+            secondary = d.roll(8);
             if (secondary == 1)
                 magicItem = "Bronze griffon";
             else if (secondary == 2)
@@ -98,7 +97,7 @@ public class MagicItemTable_G implements MagicItemTable {
         } else if (number == 47) {
             magicItem = "Horn of blasting";
         } else if (number == 48) {
-            int secondary = d.roll(2);
+            secondary = d.roll(2);
                     if (secondary == 1)
                         magicItem = "Horn of Valhalla (silver)";
                     else

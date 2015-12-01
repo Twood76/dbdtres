@@ -33,7 +33,7 @@ public class LootList {
         }
     }
 
-
+    //Takes a magic item and puts it in the loot list
     public void addToLoot(String item) {
         if (loot.containsKey(item)) {
             numberOfItems = loot.get(item);
@@ -41,9 +41,11 @@ public class LootList {
         } else
             loot.put(item,1);
     }
+    //Takes a pile of coins and adds it to the loot list
     public void addToCoins(String coin, int numberOfCoins){
         coins.put(coin,numberOfCoins);
     }
+
     private Map getCoins(){
         return coins;
     }
