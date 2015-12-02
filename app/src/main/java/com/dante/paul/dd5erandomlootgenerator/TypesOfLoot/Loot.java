@@ -2,6 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypesOfCoins;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 
@@ -13,12 +14,11 @@ public abstract class Loot implements CreateLoot{
     LootList list;
     int d100;
     Dice d;
-    TypesOfCoins t;
-    Boolean typeOfEncounter;
+    TypeOfEncounter typeOfEncounter;
 
-    public Loot(ChallengeRating challengeRating, LootList lootList, int d100, Boolean typeOfEncounter){
+    public Loot(ChallengeRating challengeRating, int d100, TypeOfEncounter typeOfEncounter){
         this.challenge=challengeRating;
-        this.list=lootList;
+        list=LootList.getInstance();
         this.d100=d100;
         this.typeOfEncounter = typeOfEncounter;
     }

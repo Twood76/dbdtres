@@ -1,6 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 
 /**
@@ -8,8 +9,8 @@ import com.dante.paul.dd5erandomlootgenerator.LootList;
  */
 public class MagicItems extends Loot {
 
-    public MagicItems(ChallengeRating challengeRating, LootList lootList, int d100) {
-        super(challengeRating, lootList, d100);
+    public MagicItems(ChallengeRating challengeRating, int d100, TypeOfEncounter typeOfEncounter) {
+        super(challengeRating, d100, typeOfEncounter);
     }
 
     @Override

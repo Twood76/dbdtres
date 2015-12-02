@@ -2,6 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
@@ -17,15 +18,15 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicI
 /**
  * Created by PaulD on 2015-11-20.
  */
-public class GemsArtAndMagicItems extends Loot {
+public class GemsArtAndMagicItems extends Loot{
     private int numberOfItems;
     private GemTypes g = new GemTypes();
     private ArtTypes a = new ArtTypes();
     private MagicItemTable table;
     private Dice d = new Dice();
 
-    public GemsArtAndMagicItems(ChallengeRating challengeRating, LootList lootList, int d100, Boolean typeOfEncounter) {
-        super(challengeRating, lootList, d100, typeOfEncounter);
+    public GemsArtAndMagicItems(ChallengeRating challengeRating, int d100) {
+        super(challengeRating, d100, TypeOfEncounter.HORDE);
     }
 
     @Override

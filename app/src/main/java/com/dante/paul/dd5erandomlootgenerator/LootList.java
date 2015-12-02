@@ -1,6 +1,5 @@
 package com.dante.paul.dd5erandomlootgenerator;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Set;
@@ -10,28 +9,37 @@ import java.util.Set;
  */
 public class LootList {
 
-    private Map<String,Integer> coins;
+    private Map<String, Integer> coins;
     private Map<String, Integer> loot;
     private int numberOfItems = 0;
 
-    public LootList() {
+    //Singleton pattern
+    private static volatile  LootList list = new LootList();
+    private LootList() {
         loot = new Hashtable<>();
         coins = new Hashtable<>();
     }
-
-    public void getTreasure(){
-        printTreasure(getCoins());
-        printTreasure(getLoot());
+    public static LootList getInstance() {
+        return list;
     }
+
 
     private void printTreasure(Map loot) {
         Set<String> keys = loot.keySet();
-        for (String key: keys){
+        for (String key : keys) {
             String currentLine = loot.get(key) + "x " + key + "\r\n";
             //TODO need to actually print out the treasure correctly
             System.out.println(currentLine);
         }
     }
+
+
+
+    public void getTreasure() {
+        printTreasure(getCoins());
+        printTreasure(getLoot());
+    }
+
 
     //Takes a magic item and puts it in the loot list
     public void addToLoot(String item) {
@@ -39,17 +47,27 @@ public class LootList {
             numberOfItems = loot.get(item);
             loot.put(item, numberOfItems + 1);
         } else
-            loot.put(item,1);
-    }
-    //Takes a pile of coins and adds it to the loot list
-    public void addToCoins(String coin, int numberOfCoins){
-        coins.put(coin,numberOfCoins);
+            loot.put(item, 1);
     }
 
-    private Map getCoins(){
+    //Takes a pile of coins and adds it to the loot list
+    public void addToCoins(String coin, int numberOfCoins) {
+        numberOfCoins = numberOfCoins + coins.get(coin);
+        coins.put(coin, numberOfCoins);
+    }
+
+    public Map getCoins() {
         return coins;
     }
-    private Map getLoot() {
+
+    public Map getLoot() {
         return loot;
     }
+
+    public void deleteAll(){
+        coins.clear();
+        loot.clear();
+    }
+
+
 }
