@@ -30,7 +30,7 @@ public class GemsArtAndMagicItems extends Loot{
     }
 
     @Override
-    public LootList createStuff() {
+    public void createStuff() {
         switch (challenge) {
             case ZERO:
                 if (d100 < 7) {//no gems or art
@@ -645,7 +645,6 @@ public class GemsArtAndMagicItems extends Loot{
                 }
                 break;
         }
-        return list;
     }
 
     private void generateGemsOrArt(int numberOfItems, int value, ValueableItems vI) {

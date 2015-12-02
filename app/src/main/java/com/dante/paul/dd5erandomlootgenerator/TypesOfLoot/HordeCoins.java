@@ -14,7 +14,7 @@ public class HordeCoins extends Loot implements Coins{
         super(challengeRating, d100, TypeOfEncounter.HORDE);
     }
     @Override
-    public LootList createStuff() {
+    public void createStuff() {
         int numberOfCoins;
         switch (challenge) {
             case ZERO:
@@ -48,7 +48,6 @@ public class HordeCoins extends Loot implements Coins{
                 list.addToCoins(TypesOfCoins.PLATINUM, numberOfCoins);
                 break;
         }
-        return list;
     }
 
 }

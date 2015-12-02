@@ -14,7 +14,6 @@ public class MagicItems extends Loot {
     }
 
     @Override
-    public LootList createStuff() {
-        return list;
+    public void createStuff() {
     }
 }

@@ -52,7 +52,10 @@ public class LootList {
 
     //Takes a pile of coins and adds it to the loot list
     public void addToCoins(String coin, int numberOfCoins) {
+        if (coins.isEmpty() == false)
+            if(coins.containsKey(coin))
         numberOfCoins = numberOfCoins + coins.get(coin);
+
         coins.put(coin, numberOfCoins);
     }
 

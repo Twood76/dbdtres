@@ -14,7 +14,7 @@ public class IndividualCoins extends Loot implements Coins {
         super(challengeRating, d100, TypeOfEncounter.INDIVIDUAL);
     }
 
-    public LootList createStuff() {
+    public void createStuff() {
         int numberOfCoins;
         switch (challenge) {
             case ZERO:
@@ -106,7 +106,6 @@ public class IndividualCoins extends Loot implements Coins {
                 break;
 
         }
-        return list;
     }
 
 }

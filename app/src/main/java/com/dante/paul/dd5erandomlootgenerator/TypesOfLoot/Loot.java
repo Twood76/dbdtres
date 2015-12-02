@@ -13,7 +13,7 @@ public abstract class Loot implements CreateLoot{
     ChallengeRating challenge;
     LootList list;
     int d100;
-    Dice d;
+    Dice d = new Dice();
     TypeOfEncounter typeOfEncounter;
 
     public Loot(ChallengeRating challengeRating, int d100, TypeOfEncounter typeOfEncounter){
@@ -23,7 +23,7 @@ public abstract class Loot implements CreateLoot{
         this.typeOfEncounter = typeOfEncounter;
     }
 
-    public LootList createStuff() {
-        return null;
+    public void createStuff() {
+
     }
 }

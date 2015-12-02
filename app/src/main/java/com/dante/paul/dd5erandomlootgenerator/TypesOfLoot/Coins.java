@@ -9,6 +9,6 @@ import com.dante.paul.dd5erandomlootgenerator.LootList;
  */
 public interface Coins {
 
-    LootList createStuff();
+    void createStuff();
 }
 
