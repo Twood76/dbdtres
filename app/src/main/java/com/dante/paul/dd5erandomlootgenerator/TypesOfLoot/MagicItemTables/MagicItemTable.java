@@ -5,5 +5,5 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
  */
 public interface MagicItemTable {
 
-    String getItem(int number);
+    MagicItemTableObject getItem(int number);
 }

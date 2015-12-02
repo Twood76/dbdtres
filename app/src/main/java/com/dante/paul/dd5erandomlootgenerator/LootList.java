@@ -1,5 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator;
 
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTableObject;
+
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Set;
@@ -29,7 +31,7 @@ public class LootList {
         for (String key : keys) {
             String currentLine = loot.get(key) + "x " + key + "\r\n";
             //TODO need to actually print out the treasure correctly
-            System.out.println(currentLine);
+            //System.out.println(currentLine);
         }
     }
 
@@ -42,12 +44,12 @@ public class LootList {
 
 
     //Takes a magic item and puts it in the loot list
-    public void addToLoot(String item) {
-        if (loot.containsKey(item)) {
+    public void addToLoot(MagicItemTableObject item) {
+        if (loot.containsKey(item.itemName)) {
             numberOfItems = loot.get(item);
-            loot.put(item, numberOfItems + 1);
+            loot.put(item.itemName, numberOfItems + numberOfItems);
         } else
-            loot.put(item, 1);
+            loot.put(item.itemName, item.numberOfItem);
     }
 
     //Takes a pile of coins and adds it to the loot list

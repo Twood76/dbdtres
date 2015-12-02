@@ -5,26 +5,26 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
  */
 public class MagicItemTable_E extends GenerateSpell implements MagicItemTable {
 
-    public String getItem(int number) {
+    public MagicItemTableObject getItem(int number) {
 
-        String magicItem;
+
         if (number < 31) {
-            magicItem = generateSpell(8);
+            mITO.itemName = generateSpell(8);
         } else if (number < 56) {
-            magicItem = "Potion of storm giant strength";
+            mITO.itemName = "Potion of storm giant strength";
         } else if (number < 71) {
-            magicItem = "Potion of supreme healing";
+            mITO.itemName = "Potion of supreme healing";
         } else if (number < 86) {
-            magicItem = generateSpell(9);
+            mITO.itemName = generateSpell(9);
         } else if (number < 94) {
-            magicItem = "Universal solvent";
+            mITO.itemName = "Universal solvent";
         } else if (number < 99) {
-            magicItem = "Arrow of slaying";
+            mITO.itemName = "Arrow of slaying";
         } else {
-            magicItem = "Sovereign glue";
+            mITO.itemName = "Sovereign glue";
         }
 
-        magicItem += " (Table E)";
-        return magicItem;
+        mITO.itemName += " (Table E)";
+        return mITO;
     }
 }

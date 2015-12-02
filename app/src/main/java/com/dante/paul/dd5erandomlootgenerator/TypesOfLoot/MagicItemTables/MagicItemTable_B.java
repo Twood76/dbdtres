@@ -10,91 +10,90 @@ public class MagicItemTable_B extends GenerateSpell implements MagicItemTable {
     DamageType damageType = new DamageType();
 
 
-    public String getItem(int number) {
+    public MagicItemTableObject getItem(int number) {
         String magicItem;
-
         if (number < 16) {
-            magicItem = "Potion of greater healing";
+            mITO.itemName = "Potion of greater healing";
         } else if (number < 23) {
-            magicItem = "Potion of fire breath";
+            mITO.itemName = "Potion of fire breath";
         } else if (number < 30) {
-            magicItem = "Potion of " + damageType.getDamageType() + " resistance";
+            mITO.itemName = "Potion of " + damageType.getDamageType() + " resistance";
         } else if (number < 35) {
-            int secondary=d.roll(6);
-            magicItem = secondary + " Ammunition, +1";
+            mITO.numberOfItem =d.roll(6);
+            mITO.itemName = "Ammunition, +1";
         } else if (number < 40) {
-            magicItem = "Potion of animal friendship";
+            mITO.itemName = "Potion of animal friendship";
         } else if (number < 45) {
-            magicItem = "Potion of hill giant strength";
+            mITO.itemName = "Potion of hill giant strength";
         } else if (number < 50) {
-            magicItem = "Potion of growth";
+            mITO.itemName = "Potion of growth";
         } else if (number < 55) {
-            magicItem = "Potion of water breathing";
+            mITO.itemName = "Potion of water breathing";
         } else if (number < 60) {
-            magicItem = generateSpell(2);
+            mITO.itemName = generateSpell(2);
         } else if (number < 65) {
-            magicItem = generateSpell(3);
+            mITO.itemName = generateSpell(3);
         } else if (number < 68) {
-            magicItem = "Bag of holding";
+            mITO.itemName = "Bag of holding";
         } else if (number < 71) {
-            magicItem = "Keoghtom's ointment";
+            mITO.itemName = "Keoghtom's ointment";
         } else if (number < 74) {
-            magicItem = "Oil of slipperiness";
+            mITO.itemName = "Oil of slipperiness";
         } else if (number < 76) {
-            magicItem = "Dust of disappearance";
+            mITO.itemName = "Dust of disappearance";
         } else if (number < 78) {
-            magicItem = "Dust of dryness";
+            mITO.itemName = "Dust of dryness";
         } else if (number < 80) {
-            magicItem = "Dust of sneezing and choking";
+            mITO.itemName = "Dust of sneezing and choking";
         } else if (number < 82) {
             int secondary = d.roll(4);
             if (secondary == 1)
-                magicItem = "Blue sapphire elemental gem (air elemental)";
+                mITO.itemName = "Blue sapphire elemental gem (air elemental)";
             else if (secondary == 2)
-                magicItem = "Yellow diamond elemental gem (earth elemental)";
+                mITO.itemName = "Yellow diamond elemental gem (earth elemental)";
             else if (secondary == 3)
-                magicItem = "Red corundum elemental gem (fire elemental)";
+                mITO.itemName = "Red corundum elemental gem (fire elemental)";
             else
-                magicItem = "Emerald elemental gem (water elemental)";
+                mITO.itemName = "Emerald elemental gem (water elemental)";
         } else if (number < 84) {
-            magicItem = "Philter of love";
+            mITO.itemName = "Philter of love";
         } else if (number == 84) {
-            magicItem = "Alchemy jug";
+            mITO.itemName = "Alchemy jug";
         } else if (number == 85) {
-            magicItem = "Cap of water breathing";
+            mITO.itemName = "Cap of water breathing";
         } else if (number == 86) {
-            magicItem = "Cloak of manta ray";
+            mITO.itemName = "Cloak of manta ray";
         } else if (number == 87) {
-            magicItem = "Driftglobe";
+            mITO.itemName = "Driftglobe";
         } else if (number == 88) {
-            magicItem = "Goggles of night";
+            mITO.itemName = "Goggles of night";
         } else if (number == 89) {
-            magicItem = "Helm of comprehending languages";
+            mITO.itemName = "Helm of comprehending languages";
         } else if (number == 90) {
-            magicItem = "Immovable rod";
+            mITO.itemName = "Immovable rod";
         } else if (number == 91) {
-            magicItem = "Lantern of revealing";
+            mITO.itemName = "Lantern of revealing";
         } else if (number == 92) {
-            magicItem = "Mariner's armor";
+            mITO.itemName = "Mariner's armor";
         } else if (number == 93) {
-            magicItem = "Mithral armor";
+            mITO.itemName = "Mithral armor";
         } else if (number == 94) {
-            magicItem = "Potion of poison";
+            mITO.itemName = "Potion of poison";
         } else if (number == 95) {
-            magicItem = "Ring of swimming";
+            mITO.itemName = "Ring of swimming";
         } else if (number == 96) {
-            magicItem = "Robe of useful items";
+            mITO.itemName = "Robe of useful items";
         } else if (number == 97) {
-            magicItem = "Rope of climbing";
+            mITO.itemName = "Rope of climbing";
         } else if (number == 98) {
-            magicItem = "Saddle of the cavalier";
+            mITO.itemName = "Saddle of the cavalier";
         } else if (number == 99) {
-            magicItem = "Wand of magic detection";
+            mITO.itemName = "Wand of magic detection";
         } else {
-            magicItem = "Wand of secrets";
+            mITO.itemName = "Wand of secrets";
         }
 
-        magicItem += " (Table B)";
-        return magicItem;
+        mITO.itemName += " (Table B)";
+        return mITO;
     }
 }

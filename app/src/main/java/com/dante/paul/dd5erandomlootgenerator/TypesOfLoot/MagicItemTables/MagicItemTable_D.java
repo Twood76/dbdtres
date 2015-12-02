@@ -7,43 +7,42 @@ import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
  */
 public class MagicItemTable_D extends GenerateSpell implements MagicItemTable {
 
-    public String getItem(int number) {
-        String magicItem;
+    public MagicItemTableObject getItem(int number) {
 
         if (number < 21) {
-            magicItem = "Potion of supreme healing";
+            mITO.itemName = "Potion of supreme healing";
         } else if (number < 31) {
-            magicItem = "Potion of invisibility";
+            mITO.itemName = "Potion of invisibility";
         } else if (number < 41) {
-            magicItem = "Potion of speed";
+            mITO.itemName = "Potion of speed";
         } else if (number < 51) {
-            magicItem = generateSpell(6);
+            mITO.itemName = generateSpell(6);
         } else if (number < 58) {
-            magicItem = generateSpell(7);
+            mITO.itemName = generateSpell(7);
         } else if (number < 63) {
-            magicItem = " Ammunition, +3";
+            mITO.itemName = " Ammunition, +3";
         } else if (number < 68) {
-            magicItem = "Oil of sharpness";
+            mITO.itemName = "Oil of sharpness";
         } else if (number < 73) {
-            magicItem = "Potion of flying";
+            mITO.itemName = "Potion of flying";
         } else if (number < 78) {
-            magicItem = "Potion of cloud giant strength";
+            mITO.itemName = "Potion of cloud giant strength";
         } else if (number < 83) {
-            magicItem = "Potion of longevity";
+            mITO.itemName = "Potion of longevity";
         } else if (number < 88) {
-            magicItem = "Potion of vitality";
+            mITO.itemName = "Potion of vitality";
         } else if (number < 93) {
-            magicItem = generateSpell(8);
+            mITO.itemName = generateSpell(8);
         } else if (number < 96) {
-            magicItem = "Horseshoes of a zephyr";
+            mITO.itemName = "Horseshoes of a zephyr";
         } else if (number < 99) {
-            magicItem = "Nolzur's marvelous pigments";
+            mITO.itemName = "Nolzur's marvelous pigments";
         } else if (number == 99) {
-            magicItem = "Bag of devouring";
+            mITO.itemName = "Bag of devouring";
         } else {
-            magicItem = "Portable hole";
+            mITO.itemName = "Portable hole";
         }
-        magicItem += " (Table D)";
-        return magicItem;
+        mITO.itemName += " (Table D)";
+        return mITO;
     }
 }

@@ -6,6 +6,8 @@ package com.dante.paul.dd5erandomlootgenerator;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
+import com.dante.paul.dd5erandomlootgenerator.Tables.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.Coins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GemsArtAndMagicItems;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.HordeCoins;
@@ -75,6 +77,36 @@ public class JUnitTest {
             System.out.println(list.getLoot().get(key) + "x "+ key);
         }
         System.out.println("Finished Horde Items");
+        assertNotNull(list);
+    }
+    @Test
+    public void generateHordeTreasure() throws Exception{
+        System.out.println("Beginning of Horde Treasure");
+        LootList list = LootList.getInstance();
+        list.getCoins().clear();
+        list.getLoot().clear();
+        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1);
+        treasure.generateTreasure();
+        Set<String> keys = list.getCoins().keySet();
+        for(String key: keys) {
+            System.out.println(list.getCoins().get(key) + key);
+        }
+        keys = list.getLoot().keySet();
+        for(String key: keys){
+            System.out.println(list.getLoot().get(key) + "x "+ key);
+        }
+        System.out.println("End of single Horde Treasure");
+        treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,20);
+        treasure.generateTreasure();
+        keys = list.getCoins().keySet();
+        for(String key: keys) {
+            System.out.println(list.getCoins().get(key) + key);
+        }
+        keys = list.getLoot().keySet();
+        for(String key: keys){
+            System.out.println(list.getLoot().get(key) + "x "+ key);
+        }
+        System.out.println("End of huge Horde Treasure");
         assertNotNull(list);
     }
 }

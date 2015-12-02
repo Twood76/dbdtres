@@ -10,159 +10,158 @@ public class MagicItemTable_H extends GenerateSpell implements MagicItemTable {
     DamageType damageType;
 
 
-    public String getItem(int number) {
-        String magicItem;
+    public MagicItemTableObject getItem(int number) {
 
         if (number < 11) {
-            magicItem = "Weapon (any), +3";
+            mITO.itemName = "Weapon (any), +3";
         } else if (number < 13) {
-            magicItem = "Amulet of the planes";
+            mITO.itemName = "Amulet of the planes";
         } else if (number < 15) {
-            magicItem = "Carpet of flying";
+            mITO.itemName = "Carpet of flying";
         } else if (number < 17) {
-            magicItem = "Crystal ball (very rare version)";
+            mITO.itemName = "Crystal ball (very rare version)";
         } else if (number < 19) {
-            magicItem = "Ring of regeneration";
+            mITO.itemName = "Ring of regeneration";
         } else if (number < 21) {
-            magicItem = "Ring of shooting stars";
+            mITO.itemName = "Ring of shooting stars";
         } else if (number < 23) {
-            magicItem = "Ring of telekinesis";
+            mITO.itemName = "Ring of telekinesis";
         } else if (number < 25) {
-            magicItem = "Robe of scintillating colors";
+            mITO.itemName = "Robe of scintillating colors";
         } else if (number < 27) {
-            magicItem = "Robe of stars";
+            mITO.itemName = "Robe of stars";
         } else if (number < 29) {
-            magicItem = "Rod of absorption";
+            mITO.itemName = "Rod of absorption";
         } else if (number < 31) {
-            magicItem = "Rod of alertness";
+            mITO.itemName = "Rod of alertness";
         } else if (number < 33) {
-            magicItem = "Rod of security";
+            mITO.itemName = "Rod of security";
         } else if (number < 35) {
-            magicItem = "Rod of the pact keeper, +3";
+            mITO.itemName = "Rod of the pact keeper, +3";
         } else if (number < 37) {
-            magicItem = "Scimitar of speed";
+            mITO.itemName = "Scimitar of speed";
         } else if (number < 39) {
-            magicItem = "Shield, +3";
+            mITO.itemName = "Shield, +3";
         } else if (number < 41) {
-            magicItem = "Staff of fire";
+            mITO.itemName = "Staff of fire";
         } else if (number < 43) {
-            magicItem = "Staff of frost";
+            mITO.itemName = "Staff of frost";
         } else if (number < 45) {
-            magicItem = "Staff of power";
+            mITO.itemName = "Staff of power";
         } else if (number < 47) {
-            magicItem = "Staff of striking";
+            mITO.itemName = "Staff of striking";
         } else if (number < 49) {
-            magicItem = "Staff of thunder and lightning";
+            mITO.itemName = "Staff of thunder and lightning";
         } else if (number < 51) {
-            magicItem = "Sword of sharpness";
+            mITO.itemName = "Sword of sharpness";
         } else if (number < 53) {
-            magicItem = "Wand of polymorph";
+            mITO.itemName = "Wand of polymorph";
         } else if (number < 55) {
-            magicItem = "Wand of the war mage, +3";
+            mITO.itemName = "Wand of the war mage, +3";
         } else if (number == 55) {
-            magicItem = "Adamantine armor (half plate)";
+            mITO.itemName = "Adamantine armor (half plate)";
         } else if (number == 56) {
-            magicItem = "Adamantine armor (plate)";
+            mITO.itemName = "Adamantine armor (plate)";
         } else if (number == 57) {
-            magicItem = "Animated shield";
+            mITO.itemName = "Animated shield";
         } else if (number == 58) {
-            magicItem = "Belt of fire giant strength";
+            mITO.itemName = "Belt of fire giant strength";
         } else if (number == 59) {
-            magicItem = "Belt of frost (or stone) giant strength";
+            mITO.itemName = "Belt of frost (or stone) giant strength";
         } else if (number == 60) {
-            magicItem = "Armor, +1 breastplate";
+            mITO.itemName = "Armor, +1 breastplate";
         } else if (number == 61) {
-            magicItem = "Armor of " + damageType.getDamageType() + " resistance (breastplate)";
+            mITO.itemName = "Armor of " + damageType.getDamageType() + " resistance (breastplate)";
         } else if (number == 62) {
-            magicItem = "Candle of invocation";
+            mITO.itemName = "Candle of invocation";
         } else if (number == 63) {
-            magicItem = "Armor, +2 chain mail";
+            mITO.itemName = "Armor, +2 chain mail";
         } else if (number == 64) {
-            magicItem = "Armor, +2 chain shirt";
+            mITO.itemName = "Armor, +2 chain shirt";
         } else if (number == 65) {
-            magicItem = "Cloak of arachnida";
+            mITO.itemName = "Cloak of arachnida";
         } else if (number == 66) {
-            magicItem = "Dancing sword";
+            mITO.itemName = "Dancing sword";
         } else if (number == 67) {
-            magicItem = "Demon armor";
+            mITO.itemName = "Demon armor";
         } else if (number == 68) {
-            magicItem = "Dragon scale mail";
+            mITO.itemName = "Dragon scale mail";
         } else if (number == 69) {
-            magicItem = "Dwarven plate";
+            mITO.itemName = "Dwarven plate";
         } else if (number == 70) {
-            magicItem = "Dwarven thrower";
+            mITO.itemName = "Dwarven thrower";
         } else if (number == 71) {
-            magicItem = "Efreeti bottle";
+            mITO.itemName = "Efreeti bottle";
         } else if (number == 72) {
-            magicItem = "Figurine of wondrous power (obsidian steed)";
+            mITO.itemName = "Figurine of wondrous power (obsidian steed)";
         } else if (number == 73) {
-            magicItem = "Frost brand";
+            mITO.itemName = "Frost brand";
         } else if (number == 74) {
-            magicItem = "Helm of brilliance";
+            mITO.itemName = "Helm of brilliance";
         } else if (number == 75) {
-            magicItem = "Horn of Valhalla (bronze)";
+            mITO.itemName = "Horn of Valhalla (bronze)";
         } else if (number == 76) {
-            magicItem = "Instrument of the bards (Anstruth harp)";
+            mITO.itemName = "Instrument of the bards (Anstruth harp)";
         } else if (number == 77) {
-            magicItem = "loun stone (absorption)";
+            mITO.itemName = "loun stone (absorption)";
         } else if (number == 78) {
-            magicItem = "loun stone (agility)";
+            mITO.itemName = "loun stone (agility)";
         } else if (number == 79) {
-            magicItem = "loun stone (fortitude)";
+            mITO.itemName = "loun stone (fortitude)";
         } else if (number == 80) {
-            magicItem = "loun stone (insight)";
+            mITO.itemName = "loun stone (insight)";
         } else if (number == 81) {
-            magicItem = "loun stone (intellect)";
+            mITO.itemName = "loun stone (intellect)";
         } else if (number == 82) {
-            magicItem = "loun stone (leadership)";
+            mITO.itemName = "loun stone (leadership)";
         } else if (number == 83) {
-            magicItem = "loun stone (strength)";
+            mITO.itemName = "loun stone (strength)";
         } else if (number == 84) {
-            magicItem = "Armor, +2 leather";
+            mITO.itemName = "Armor, +2 leather";
         } else if (number == 85) {
-            magicItem = "Manual of bodily health";
+            mITO.itemName = "Manual of bodily health";
         } else if (number == 86) {
-            magicItem = "Manual of gainful exercise";
+            mITO.itemName = "Manual of gainful exercise";
         } else if (number == 87) {
-            secondary = d.roll(20);
-            magicItem = "Manual of golems";
+            mITO.numberOfItem += d.roll(20);
+            mITO.itemName = "Manual of golems";
             if (secondary < 6)
-                magicItem += " (clay";
+                mITO.itemName += " (clay";
             else if (secondary < 18)
-                magicItem += " (flesh";
+                mITO.itemName += " (flesh";
             else if (secondary == 18)
-                magicItem += " (iron";
+                mITO.itemName += " (iron";
             else
-                magicItem += " (stone";
-            magicItem += " or DM decides)";
+                mITO.itemName += " (stone";
+            mITO.itemName += " or DM decides)";
         } else if (number == 88) {
-            magicItem = "Manual of quickness of action";
+            mITO.itemName = "Manual of quickness of action";
         } else if (number == 89) {
-            magicItem = "Mirror of life trapping";
+            mITO.itemName = "Mirror of life trapping";
         } else if (number == 90) {
-            magicItem = "Nine lives stealer";
+            mITO.itemName = "Nine lives stealer";
         } else if (number == 91) {
-            magicItem = "Oath bow";
+            mITO.itemName = "Oath bow";
         } else if (number == 92) {
-            magicItem = "Armor, +2 scale mail";
+            mITO.itemName = "Armor, +2 scale mail";
         } else if (number == 93) {
-            magicItem = "Spellguard shield";
+            mITO.itemName = "Spellguard shield";
         } else if (number == 94) {
-            magicItem = "Armor, +1 splint";
+            mITO.itemName = "Armor, +1 splint";
         } else if (number == 95) {
-            magicItem = "Armor of resistance (splint)";
+            mITO.itemName = "Armor of resistance (splint)";
         } else if (number == 96) {
-            magicItem = "Armor, +1 studded leather";
+            mITO.itemName = "Armor, +1 studded leather";
         } else if (number == 97) {
-            magicItem = "Armor of " + damageType.getDamageType() + " resistance (studded leather)";
+            mITO.itemName = "Armor of " + damageType.getDamageType() + " resistance (studded leather)";
         } else if (number == 98) {
-            magicItem = "Tome of clear thought";
+            mITO.itemName = "Tome of clear thought";
         } else if (number == 99) {
-            magicItem = "Tome of leadership and influence";
+            mITO.itemName = "Tome of leadership and influence";
         } else {
-            magicItem = "Tome of understanding";
+            mITO.itemName = "Tome of understanding";
         }
-        magicItem += " (Table H)";
-        return magicItem;
+        mITO.itemName += " (Table H)";
+        return mITO;
     }
 }

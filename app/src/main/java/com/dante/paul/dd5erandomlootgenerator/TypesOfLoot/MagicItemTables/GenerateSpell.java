@@ -17,6 +17,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpel
 public abstract class GenerateSpell {
     Dice d = new Dice();
     int secondary;
+    MagicItemTableObject mITO;
     protected String generateSpell(int level){
 
         AbstractSpells spell;

@@ -20,7 +20,7 @@ import java.util.Random;
 public class Treasure implements TreasureTable {
     protected ChallengeRating challengeRating;
     protected int d100;
-    protected Dice d;
+    protected Dice d = new Dice();
     protected TypeOfEncounter toE;
     public LootList list;
     int numberOfIterations;
@@ -33,16 +33,16 @@ public class Treasure implements TreasureTable {
         this.numberOfIterations = numberOfIterations;
     }
 
-    public void generateTreasure(LootList list){
+    public void generateTreasure(){
         for (int counter = 0; counter < numberOfIterations; counter ++) {
-            generateCoins(list);
+            generateCoins();
             if (toE == TypeOfEncounter.HORDE)
-                generateItems(list);
+                generateItems();
         }
         list.getTreasure();
     }
 
-    private void generateCoins(LootList list) {
+    private void generateCoins() {
         if (toE == TypeOfEncounter.INDIVIDUAL) {
             Loot coins = new IndividualCoins(challengeRating, d100);
             coins.createStuff();
@@ -53,9 +53,8 @@ public class Treasure implements TreasureTable {
             items.createStuff();
         }
     }
-    private LootList generateItems(LootList list){
+    private void generateItems(){
         Loot items = new GemsArtAndMagicItems(challengeRating, d100);
         items.createStuff();
-        return list;
     }
 }

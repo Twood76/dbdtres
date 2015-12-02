@@ -16,29 +16,28 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpel
  */
 public class MagicItemTable_A extends GenerateSpell implements MagicItemTable{
 
-    public String getItem(int number){
-        String magicItem;
+    public MagicItemTableObject getItem(int number){
 
         if (number < 51) {
-            magicItem = "Potion of healing";
+            mITO.itemName = "Potion of healing";
         } else if (number < 61) {
-            magicItem = generateSpell(0);
+            mITO.itemName = generateSpell(0);
         } else if (number < 71) {
-            magicItem = "Potion of climbing";
+            mITO.itemName = "Potion of climbing";
         } else if (number < 91) {
-            magicItem = generateSpell(1);
+            mITO.itemName = generateSpell(1);
         } else if (number < 95) {
-            magicItem = generateSpell(2);
+            mITO.itemName = generateSpell(2);
         } else if (number < 99) {
-            magicItem = "Potion of greater healing";
+            mITO.itemName = "Potion of greater healing";
         } else if (number == 99) {
-            magicItem = "Bag of holding";
+            mITO.itemName = "Bag of holding";
         } else {
-            magicItem = "Driftglobe";
+            mITO.itemName = "Driftglobe";
         }
 
-        magicItem += " (Table A)";
-        return magicItem;
+        mITO.itemName += " (Table A)";
+        return mITO;
     }
 
 
