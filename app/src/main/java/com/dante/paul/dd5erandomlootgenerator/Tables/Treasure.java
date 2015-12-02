@@ -23,34 +23,35 @@ public class Treasure implements TreasureTable {
     protected Dice d;
     protected TypeOfEncounter toE;
     public LootList list;
+    int numberOfIterations;
 
-    public Treasure(ChallengeRating challengeRating, TypeOfEncounter toE) {
+    public Treasure(ChallengeRating challengeRating, TypeOfEncounter toE, int numberOfIterations) {
         this.challengeRating = challengeRating;
         d100 = d.roll(100);
         list = LootList.getInstance();
         this.toE = toE;
+        this.numberOfIterations = numberOfIterations;
     }
 
-    public LootList generateTreasure(LootList list){
-        generateCoins(list);
-        if (toE == TypeOfEncounter.HORDE)
-        generateItems(list);
-
-        return list;
+    public void generateTreasure(LootList list){
+        for (int counter = 0; counter < numberOfIterations; counter ++) {
+            generateCoins(list);
+            if (toE == TypeOfEncounter.HORDE)
+                generateItems(list);
+        }
+        list.getTreasure();
     }
 
-    private LootList generateCoins(LootList list) {
+    private void generateCoins(LootList list) {
         if (toE == TypeOfEncounter.INDIVIDUAL) {
             Loot coins = new IndividualCoins(challengeRating, d100);
             coins.createStuff();
-            return list;
         } else {
             Loot coins = new HordeCoins(challengeRating, d100);
             coins.createStuff();
             Loot items = new GemsArtAndMagicItems(challengeRating, d100);
             items.createStuff();
         }
-        return list;
     }
     private LootList generateItems(LootList list){
         Loot items = new GemsArtAndMagicItems(challengeRating, d100);
