@@ -4,51 +4,45 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables;
  * Created by PaulD on 2015-11-30.
  */
 public abstract class AbstractSpells {
-    private String[] level0;
-    private String[] level1;
-    private String[] level2;
-    private String[] level3;
-    private String[] level4;
-    private String[] level5;
-    private String[] level6;
-    private String[] level7;
-    private String[] level8;
-    private String[] level9;
+    protected String[] spells;
     protected int number;
 
-
-    public String getSpell(int level) {
+    public abstract String getSpell (int level);
+    public abstract String[] getSpells(int level);
+    public String getSpell(int level, AbstractSpells abstractSpells) {
         switch (level) {
             case 0:
-                number = level0.length - 1;
-                return level0[number];
+                spells = getSpells(0);
+                break;
             case 1:
-                number = level1.length - 1;
-                return level1[number];
+                spells = getSpells(1);
+                break;
             case 2:
-                number = level2.length - 1;
-                return level2[number];
+                spells = getSpells(2);
+                break;
             case 3:
-                number = level3.length - 1;
-                return level3[number];
+                spells = getSpells(3);
+                break;
             case 4:
-                number = level4.length - 1;
-                return level4[number];
+                spells = getSpells(4);
+                break;
             case 5:
-                number = level5.length - 1;
-                return level5[number];
+                spells = getSpells(5);
+                break;
             case 6:
-                number = level6.length - 1;
-                return level6[number];
+                spells = getSpells(6);
+                break;
             case 7:
-                number = level7.length - 1;
-                return level7[number];
+                spells = getSpells(7);
+                break;
             case 8:
-                number = level8.length - 1;
-                return level8[number];
+                spells = getSpells(8);
+                break;
             default:
-                number = level9.length - 1;
-                return level9[number];
+                spells = getSpells(9);
+                break;
         }
+        number = spells.length - 1;
+        return spells[number];
     }
 }

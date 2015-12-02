@@ -12,7 +12,6 @@ public class MagicItemTable_C extends GenerateSpell implements MagicItemTable {
         MonsterType monsterType = new MonsterType();
         String magicItem;
 
-
         if (number < 16) {
             magicItem = "Potion of superior healing";
         } else if (number < 23) {

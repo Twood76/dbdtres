@@ -6,8 +6,8 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 public class MagicItemTable_E extends GenerateSpell implements MagicItemTable {
 
     public String getItem(int number) {
-        String magicItem;
 
+        String magicItem;
         if (number < 31) {
             magicItem = generateSpell(8);
         } else if (number < 56) {

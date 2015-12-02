@@ -10,7 +10,6 @@ public class MagicItemTable_D extends GenerateSpell implements MagicItemTable {
     public String getItem(int number) {
         String magicItem;
 
-
         if (number < 21) {
             magicItem = "Potion of supreme healing";
         } else if (number < 31) {

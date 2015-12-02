@@ -26,9 +26,9 @@ public abstract class GenerateSpell {
         String spellName;
 
         if (level == 0 || level > 5)
-            secondary = 6;
+            secondary = d.roll(6);
         else
-            secondary = 8;
+            secondary = d.roll(8);
 
         switch (secondary){
             case 1:
@@ -64,7 +64,7 @@ public abstract class GenerateSpell {
                 spellType = "Paladin";
                 break;
         }
-        scroll = spell.getSpell(0);
+        scroll = spell.getSpell(level);
         spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
         return spellName;
     }
