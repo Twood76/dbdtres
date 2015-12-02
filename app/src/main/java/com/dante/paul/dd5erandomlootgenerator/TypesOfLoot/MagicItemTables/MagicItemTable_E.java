@@ -9,22 +9,22 @@ public class MagicItemTable_E extends GenerateSpell implements MagicItemTable {
 
 
         if (number < 31) {
-            mITO.itemName = generateSpell(8);
+            magicItemTableObject.itemName = generateSpell(8);
         } else if (number < 56) {
-            mITO.itemName = "Potion of storm giant strength";
+            magicItemTableObject.itemName = "Potion of storm giant strength";
         } else if (number < 71) {
-            mITO.itemName = "Potion of supreme healing";
+            magicItemTableObject.itemName = "Potion of supreme healing";
         } else if (number < 86) {
-            mITO.itemName = generateSpell(9);
+            magicItemTableObject.itemName = generateSpell(9);
         } else if (number < 94) {
-            mITO.itemName = "Universal solvent";
+            magicItemTableObject.itemName = "Universal solvent";
         } else if (number < 99) {
-            mITO.itemName = "Arrow of slaying";
+            magicItemTableObject.itemName = "Arrow of slaying";
         } else {
-            mITO.itemName = "Sovereign glue";
+            magicItemTableObject.itemName = "Sovereign glue";
         }
 
-        mITO.itemName += " (Table E)";
-        return mITO;
+        magicItemTableObject.itemName += " (Table E)";
+        return magicItemTableObject;
     }
 }

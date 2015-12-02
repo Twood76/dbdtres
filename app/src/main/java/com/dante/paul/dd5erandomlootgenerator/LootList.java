@@ -16,11 +16,13 @@ public class LootList {
     private int numberOfItems = 0;
 
     //Singleton pattern
-    private static volatile  LootList list = new LootList();
+    private static volatile LootList list = new LootList();
+
     private LootList() {
         loot = new Hashtable<>();
         coins = new Hashtable<>();
     }
+
     public static LootList getInstance() {
         return list;
     }
@@ -36,7 +38,6 @@ public class LootList {
     }
 
 
-
     public void getTreasure() {
         printTreasure(getCoins());
         printTreasure(getLoot());
@@ -46,18 +47,17 @@ public class LootList {
     //Takes a magic item and puts it in the loot list
     public void addToLoot(MagicItemTableObject item) {
         if (loot.containsKey(item.itemName)) {
-            numberOfItems = loot.get(item);
-            loot.put(item.itemName, numberOfItems + numberOfItems);
+            numberOfItems = loot.get(item.itemName);
+            loot.put(item.itemName, numberOfItems + item.numberOfItem);
         } else
             loot.put(item.itemName, item.numberOfItem);
     }
 
     //Takes a pile of coins and adds it to the loot list
     public void addToCoins(String coin, int numberOfCoins) {
-        if (coins.isEmpty() == false)
-            if(coins.containsKey(coin))
-        numberOfCoins = numberOfCoins + coins.get(coin);
-
+        if (!coins.isEmpty())
+            if (coins.containsKey(coin))
+                numberOfCoins = numberOfCoins + coins.get(coin);
         coins.put(coin, numberOfCoins);
     }
 
@@ -69,7 +69,7 @@ public class LootList {
         return loot;
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         coins.clear();
         loot.clear();
     }

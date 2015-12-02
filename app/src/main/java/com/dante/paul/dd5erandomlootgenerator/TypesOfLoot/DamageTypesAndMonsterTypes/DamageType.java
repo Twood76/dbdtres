@@ -6,7 +6,7 @@ import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
  * Created by PaulD on 2015-11-26.
  */
 public class DamageType {
-    Dice d;
+    Dice d = new Dice();
     int number;
     String damageType;
 

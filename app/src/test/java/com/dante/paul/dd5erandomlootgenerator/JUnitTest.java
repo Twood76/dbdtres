@@ -18,7 +18,8 @@ import org.junit.Test;
 
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class JUnitTest {
     @Before public void initializeList(){
@@ -81,7 +82,7 @@ public class JUnitTest {
     }
     @Test
     public void generateHordeTreasure() throws Exception{
-        System.out.println("Beginning of Horde Treasure");
+        System.out.println("Single Horde Treasure");
         LootList list = LootList.getInstance();
         list.getCoins().clear();
         list.getLoot().clear();
@@ -95,10 +96,19 @@ public class JUnitTest {
         for(String key: keys){
             System.out.println(list.getLoot().get(key) + "x "+ key);
         }
-        System.out.println("End of single Horde Treasure");
-        treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,20);
+        assertNotNull(list);
+    }
+
+    @Test
+    public void generateMultipleHordeTreasures() throws Exception{
+        System.out.println("Multi-Horde Treasure");
+        LootList list = LootList.getInstance();
+        list.getCoins().clear();
+        list.getLoot().clear();
+
+        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,20);
         treasure.generateTreasure();
-        keys = list.getCoins().keySet();
+        Set<String> keys = list.getCoins().keySet();
         for(String key: keys) {
             System.out.println(list.getCoins().get(key) + key);
         }
@@ -107,6 +117,5 @@ public class JUnitTest {
             System.out.println(list.getLoot().get(key) + "x "+ key);
         }
         System.out.println("End of huge Horde Treasure");
-        assertNotNull(list);
     }
 }

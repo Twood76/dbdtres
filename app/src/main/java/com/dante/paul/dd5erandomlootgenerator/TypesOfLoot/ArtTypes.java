@@ -50,6 +50,7 @@ public class ArtTypes extends ValueableItems {
                         artwork = "Gold locket with a painted portrait inside." + artwork;
                         break;
                 }
+                break;
             case 250:
                 artwork = " Value 250 GP.";
                 number = d.roll(10);
@@ -85,6 +86,7 @@ public class ArtTypes extends ValueableItems {
                         artwork = "Gold bird cage with electrum filigree." + artwork;
                         break;
                 }
+                break;
             case 750:
                 artwork = " Value 750 GP.";
                 number = d.roll(10);
@@ -120,6 +122,7 @@ public class ArtTypes extends ValueableItems {
                         artwork = "Painted gold war mask." + artwork;
                         break;
                 }
+                break;
             case 2500:
                 artwork = " Value 2500 GP.";
                 number = d.roll(10);
@@ -155,6 +158,7 @@ public class ArtTypes extends ValueableItems {
                         artwork = "A necklace string of small pink pearls." + artwork;
                         break;
                 }
+                break;
             default: //7500 GP
                 artwork = " Value 7500 GP.";
                 number = d.roll(8);
@@ -184,6 +188,7 @@ public class ArtTypes extends ValueableItems {
                         artwork = "Bejeweled ivory drinking horn with gold filigree." + artwork;
                         break;
                 }
+                break;
         }
 
         magicItemTableObject.itemName = artwork;

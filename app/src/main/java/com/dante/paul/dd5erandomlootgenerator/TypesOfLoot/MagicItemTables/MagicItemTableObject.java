@@ -8,7 +8,8 @@ public class MagicItemTableObject {
     public String itemName;
 
     public MagicItemTableObject() {
-        numberOfItem = 1;
+
+        this.numberOfItem = 1;
     }
 
 }

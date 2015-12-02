@@ -17,8 +17,9 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpel
 public abstract class GenerateSpell {
     Dice d = new Dice();
     int secondary;
-    MagicItemTableObject mITO;
-    protected String generateSpell(int level){
+    MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
+
+    protected String generateSpell(int level) {
 
         AbstractSpells spell;
 
@@ -31,7 +32,7 @@ public abstract class GenerateSpell {
         else
             secondary = d.roll(8);
 
-        switch (secondary){
+        switch (secondary) {
             case 1:
                 spell = new BardSpells();
                 spellType = "Bard";

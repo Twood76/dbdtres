@@ -2,6 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTableObject;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_B;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_C;
@@ -18,12 +19,12 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicI
 public class MagicTypes extends ValueableItems {
     Dice d = new Dice();
     int number;
-    String magicItem;
+    MagicItemTableObject magicItemTableObject;
     MagicItemTable magicItemTable;
 
 
     //TODO randomly generate spells of given level
-    public String getItem(String table) {
+    public MagicItemTableObject getItem(String table) {
         number = d.roll(100);
         switch (table) {
             case "A":
@@ -54,11 +55,16 @@ public class MagicTypes extends ValueableItems {
             case "I":
                 magicItemTable = new MagicItemTable_I();
             default:
-                magicItem = "Something is fucked with magic item generation!";
-                System.out.println(magicItem);
-                return magicItem;
+                magicItemTableObject.itemName = "Something is fucked with magic item generation!";
+                System.out.println(magicItemTableObject.itemName);
         }
-        magicItem = magicItemTable.getItem(number);
-        return magicItem;
+        magicItemTableObject = magicItemTable.getItem(number);
+        return magicItemTableObject;
+    }
+
+    @Override
+    public MagicItemTableObject getItem(int value) {
+        magicItemTableObject = magicItemTable.getItem(value);
+        return magicItemTableObject;
     }
 }
