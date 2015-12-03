@@ -98,7 +98,7 @@ public class JUnitTest {
         list.getCoins().clear();
         list.getLoot().clear();
 
-        Treasure treasure = new Treasure(ChallengeRating.FIVE, TypeOfEncounter.HORDE,20);
+        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1000);
         treasure.generateTreasure();
 
         System.out.println("End of huge Horde Treasure");

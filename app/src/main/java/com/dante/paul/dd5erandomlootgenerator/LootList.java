@@ -41,28 +41,35 @@ public class LootList {
         }
     }
 
-    private void printTreasure(Map storage) {
+    private int printTreasure(Map storage) {
+        int count = 0;
         Set<String> keys = storage.keySet();
         for (String key : keys) {
             String currentLine = storage.get(key) + "x " + key + "\r\n";
             //TODO need to actually print out the treasure correctly
             System.out.print(currentLine);
+            count += (Integer) storage.get(key);
         }
+    return count;
     }
 
 
     public void getTreasure() {
+        int count;
         System.out.println("Coins");
         printCoins();
         System.out.println();
         System.out.println("Gems");
-        printTreasure(getGems());
+        count = printTreasure(getGems());
+        System.out.println("Gem Total = " + count);
         System.out.println();
         System.out.println("Art");
-        printTreasure(getArt());
+        count = printTreasure(getArt());
+        System.out.println("Art Total = " + count);
         System.out.println("");
         System.out.println("Magic Items");
-        printTreasure(getLoot());
+        count = printTreasure(getLoot());
+        System.out.println("Magic Item Total Total = " + count);
     }
 
 

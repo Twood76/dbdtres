@@ -6,7 +6,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterT
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_H extends GenerateSpell implements MagicItemTable {
-    DamageType damageType;
+    DamageType damageType = new DamageType();
 
 
     public MagicItemTableObject getItem(int number) {

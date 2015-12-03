@@ -17,7 +17,7 @@ public class MagicItemTable_C extends GenerateSpell implements MagicItemTable {
             magicItemTableObject.itemName = generateSpell(4);
         } else if (number < 28) {
             magicItemTableObject.numberOfItem = d.roll(4);
-            magicItemTableObject.itemName = secondary + " Ammunition, +2";
+            magicItemTableObject.itemName =  "Ammunition, +2";
         } else if (number < 33) {
             magicItemTableObject.itemName = "Potion of clairvoyance";
         } else if (number < 38) {
