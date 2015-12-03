@@ -88,14 +88,6 @@ public class JUnitTest {
         list.getLoot().clear();
         Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1);
         treasure.generateTreasure();
-        Set<String> keys = list.getCoins().keySet();
-        for(String key: keys) {
-            System.out.println(list.getCoins().get(key) + key);
-        }
-        keys = list.getLoot().keySet();
-        for(String key: keys){
-            System.out.println(list.getLoot().get(key) + "x "+ key);
-        }
         assertNotNull(list);
     }
 
@@ -106,16 +98,9 @@ public class JUnitTest {
         list.getCoins().clear();
         list.getLoot().clear();
 
-        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,20);
+        Treasure treasure = new Treasure(ChallengeRating.FIVE, TypeOfEncounter.HORDE,20);
         treasure.generateTreasure();
-        Set<String> keys = list.getCoins().keySet();
-        for(String key: keys) {
-            System.out.println(list.getCoins().get(key) + key);
-        }
-        keys = list.getLoot().keySet();
-        for(String key: keys){
-            System.out.println(list.getLoot().get(key) + "x "+ key);
-        }
+
         System.out.println("End of huge Horde Treasure");
     }
 }

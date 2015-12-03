@@ -1,18 +1,18 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.ArtTableObject;
 
 /**
  * Created by PaulD on 2015-11-23.
  */
-public class ArtTypes extends ValueableItems {
+public class ArtTypes extends ValuableItems {
     Dice d = new Dice();
     int number;
-    MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
+    ArtTableObject artTableObject = new ArtTableObject();
 
     @Override
-    public MagicItemTableObject getItem(int value) {
+    public ArtTableObject getItem(int value) {
         String artwork;
         switch (value) {
             case 25:
@@ -191,7 +191,7 @@ public class ArtTypes extends ValueableItems {
                 break;
         }
 
-        magicItemTableObject.itemName = artwork;
-        return magicItemTableObject;
+        artTableObject.itemName = artwork;
+        return artTableObject;
     }
 }

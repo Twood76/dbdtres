@@ -16,10 +16,10 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicI
 /**
  * Created by PaulD on 2015-11-23.
  */
-public class MagicTypes extends ValueableItems {
+public class MagicTypes extends ValuableItems {
     Dice d = new Dice();
     int number;
-    MagicItemTableObject magicItemTableObject;
+    MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
     MagicItemTable magicItemTable;
 
 

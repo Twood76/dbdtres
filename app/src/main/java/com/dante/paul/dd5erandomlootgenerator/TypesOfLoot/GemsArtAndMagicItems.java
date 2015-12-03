@@ -3,7 +3,6 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
-import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_B;
@@ -647,7 +646,7 @@ public class GemsArtAndMagicItems extends Loot{
         }
     }
 
-    private void generateGemsOrArt(int numberOfItems, int value, ValueableItems vI) {
+    private void generateGemsOrArt(int numberOfItems, int value, ValuableItems vI) {
         for (int counter = 0; counter < numberOfItems; counter++) {
             list.addToLoot(vI.getItem(value));
         }
