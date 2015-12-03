@@ -1,4 +1,4 @@
-package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
+package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects;
 
 /**
  * Created by PaulD on 2015-12-02.

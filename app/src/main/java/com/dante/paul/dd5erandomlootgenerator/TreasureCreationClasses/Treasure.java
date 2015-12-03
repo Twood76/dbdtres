@@ -1,4 +1,4 @@
-package com.dante.paul.dd5erandomlootgenerator.Tables;
+package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;

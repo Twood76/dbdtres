@@ -7,7 +7,7 @@ package com.dante.paul.dd5erandomlootgenerator;
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
-import com.dante.paul.dd5erandomlootgenerator.Tables.Treasure;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.Coins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GemsArtAndMagicItems;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.HordeCoins;

@@ -1,6 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.TableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.TableObject;
 
 /**
  * Created by PaulD on 2015-11-23.

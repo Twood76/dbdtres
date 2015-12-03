@@ -1,7 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.GemTableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.GemTableObject;
 
 /**
  * Created by PaulD on 2015-11-23.

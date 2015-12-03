@@ -1,4 +1,4 @@
-package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
+package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.AbstractSpells;
@@ -10,6 +10,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.RangerSpel
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.SorcererSpells;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WarlockSpells;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 /**
  * Created by PaulD on 2015-11-30.
@@ -19,7 +20,7 @@ public abstract class GenerateSpell {
     int secondary;
     MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
 
-    protected String generateSpell(int level) {
+    public String generateSpell(int level) {
 
         AbstractSpells spell;
 

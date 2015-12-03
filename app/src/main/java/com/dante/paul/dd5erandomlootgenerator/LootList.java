@@ -1,8 +1,8 @@
 package com.dante.paul.dd5erandomlootgenerator;
 
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.ArtTableObject;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.GemTableObject;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.TableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.ArtTableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.GemTableObject;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.TableObject;
 
 import java.util.HashMap;
 import java.util.Hashtable;

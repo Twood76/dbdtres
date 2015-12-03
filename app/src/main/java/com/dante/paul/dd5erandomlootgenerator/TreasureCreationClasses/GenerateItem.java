@@ -1,7 +1,17 @@
-package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
+package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_B;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_C;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_D;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_E;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_F;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_G;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_H;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_I;
 
 /**
  * Created by PaulD on 2015-12-03.
@@ -26,11 +36,9 @@ public class GenerateItem {
                     table = new MagicItemTable_A();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <61){
-
                     table = new MagicItemTable_A();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <66){
-
                     table = new MagicItemTable_B();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <71){
@@ -65,7 +73,6 @@ public class GenerateItem {
 
             case FIVE:
                 if (d100 < 33) {
-
                     table = new MagicItemTable_A();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <37){
@@ -139,7 +146,7 @@ public class GenerateItem {
                     generateMagicItems(numberOfItems, table);
                 }
                 break;
-            //TODO Not finished converting from FIVE and Still need to do SEVENTEEN
+
             case ELEVEN:
                 if (d100 < 20) {
                     int secondary = d.roll(2);
