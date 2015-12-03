@@ -499,145 +499,145 @@ public class GemsArtAndMagicItems extends Loot{
                 if (d100 < 2) {//no gems or art
                 } else if (d100 <6) {
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 8);
                     table = new MagicItemTable_C();
                     generateMagicItems(numberOfItems, table);
                 } else if (d100 < 9) {
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 8);
                     table = new MagicItemTable_C();
                     generateMagicItems(numberOfItems, table);
                 } else if (d100 < 12) {
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 7500, a);
                     numberOfItems = d.roll(1, 8);
                     table = new MagicItemTable_C();
                     generateMagicItems(numberOfItems, table);
                 } else if (d100 < 15) {
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 8);
                     table = new MagicItemTable_C();
                     generateMagicItems(numberOfItems, table);
                 } else if (d100 < 23) {
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_D();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <31){
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_D();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <39){
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 7500, a);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_D();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <47){
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_D();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <53){
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_E();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 < 59){
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_E();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <64){
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 7500, a);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_E();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 < 69){
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 6);
                     table = new MagicItemTable_E();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 == 69){
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_G();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 == 70){
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_G();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 == 71){
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 75000, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_G();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 == 72){
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_G();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <75){
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <77){
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <78){
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 7500, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <81){
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <86){
                     numberOfItems = d.roll(3, 6);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <91){
                     numberOfItems = d.roll(1, 10);
-                    generateGemsOrArt(numberOfItems, 10, g);
+                    generateGemsOrArt(numberOfItems, 2500, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
                 }else if (d100 <96){
                     numberOfItems = d.roll(1, 4);
-                    generateGemsOrArt(numberOfItems, 25, a);
+                    generateGemsOrArt(numberOfItems, 7500, a);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
                 }else{
                     numberOfItems = d.roll(1, 8);
-                    generateGemsOrArt(numberOfItems, 50, g);
+                    generateGemsOrArt(numberOfItems, 5000, g);
                     numberOfItems = d.roll(1, 4);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
