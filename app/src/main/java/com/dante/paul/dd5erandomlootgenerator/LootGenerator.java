@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItem;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GenerateLootMessage;
 
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class LootGenerator extends AppCompatActivity {
     RadioGroup typeOfEncounter;
+    Spinner challengeSpinner, levelSpinner, classSpinner, iterationSpinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,7 @@ public class LootGenerator extends AppCompatActivity {
 
 
         //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
-        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
+        challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> challengeAdapter = ArrayAdapter
@@ -50,11 +52,11 @@ public class LootGenerator extends AppCompatActivity {
                 this, android.R.layout.simple_spinner_item, iterations);
         iterationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
+        iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
         iterationSpinner.setAdapter(iterationAdapter);
 
         //setup the SPELL LEVEL SPINNER------------------------------------------------------------
-        Spinner levelSpinner = (Spinner) findViewById(R.id.level_spinner);
+        levelSpinner = (Spinner) findViewById(R.id.level_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter
@@ -70,7 +72,7 @@ public class LootGenerator extends AppCompatActivity {
 
 
         //setup the SPELL CLASS SPINNER------------------------------------------------------------
-        Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+        classSpinner = (Spinner) findViewById(R.id.class_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter
@@ -91,11 +93,8 @@ public class LootGenerator extends AppCompatActivity {
     public void generateTreasure(View view) {
         String lootSummary;
         Treasure treasure;
-        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
-        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
-
         int iterations = (Integer) iterationSpinner.getSelectedItem();
 
         switch(typeOfEncounter.getCheckedRadioButtonId()){
@@ -131,10 +130,8 @@ public class LootGenerator extends AppCompatActivity {
     public void generateItem(View view) {
         String lootSummary;
         String loot;
-        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
-        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
 
         int iterations = (Integer) iterationSpinner.getSelectedItem();
         GenerateItem treasure = new GenerateItem(iterations);
@@ -154,8 +151,13 @@ public class LootGenerator extends AppCompatActivity {
         how.show(getFragmentManager(), "tag");
 
     }
-
-    public ChallengeRating getChallengeRating(String challengeRatingString) {
+    public void generateSpell(View view){
+        String spells;
+        int iterations = (Integer) iterationSpinner.getSelectedItem();
+        int level = (Integer) levelSpinner.getSelectedItem();
+        GenerateSpell generateSpell = new GenerateSpell();
+    }
+    private ChallengeRating getChallengeRating(String challengeRatingString) {
         ChallengeRating challengeRating;
         if (challengeRatingString.equals("0-4"))
             challengeRating = ChallengeRating.ZERO;
