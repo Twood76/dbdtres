@@ -19,89 +19,73 @@ public class GenerateSpell {
     Dice d = new Dice();
     int secondary;
     MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
+    AbstractSpells spells;
+    int level;
+    String spellType;
 
     //RANDOM SELL CLASS AND LEVEL-------------------------------------------------------------------
-    public String generateSpell() {
-
-        AbstractSpells spell;
-
-        String scroll;
-        String spellType;
-        String spellName;
-
-        int level;
+    public GenerateSpell() {
 
         secondary = d.roll(8);
 
         switch (secondary) {
             case 1:
-                spell = new BardSpells();
+                spells = new BardSpells();
                 spellType = "Bard";
                 break;
             case 2:
-                spell = new ClericSpells();
+                spells = new ClericSpells();
                 spellType = "Cleric";
                 break;
             case 3:
-                spell = new DruidSpells();
+                spells = new DruidSpells();
                 spellType = "Druid";
                 break;
             case 4:
-                spell = new SorcererSpells();
+                spells = new SorcererSpells();
                 spellType = "Sorcerer";
                 break;
             case 5:
-                spell = new WarlockSpells();
+                spells = new WarlockSpells();
                 spellType = "Warlock";
                 break;
             case 6:
-                spell = new WizardSpells();
+                spells = new WizardSpells();
                 spellType = "Wizard";
                 break;
             case 7:
-                spell = new RangerSpells();
+                spells = new RangerSpells();
                 spellType = "Ranger";
                 break;
             default:
-                spell = new PaladinSpells();
+                spells = new PaladinSpells();
                 spellType = "Paladin";
                 break;
         }
-        if (secondary >6)
+        if (secondary > 6)
             level = d.roll(5);
         else
-            level = d.roll(10)-1;
+            level = d.roll(10) - 1;
 
-        scroll = spell.getSpell(level);
-        spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
-        return spellName;
     }
 
     //RANDOM SPELL LEVEL---------------------------------------------------------------------------
-    public String generateSpell(AbstractSpells spell, String spellType) {
+    public GenerateSpell(AbstractSpells spells, String spellType) {
 
-        String scroll;
-        String spellName;
-        int level;
-
-        if (spellType.equals("Paladin")||spellType.equals("Ranger"))
+        this.spells=spells;
+        this.spellType=spellType;
+        
+        if (spellType.equals("Paladin") || spellType.equals("Ranger"))
             level = d.roll(5);
         else
-        level = d.roll(10)-1;
+            level = d.roll(10) - 1;
 
-        scroll = spell.getSpell(level);
-        spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
-        return spellName;
     }
+
     //RANDOM SPELL CLASS---------------------------------------------------------------------------
-    public String generateSpell(int level) {
-
-        AbstractSpells spell;
-
-        String scroll;
-        String spellType;
-        String spellName;
-
+    public GenerateSpell(int level) {
+        this.level = level;
+        
         if (level == 0 || level > 5)
             secondary = d.roll(6);
         else
@@ -109,56 +93,59 @@ public class GenerateSpell {
 
         switch (secondary) {
             case 1:
-                spell = new BardSpells();
+                spells = new BardSpells();
                 spellType = "Bard";
                 break;
             case 2:
-                spell = new ClericSpells();
+                spells = new ClericSpells();
                 spellType = "Cleric";
                 break;
             case 3:
-                spell = new DruidSpells();
+                spells = new DruidSpells();
                 spellType = "Druid";
                 break;
             case 4:
-                spell = new SorcererSpells();
+                spells = new SorcererSpells();
                 spellType = "Sorcerer";
                 break;
             case 5:
-                spell = new WarlockSpells();
+                spells = new WarlockSpells();
                 spellType = "Warlock";
                 break;
             case 6:
-                spell = new WizardSpells();
+                spells = new WizardSpells();
                 spellType = "Wizard";
                 break;
             case 7:
-                spell = new RangerSpells();
+                spells = new RangerSpells();
                 spellType = "Ranger";
                 break;
             default:
-                spell = new PaladinSpells();
+                spells = new PaladinSpells();
                 spellType = "Paladin";
                 break;
         }
-        scroll = spell.getSpell(level);
-        spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
-        return spellName;
     }
 
     //KNOWN CLASS AND LEVEL------------------------------------------------------------------------
-    public String generateSpell(int level, AbstractSpells spells, String spellType) {
+    public GenerateSpell(AbstractSpells spells, String spellType, int level){
+        this.spells = spells;
+        this.spellType = spellType;
+        this.level = level;
+    }
+    public String generateSpell() {
 
         String scroll;
         String spellName;
 
-        if (level == 0 || level > 5)
-            secondary = d.roll(6);
-        else
-            secondary = d.roll(8);
-
+        if ((level == 0) && (spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))
+            return "This class does not have any Level 0 spells";
+        if ((level > 5) && (spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))
+            return "This class does not have any spells above Level 5";
         scroll = spells.getSpell(level);
         spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
         return spellName;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 /**
@@ -16,9 +17,11 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         } else if (number < 41) {
             magicItemTableObject.itemName = "Potion of speed";
         } else if (number < 51) {
-            magicItemTableObject.itemName = generateSpell(6);
+            spells = new GenerateSpell(6);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 58) {
-            magicItemTableObject.itemName = generateSpell(7);
+            spells = new GenerateSpell(7);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 63) {
             magicItemTableObject.itemName = " Ammunition, +3";
         } else if (number < 68) {
@@ -32,7 +35,8 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         } else if (number < 88) {
             magicItemTableObject.itemName = "Potion of vitality";
         } else if (number < 93) {
-            magicItemTableObject.itemName = generateSpell(8);
+            spells = new GenerateSpell(8);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 96) {
             magicItemTableObject.itemName = "Horseshoes of a zephyr";
         } else if (number < 99) {

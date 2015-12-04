@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.MonsterType;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
@@ -15,7 +16,8 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         if (number < 16) {
             magicItemTableObject.itemName = "Potion of superior healing";
         } else if (number < 23) {
-            magicItemTableObject.itemName = generateSpell(4);
+            spells = new GenerateSpell(4);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 28) {
             magicItemTableObject.numberOfItem = d.roll(4);
             magicItemTableObject.itemName =  "Ammunition, +2";
@@ -36,7 +38,8 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         } else if (number < 68) {
             magicItemTableObject.itemName = "Potion of mind reading";
         } else if (number < 73) {
-            magicItemTableObject.itemName = generateSpell(5);
+            spells = new GenerateSpell(5);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 76) {
             magicItemTableObject.itemName = "Elixir of health";
         } else if (number < 79) {

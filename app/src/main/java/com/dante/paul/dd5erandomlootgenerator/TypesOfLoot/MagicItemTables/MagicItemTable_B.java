@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
@@ -29,9 +30,11 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         } else if (number < 55) {
             magicItemTableObject.itemName = "Potion of water breathing";
         } else if (number < 60) {
-            magicItemTableObject.itemName = generateSpell(2);
+            spells = new GenerateSpell(2);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 65) {
-            magicItemTableObject.itemName = generateSpell(3);
+            spells = new GenerateSpell(3);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 68) {
             magicItemTableObject.itemName = "Bag of holding";
         } else if (number < 71) {

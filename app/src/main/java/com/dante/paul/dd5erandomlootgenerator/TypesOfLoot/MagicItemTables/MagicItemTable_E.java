@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 /**
@@ -11,13 +12,15 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
 
 
         if (number < 31) {
-            magicItemTableObject.itemName = generateSpell(8);
+            spells = new GenerateSpell(8);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 56) {
             magicItemTableObject.itemName = "Potion of storm giant strength";
         } else if (number < 71) {
             magicItemTableObject.itemName = "Potion of supreme healing";
         } else if (number < 86) {
-            magicItemTableObject.itemName = generateSpell(9);
+            spells = new GenerateSpell(9);
+            magicItemTableObject.itemName = spells.generateSpell();
         } else if (number < 94) {
             magicItemTableObject.itemName = "Universal solvent";
         } else if (number < 99) {

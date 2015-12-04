@@ -14,6 +14,15 @@ import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateIt
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GenerateLootMessage;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.AbstractSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.BardSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.ClericSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.DruidSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.PaladinSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.RangerSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.SorcererSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WarlockSpells;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpells;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +30,7 @@ import java.util.List;
 public class LootGenerator extends AppCompatActivity {
     RadioGroup typeOfEncounter;
     Spinner challengeSpinner, levelSpinner, classSpinner, iterationSpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,26 +105,26 @@ public class LootGenerator extends AppCompatActivity {
         Treasure treasure;
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
-        int iterations = (Integer) iterationSpinner.getSelectedItem();
+        int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
 
-        switch(typeOfEncounter.getCheckedRadioButtonId()){
+        switch (typeOfEncounter.getCheckedRadioButtonId()) {
             case R.id.radio_individual:
-            treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
-            treasure.generateTreasure();
-            lootSummary = "Individual Treasure Level " + challengeRatingString + " run ";
-            if (iterations == 1)
-                lootSummary += iterations + " time";
-            else
-                lootSummary += iterations + " times";
-             break;
-        default:
-            treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
-            treasure.generateTreasure();
-            lootSummary = "Horde Treasure Level " + challengeRatingString + " run ";
-            if (iterations == 1)
-                lootSummary += iterations + " time";
-            else
-                lootSummary += iterations + " times";
+                treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
+                treasure.generateTreasure();
+                lootSummary = "Individual Treasure Level " + challengeRatingString + " run ";
+                if (iterations == 1)
+                    lootSummary += iterations + " time";
+                else
+                    lootSummary += iterations + " times";
+                break;
+            default:
+                treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
+                treasure.generateTreasure();
+                lootSummary = "Horde Treasure Level " + challengeRatingString + " run ";
+                if (iterations == 1)
+                    lootSummary += iterations + " time";
+                else
+                    lootSummary += iterations + " times";
         }
         LootList list = LootList.getInstance();
         DialogFragment how = new GenerateLootMessage();
@@ -133,7 +143,7 @@ public class LootGenerator extends AppCompatActivity {
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
 
-        int iterations = (Integer) iterationSpinner.getSelectedItem();
+        int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
         GenerateItem treasure = new GenerateItem(iterations);
         loot = treasure.generateItem(challengeRating);
         lootSummary = "Individual Items Level " + challengeRatingString + " run ";
@@ -151,12 +161,31 @@ public class LootGenerator extends AppCompatActivity {
         how.show(getFragmentManager(), "tag");
 
     }
-    public void generateSpell(View view){
+
+    public void generateSpell(View view) {
         String spells;
-        int iterations = (Integer) iterationSpinner.getSelectedItem();
-        int level = (Integer) levelSpinner.getSelectedItem();
-        GenerateSpell generateSpell = new GenerateSpell();
+        int level = -1;
+        AbstractSpells casterType;
+        GenerateSpell generateSpell;
+        int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
+        String levelString = levelSpinner.getSelectedItem().toString();
+        if (!levelString.equals("Random"))
+            level = Integer.parseInt(levelString);
+        String casterTypeString = classSpinner.getSelectedItem().toString();
+        if (!casterTypeString.equals("Random")) {
+            casterType = getCasterType(casterTypeString);
+            if (level == -1)
+                generateSpell = new GenerateSpell(casterType, casterTypeString);
+            else
+                generateSpell = new GenerateSpell(casterType, casterTypeString, level);
+        }else {
+            if (level == -1)
+                generateSpell = new GenerateSpell();
+            else
+                generateSpell = new GenerateSpell(level);
+        }
     }
+
     private ChallengeRating getChallengeRating(String challengeRatingString) {
         ChallengeRating challengeRating;
         if (challengeRatingString.equals("0-4"))
@@ -167,7 +196,27 @@ public class LootGenerator extends AppCompatActivity {
             challengeRating = ChallengeRating.ELEVEN;
         else
             challengeRating = ChallengeRating.SEVENTEEN;
-
         return challengeRating;
+    }
+
+    private AbstractSpells getCasterType(String casterTypeString) {
+        switch (casterTypeString) {
+            case "Bard":
+                return new BardSpells();
+            case "Cleric":
+                return new ClericSpells();
+            case "Druid":
+                return new DruidSpells();
+            case "Paladin":
+                return new PaladinSpells();
+            case "Ranger":
+                return new RangerSpells();
+            case "Sorcerer":
+                return new SorcererSpells();
+            case "Warlock":
+                return new WarlockSpells();
+            default:
+                return new WizardSpells();
+        }
     }
 }

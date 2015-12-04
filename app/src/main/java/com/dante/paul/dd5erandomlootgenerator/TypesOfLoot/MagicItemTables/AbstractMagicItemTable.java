@@ -11,4 +11,5 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
     Dice d = new Dice();
     int secondary;
     MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
+    GenerateSpell spells;
 }

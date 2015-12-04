@@ -142,7 +142,6 @@
                 android:layout_height="70dp"
                 android:onClick="generateTreasure"
                 android:text="@string/treasure_send"
-                android:layout_gravity="left"
                 android:clickable="true"
                 android:contextClickable="false" />
 
@@ -209,7 +208,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:onClick="createSpell"
+            android:onClick="generateSpell"
             android:text="@string/spell_send"
             android:contextClickable="false" />
     </LinearLayout>
