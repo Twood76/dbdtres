@@ -1,4 +1,48 @@
 <resources>
     <string name="app_name">D&amp;D 5e Random Loot Generator</string>
     <string name="action_settings">Settings</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="treasure_send">Generate Treasure</string>
+    <string name="challenge">Challenge Level:</string>
+    <string name="spinner">Challenge Level</string>
+    <string-array name="challenge_array">
+        <item>0-4</item>
+        <item>5-10</item>
+        <item>11-16</item>
+        <item>17+</item>
+    </string-array>
+    <string name="spell_send">Generate Spell</string>
+    <string name="level">Spell Level</string>
+    <string name="level_spinner">Spell Level</string>
+    <string-array name="level_array">
+        <item>Random</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string name="spell_class">Spell Class: </string>
+    <string name="class_spinner">Spell Class</string>
+    <string-array name="class_array">
+        <item>Random</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+    <string name="item_send">Generate Item</string>
+    <string name="individual">Individual</string>
+    <string name="horde">Horde</string>
+    <string name="iterations_spinner">Iterations Spinner</string>
+    <string name="iterations">Number of Times to Run</string>
 </resources>

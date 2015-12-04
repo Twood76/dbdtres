@@ -32,44 +32,38 @@ public class LootList {
         return list;
     }
 
-    private void printCoins (){
+    private String printCoins (String treasure){
         Set<String> keys = coins.keySet();
         for (String key : keys) {
-            String currentLine = coins.get(key) + key + "\r\n";
-            //TODO need to actually print out the treasure correctly
-            System.out.print(currentLine);
+            treasure += coins.get(key) + key + "\r\n";
         }
+        return treasure;
     }
 
-    private int printTreasure(Map storage) {
+    private String printTreasure(Map storage, String treasure) {
         int count = 0;
         Set<String> keys = storage.keySet();
         for (String key : keys) {
-            String currentLine = storage.get(key) + "x " + key + "\r\n";
-            //TODO need to actually print out the treasure correctly
-            System.out.print(currentLine);
-            count += (Integer) storage.get(key);
+            treasure += storage.get(key) + "x " + key + "\r\n";
         }
-    return count;
+    return treasure;
     }
 
 
-    public void getTreasure() {
-        int count;
-        System.out.println("Coins");
-        printCoins();
+    public String getTreasure() {
+        String treasure;
+        treasure = "Coins \r\n";
+        treasure = printCoins(treasure);
         System.out.println();
         System.out.println("Gems");
-        count = printTreasure(getGems());
-        System.out.println("Gem Total = " + count);
-        System.out.println();
-        System.out.println("Art");
-        count = printTreasure(getArt());
-        System.out.println("Art Total = " + count);
-        System.out.println("");
-        System.out.println("Magic Items");
-        count = printTreasure(getLoot());
-        System.out.println("Magic Item Total Total = " + count);
+        treasure = printTreasure(getGems(), treasure);
+        treasure += "\r\n";
+        treasure += "Art \r\n";
+        treasure = printTreasure(getArt(), treasure);
+        treasure += "\r\n";
+        treasure += "Magic Items\r\n";
+        treasure = printTreasure(getLoot(),treasure);
+        return treasure;
     }
 
 
