@@ -23,31 +23,62 @@ public class LootGenerator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loot_generator);
-
-        Spinner staticSpinner = (Spinner) findViewById(R.id.spinner);
+        //setup the CHALLENGE LEVEL SPINNER
+        Spinner challengeSpinner = (Spinner) findViewById(R.id.spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
-        ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
+        ArrayAdapter<CharSequence> challengeAdapter = ArrayAdapter
                 .createFromResource(this, R.array.challenge_array,
                         android.R.layout.simple_spinner_item);
 
         // Specify the layout to use when the list of choices appears
-        staticAdapter
+        challengeAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Apply the adapter to the spinner
-        staticSpinner.setAdapter(staticAdapter);
+        challengeSpinner.setAdapter(challengeAdapter);
 
-        List iterations = new ArrayList<Integer>();
-        for (int i = 1; i <= 100; i++) {
-            iterations.add(Integer.toString(i));
-        }
-        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(
+        //setup the ITERATION SPINNER
+            List iterations = new ArrayList<Integer>();
+            for (int i = 1; i <= 500; i++) {
+                iterations.add(Integer.toString(i));
+            }
+            ArrayAdapter<Integer> iterationAdapter = new ArrayAdapter<Integer>(
                 this, android.R.layout.simple_spinner_item, iterations);
-        spinnerArrayAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+            iterationAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
 
-        Spinner spinner = (Spinner)findViewById(R.id.iteration_spinner);
-        spinner.setAdapter(spinnerArrayAdapter);
+            Spinner iterationSpinner = (Spinner)findViewById(R.id.iteration_spinner);
+            iterationSpinner.setAdapter(iterationAdapter);
+
+        //setup the SPELL LEVEL SPINNER
+            Spinner levelSpinner = (Spinner) findViewById(R.id.level_spinner);
+
+            // Create an ArrayAdapter using the string array and a default spinner
+            ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter
+                 .createFromResource(this, R.array.level_array,
+                        android.R.layout.simple_spinner_item);
+
+            // Specify the layout to use when the list of choices appears
+            levelAdapter
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            // Apply the adapter to the spinner
+            levelSpinner.setAdapter(levelAdapter);
+
+        //setup the SPELL CLASS SPINNER
+            Spinner classSpinner = (Spinner) findViewById(R.id.level_spinner);
+
+            // Create an ArrayAdapter using the string array and a default spinner
+            ArrayAdapter<CharSequence> classAdapter = ArrayAdapter
+                .createFromResource(this, R.array.class_array,
+                        android.R.layout.simple_spinner_item);
+
+            // Specify the layout to use when the list of choices appears
+            classAdapter
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            // Apply the adapter to the spinner
+            classSpinner.setAdapter(classAdapter);
 
     }
 
@@ -83,8 +114,8 @@ public class LootGenerator extends AppCompatActivity {
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 
-        args.putString("title", lootSummary);
-        args.putString("fail_message", list.getTreasure());
+        args.putString("loot_summary", lootSummary);
+        args.putString("loot", list.getTreasure());
         how.setArguments(args);
         how.show(getFragmentManager(), "tag");
 
