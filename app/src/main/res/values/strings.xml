@@ -4,7 +4,7 @@
     <string name="edit_message">Enter a message</string>
     <string name="treasure_send">Generate Treasure</string>
     <string name="challenge">Challenge Level:</string>
-    <string name="spinner">Challenge Level</string>
+    <string name="challenge_spinner">Challenge Level</string>
     <string-array name="challenge_array">
         <item>0-4</item>
         <item>5-10</item>

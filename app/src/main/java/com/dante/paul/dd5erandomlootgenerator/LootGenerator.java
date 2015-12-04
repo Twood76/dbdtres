@@ -18,13 +18,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LootGenerator extends AppCompatActivity {
-
+    RadioGroup typeOfEncounter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loot_generator);
-        //setup the CHALLENGE LEVEL SPINNER
-        Spinner challengeSpinner = (Spinner) findViewById(R.id.spinner);
+
+
+        //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
+        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> challengeAdapter = ArrayAdapter
@@ -38,71 +40,76 @@ public class LootGenerator extends AppCompatActivity {
         // Apply the adapter to the spinner
         challengeSpinner.setAdapter(challengeAdapter);
 
-        //setup the ITERATION SPINNER
-            List iterations = new ArrayList<Integer>();
-            for (int i = 1; i <= 500; i++) {
-                iterations.add(Integer.toString(i));
-            }
-            ArrayAdapter<Integer> iterationAdapter = new ArrayAdapter<Integer>(
+
+        //setup the ITERATION SPINNER--------------------------------------------------------------
+        List iterations = new ArrayList<Integer>();
+        for (int i = 1; i <= 500; i++) {
+            iterations.add(Integer.toString(i));
+        }
+        ArrayAdapter<Integer> iterationAdapter = new ArrayAdapter<Integer>(
                 this, android.R.layout.simple_spinner_item, iterations);
-            iterationAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        iterationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-            Spinner iterationSpinner = (Spinner)findViewById(R.id.iteration_spinner);
-            iterationSpinner.setAdapter(iterationAdapter);
+        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
+        iterationSpinner.setAdapter(iterationAdapter);
 
-        //setup the SPELL LEVEL SPINNER
-            Spinner levelSpinner = (Spinner) findViewById(R.id.level_spinner);
+        //setup the SPELL LEVEL SPINNER------------------------------------------------------------
+        Spinner levelSpinner = (Spinner) findViewById(R.id.level_spinner);
 
-            // Create an ArrayAdapter using the string array and a default spinner
-            ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter
-                 .createFromResource(this, R.array.level_array,
+        // Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> levelAdapter = ArrayAdapter
+                .createFromResource(this, R.array.level_array,
                         android.R.layout.simple_spinner_item);
 
-            // Specify the layout to use when the list of choices appears
-            levelAdapter
+        // Specify the layout to use when the list of choices appears
+        levelAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-            // Apply the adapter to the spinner
-            levelSpinner.setAdapter(levelAdapter);
+        // Apply the adapter to the spinner
+        levelSpinner.setAdapter(levelAdapter);
 
-        //setup the SPELL CLASS SPINNER
-            Spinner classSpinner = (Spinner) findViewById(R.id.level_spinner);
 
-            // Create an ArrayAdapter using the string array and a default spinner
-            ArrayAdapter<CharSequence> classAdapter = ArrayAdapter
+        //setup the SPELL CLASS SPINNER------------------------------------------------------------
+        Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+
+        // Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> classAdapter = ArrayAdapter
                 .createFromResource(this, R.array.class_array,
                         android.R.layout.simple_spinner_item);
 
-            // Specify the layout to use when the list of choices appears
-            classAdapter
+        // Specify the layout to use when the list of choices appears
+        classAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-            // Apply the adapter to the spinner
-            classSpinner.setAdapter(classAdapter);
+        // Apply the adapter to the spinner
+        classSpinner.setAdapter(classAdapter);
+
+        typeOfEncounter = (RadioGroup) findViewById(R.id.radio_encounter);
 
     }
 
-    public void generateTreasure(View view){
+    public void generateTreasure(View view) {
         String lootSummary;
-        Spinner challengeSpinner=(Spinner) findViewById(R.id.spinner);
+        Treasure treasure;
+        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
-        Spinner iterationSpinner=(Spinner) findViewById(R.id.iteration_spinner);
+        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
 
         int iterations = (Integer) iterationSpinner.getSelectedItem();
 
-        RadioGroup encounterRadio = (RadioGroup) findViewById(R.id.radio_encounter);
-        int encounterTypeId = encounterRadio.getCheckedRadioButtonId();
-        if (encounterTypeId == findViewById(R.id.radio_individual).getId()){
-            Treasure treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL,iterations);
+        switch(typeOfEncounter.getCheckedRadioButtonId()){
+            case R.id.radio_individual:
+            treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
             treasure.generateTreasure();
             lootSummary = "Individual Treasure Level " + challengeRatingString + " run ";
             if (iterations == 1)
                 lootSummary += iterations + " time";
             else
                 lootSummary += iterations + " times";
-        } else{
-            Treasure treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE,iterations);
+             break;
+        default:
+            treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
             treasure.generateTreasure();
             lootSummary = "Horde Treasure Level " + challengeRatingString + " run ";
             if (iterations == 1)
@@ -121,13 +128,13 @@ public class LootGenerator extends AppCompatActivity {
 
     }
 
-    public void generateItem(View view){
+    public void generateItem(View view) {
         String lootSummary;
         String loot;
-        Spinner challengeSpinner=(Spinner) findViewById(R.id.spinner);
+        Spinner challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
-        Spinner iterationSpinner=(Spinner) findViewById(R.id.iteration_spinner);
+        Spinner iterationSpinner = (Spinner) findViewById(R.id.iteration_spinner);
 
         int iterations = (Integer) iterationSpinner.getSelectedItem();
         GenerateItem treasure = new GenerateItem(iterations);
@@ -148,7 +155,7 @@ public class LootGenerator extends AppCompatActivity {
 
     }
 
-    public ChallengeRating getChallengeRating(String challengeRatingString){
+    public ChallengeRating getChallengeRating(String challengeRatingString) {
         ChallengeRating challengeRating;
         if (challengeRatingString.equals("0-4"))
             challengeRating = ChallengeRating.ZERO;
