@@ -46,7 +46,7 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         } else {
             magicItemTableObject.itemName = "Portable hole";
         }
-        magicItemTableObject.itemName += " (Table D)";
+        generateItemString(magicItemTableObject, "(Table D)");
         return magicItemTableObject;
     }
 }

@@ -22,6 +22,7 @@ public class GenerateSpell {
     AbstractSpells spells;
     int level;
     String spellType;
+    GenerateSpellStrings generateSpellStrings;
 
     //RANDOM SELL CLASS AND LEVEL-------------------------------------------------------------------
     public GenerateSpell() {
@@ -125,6 +126,7 @@ public class GenerateSpell {
                 spellType = "Paladin";
                 break;
         }
+        generateSpellStrings.spellClass = spellType + " Spell:";
     }
 
     //KNOWN CLASS AND LEVEL------------------------------------------------------------------------
@@ -133,18 +135,23 @@ public class GenerateSpell {
         this.spellType = spellType;
         this.level = level;
     }
-    public String generateSpell() {
+    public GenerateSpellStrings generateSpell() {
 
         String scroll;
-        String spellName;
 
-        if ((level == 0) && (spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))
-            return "This class does not have any Level 0 spells";
-        if ((level > 5) && (spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))
-            return "This class does not have any spells above Level 5";
+        if ((level == 0) && ((spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))) {
+            generateSpellStrings.spellName = "This class does not have any Level 0 spells";
+            return generateSpellStrings;
+        }
+        if ((level > 5) && ((spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))){
+            generateSpellStrings.spellName = "This class does not have any spells above Level 5";
+            return generateSpellStrings;
+    }
         scroll = spells.getSpell(level);
-        spellName = "Spell Scroll (Level " + level + ") - " + spellType + " spell: " + scroll;
-        return spellName;
+        generateSpellStrings.level = "Spell Scroll (Level " + level + ")";
+        generateSpellStrings.magicItemtable = scroll.substring(scroll.length()-9);
+        generateSpellStrings.spellName = scroll.substring(0,scroll.length()-10);
+        return generateSpellStrings;
     }
 
 

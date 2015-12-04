@@ -133,7 +133,7 @@ public class MagicItemTable_I extends AbstractMagicItemTable implements MagicIte
         } else {
             magicItemTableObject.itemName = "Tome of the stilled tongue";
         }
-        magicItemTableObject.itemName += " (Table I)";
+        generateItemString(magicItemTableObject, "(Table I)");
         return magicItemTableObject;
     }
 }

@@ -132,7 +132,7 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
             magicItemTableObject.itemName = "Winged boots";
         }
 
-        magicItemTableObject.itemName += " (Table F)";
+        generateItemString(magicItemTableObject, "(Table F)");
         return magicItemTableObject;
     }
 }

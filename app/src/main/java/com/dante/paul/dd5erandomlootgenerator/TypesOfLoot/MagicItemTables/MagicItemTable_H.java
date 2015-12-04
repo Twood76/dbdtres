@@ -161,7 +161,7 @@ public class MagicItemTable_H extends AbstractMagicItemTable implements MagicIte
         } else {
             magicItemTableObject.itemName = "Tome of understanding";
         }
-        magicItemTableObject.itemName += " (Table H)";
+        generateItemString(magicItemTableObject, "(Table H)");
         return magicItemTableObject;
     }
 }

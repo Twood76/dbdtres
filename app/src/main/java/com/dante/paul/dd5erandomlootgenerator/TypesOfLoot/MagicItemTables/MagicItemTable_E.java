@@ -29,7 +29,7 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
             magicItemTableObject.itemName = "Sovereign glue";
         }
 
-        magicItemTableObject.itemName += " (Table E)";
+        generateItemString(magicItemTableObject, "(Table E)");
         return magicItemTableObject;
     }
 }

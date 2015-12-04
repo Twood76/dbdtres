@@ -207,7 +207,7 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
         } else {
             magicItemTableObject.itemName = "Wings of flying";
         }
-        magicItemTableObject.itemName += " (Table G)";
+        generateItemString(magicItemTableObject, "(Table G)");
         return magicItemTableObject;
     }
 }

@@ -95,7 +95,7 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
             magicItemTableObject.itemName = "Wand of secrets";
         }
 
-        magicItemTableObject.itemName += " (Table B)";
+        generateItemString(magicItemTableObject, "(Table B)");
         return magicItemTableObject;
     }
 }

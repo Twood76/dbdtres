@@ -74,7 +74,7 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
             magicItemTableObject.itemName = "Sending stones";
         }
 
-        magicItemTableObject.itemName += " (Table C)";
+        generateItemString(magicItemTableObject, "(Table C)");
         return magicItemTableObject;
     }
 }

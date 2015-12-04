@@ -21,7 +21,7 @@ public class GenerateItem {
     int d100;
     int numberOfItems;
     MagicItemTable table;
-    String treasure;
+    String treasure = "";
     public GenerateItem(int numberOfItems) {
         this.numberOfItems = numberOfItems;
     }
@@ -342,14 +342,15 @@ public class GenerateItem {
                     }
                     break;
             }
-            treasure += generateMagicItems(table);
+
+            treasure +=  generateMagicItems(table);
         }
         return treasure;
         }
     private String generateMagicItems(MagicItemTable table) {
         int random100;
             random100 = d.roll(100);
-            String item = table.getItem(random100).itemName ="\r\n";
+            String item = table.getItem(random100).numberOfItem + "x " + table.getItem(random100).itemName + "\r\n";
         return item;
     }
 }

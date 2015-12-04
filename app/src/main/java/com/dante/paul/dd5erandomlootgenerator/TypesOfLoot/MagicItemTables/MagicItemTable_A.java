@@ -7,8 +7,8 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
 /**
  * Created by PaulD on 2015-11-26.
  */
-public class MagicItemTable_A extends AbstractMagicItemTable implements MagicItemTable{
-    public MagicItemTableObject getItem(int number){
+public class MagicItemTable_A extends AbstractMagicItemTable implements MagicItemTable {
+    public MagicItemTableObject getItem(int number) {
 
         if (number < 51) {
             magicItemTableObject.itemName = "Potion of healing";
@@ -30,8 +30,7 @@ public class MagicItemTable_A extends AbstractMagicItemTable implements MagicIte
         } else {
             magicItemTableObject.itemName = "Driftglobe";
         }
-
-        magicItemTableObject.itemName += " (Table A)";
+        generateItemString(magicItemTableObject, "(Table A)");
         return magicItemTableObject;
     }
 
