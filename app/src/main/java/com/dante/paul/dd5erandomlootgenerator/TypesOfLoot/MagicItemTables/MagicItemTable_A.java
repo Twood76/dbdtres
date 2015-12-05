@@ -1,6 +1,8 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 
@@ -11,26 +13,35 @@ public class MagicItemTable_A extends AbstractMagicItemTable implements MagicIte
     public MagicItemTableObject getItem(int number) {
 
         if (number < 51) {
-            magicItemTableObject.itemName = "Potion of healing";
+            generatedStrings = new GenerateItemStrings();
+            generatedStrings.setName("Potion of healing");
         } else if (number < 61) {
             spells = new GenerateSpell(0);
-            magicItemTableObject.itemName = spells.generateSpell();
+            generatedStrings = new GenerateSpellStrings();
+            generatedStrings = spells.generateSpell();
         } else if (number < 71) {
-            magicItemTableObject.itemName = "Potion of climbing";
+            generatedStrings = new GenerateItemStrings();
+            generatedStrings.setName("Potion of climbing");
         } else if (number < 91) {
             spells = new GenerateSpell(1);
-            magicItemTableObject.itemName = spells.generateSpell();
+            generatedStrings = new GenerateSpellStrings();
+            generatedStrings = spells.generateSpell();
         } else if (number < 95) {
             spells = new GenerateSpell(2);
-            magicItemTableObject.itemName = spells.generateSpell();
+            generatedStrings = new GenerateSpellStrings();
+            generatedStrings = spells.generateSpell();
         } else if (number < 99) {
-            magicItemTableObject.itemName = "Potion of greater healing";
+            generatedStrings = new GenerateItemStrings();
+            generatedStrings.setName("Potion of greater healing");
         } else if (number == 99) {
-            magicItemTableObject.itemName = "Bag of holding";
+            generatedStrings = new GenerateItemStrings();
+            generatedStrings.setName("Bag of holding");
         } else {
-            magicItemTableObject.itemName = "Driftglobe";
+            generatedStrings = new GenerateItemStrings();
+            generatedStrings.setName("Driftglobe");
         }
-        generateItemString(magicItemTableObject, "(Table A)");
+        generatedStrings.setMagicItemtable("(Table A)");
+        magicItemTableObject.generatedStrings = generatedStrings;
         return magicItemTableObject;
     }
 

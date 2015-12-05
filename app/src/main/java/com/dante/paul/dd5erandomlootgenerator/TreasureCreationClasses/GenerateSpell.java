@@ -22,7 +22,7 @@ public class GenerateSpell {
     AbstractSpells spells;
     int level;
     String spellType;
-    GenerateSpellStrings generateSpellStrings;
+    GenerateSpellStrings generateSpellStrings = new GenerateSpellStrings();
 
     //RANDOM SELL CLASS AND LEVEL-------------------------------------------------------------------
     public GenerateSpell() {
@@ -126,7 +126,7 @@ public class GenerateSpell {
                 spellType = "Paladin";
                 break;
         }
-        generateSpellStrings.spellClass = spellType + " Spell:";
+        generateSpellStrings.setSpellCLass(spellType + " Spell:");
     }
 
     //KNOWN CLASS AND LEVEL------------------------------------------------------------------------
@@ -140,17 +140,16 @@ public class GenerateSpell {
         String scroll;
 
         if ((level == 0) && ((spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))) {
-            generateSpellStrings.spellName = "This class does not have any Level 0 spells";
+            generateSpellStrings.setName("This class does not have any Level 0 spells");
             return generateSpellStrings;
         }
         if ((level > 5) && ((spells.getClass() == PaladinSpells.class) || (spells.getClass() == RangerSpells.class))){
-            generateSpellStrings.spellName = "This class does not have any spells above Level 5";
+            generateSpellStrings.setName("This class does not have any spells above Level 5");
             return generateSpellStrings;
     }
         scroll = spells.getSpell(level);
         generateSpellStrings.level = "Spell Scroll (Level " + level + ")";
-        generateSpellStrings.magicItemtable = scroll.substring(scroll.length()-9);
-        generateSpellStrings.spellName = scroll.substring(0,scroll.length()-10);
+        generateSpellStrings.name = scroll;
         return generateSpellStrings;
     }
 

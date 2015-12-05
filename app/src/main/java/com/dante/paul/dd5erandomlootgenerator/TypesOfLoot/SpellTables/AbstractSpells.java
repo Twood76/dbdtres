@@ -1,11 +1,14 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables;
 
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
+
 /**
  * Created by PaulD on 2015-11-30.
  */
 public abstract class AbstractSpells {
     protected String[] spells;
     protected int number;
+    Dice d = new Dice();
 
     public abstract String getSpell (int level);
     public abstract String[] getSpells(int level);
@@ -42,7 +45,8 @@ public abstract class AbstractSpells {
                 spells = getSpells(9);
                 break;
         }
-        number = spells.length - 1;
+        number = spells.length;
+        number = d.roll(number)-1;
         return spells[number];
     }
 }

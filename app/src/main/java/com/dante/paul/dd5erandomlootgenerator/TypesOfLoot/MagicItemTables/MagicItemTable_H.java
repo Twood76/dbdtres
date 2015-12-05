@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
@@ -11,157 +12,158 @@ public class MagicItemTable_H extends AbstractMagicItemTable implements MagicIte
 
 
     public MagicItemTableObject getItem(int number) {
-
+        generatedStrings = new GenerateItemStrings();
         if (number < 11) {
-            magicItemTableObject.itemName = "Weapon (any), +3";
+             generatedStrings.setName("Weapon (any), +3");
         } else if (number < 13) {
-            magicItemTableObject.itemName = "Amulet of the planes";
+             generatedStrings.setName("Amulet of the planes");
         } else if (number < 15) {
-            magicItemTableObject.itemName = "Carpet of flying";
+             generatedStrings.setName("Carpet of flying");
         } else if (number < 17) {
-            magicItemTableObject.itemName = "Crystal ball (very rare version)";
+             generatedStrings.setName("Crystal ball (very rare version)");
         } else if (number < 19) {
-            magicItemTableObject.itemName = "Ring of regeneration";
+             generatedStrings.setName("Ring of regeneration");
         } else if (number < 21) {
-            magicItemTableObject.itemName = "Ring of shooting stars";
+             generatedStrings.setName("Ring of shooting stars");
         } else if (number < 23) {
-            magicItemTableObject.itemName = "Ring of telekinesis";
+             generatedStrings.setName("Ring of telekinesis");
         } else if (number < 25) {
-            magicItemTableObject.itemName = "Robe of scintillating colors";
+             generatedStrings.setName("Robe of scintillating colors");
         } else if (number < 27) {
-            magicItemTableObject.itemName = "Robe of stars";
+             generatedStrings.setName("Robe of stars");
         } else if (number < 29) {
-            magicItemTableObject.itemName = "Rod of absorption";
+             generatedStrings.setName("Rod of absorption");
         } else if (number < 31) {
-            magicItemTableObject.itemName = "Rod of alertness";
+             generatedStrings.setName("Rod of alertness");
         } else if (number < 33) {
-            magicItemTableObject.itemName = "Rod of security";
+             generatedStrings.setName("Rod of security");
         } else if (number < 35) {
-            magicItemTableObject.itemName = "Rod of the pact keeper, +3";
+             generatedStrings.setName("Rod of the pact keeper, +3");
         } else if (number < 37) {
-            magicItemTableObject.itemName = "Scimitar of speed";
+             generatedStrings.setName("Scimitar of speed");
         } else if (number < 39) {
-            magicItemTableObject.itemName = "Shield, +3";
+             generatedStrings.setName("Shield, +3");
         } else if (number < 41) {
-            magicItemTableObject.itemName = "Staff of fire";
+             generatedStrings.setName("Staff of fire");
         } else if (number < 43) {
-            magicItemTableObject.itemName = "Staff of frost";
+             generatedStrings.setName("Staff of frost");
         } else if (number < 45) {
-            magicItemTableObject.itemName = "Staff of power";
+             generatedStrings.setName("Staff of power");
         } else if (number < 47) {
-            magicItemTableObject.itemName = "Staff of striking";
+             generatedStrings.setName("Staff of striking");
         } else if (number < 49) {
-            magicItemTableObject.itemName = "Staff of thunder and lightning";
+             generatedStrings.setName("Staff of thunder and lightning");
         } else if (number < 51) {
-            magicItemTableObject.itemName = "Sword of sharpness";
+             generatedStrings.setName("Sword of sharpness");
         } else if (number < 53) {
-            magicItemTableObject.itemName = "Wand of polymorph";
+             generatedStrings.setName("Wand of polymorph");
         } else if (number < 55) {
-            magicItemTableObject.itemName = "Wand of the war mage, +3";
+             generatedStrings.setName("Wand of the war mage, +3");
         } else if (number == 55) {
-            magicItemTableObject.itemName = "Adamantine armor (half plate)";
+             generatedStrings.setName("Adamantine armor (half plate)");
         } else if (number == 56) {
-            magicItemTableObject.itemName = "Adamantine armor (plate)";
+             generatedStrings.setName("Adamantine armor (plate)");
         } else if (number == 57) {
-            magicItemTableObject.itemName = "Animated shield";
+             generatedStrings.setName("Animated shield");
         } else if (number == 58) {
-            magicItemTableObject.itemName = "Belt of fire giant strength";
+             generatedStrings.setName("Belt of fire giant strength");
         } else if (number == 59) {
-            magicItemTableObject.itemName = "Belt of frost (or stone) giant strength";
+             generatedStrings.setName("Belt of frost (or stone) giant strength");
         } else if (number == 60) {
-            magicItemTableObject.itemName = "Armor, +1 breastplate";
+             generatedStrings.setName("Armor, +1 breastplate");
         } else if (number == 61) {
-            magicItemTableObject.itemName = "Armor of " + damageType.getDamageType() + " resistance (breastplate)";
+             generatedStrings.setName("Armor of " + damageType.getDamageType() + " resistance (breastplate)");
         } else if (number == 62) {
-            magicItemTableObject.itemName = "Candle of invocation";
+             generatedStrings.setName("Candle of invocation");
         } else if (number == 63) {
-            magicItemTableObject.itemName = "Armor, +2 chain mail";
+             generatedStrings.setName("Armor, +2 chain mail");
         } else if (number == 64) {
-            magicItemTableObject.itemName = "Armor, +2 chain shirt";
+             generatedStrings.setName("Armor, +2 chain shirt");
         } else if (number == 65) {
-            magicItemTableObject.itemName = "Cloak of arachnida";
+             generatedStrings.setName("Cloak of arachnida");
         } else if (number == 66) {
-            magicItemTableObject.itemName = "Dancing sword";
+             generatedStrings.setName("Dancing sword");
         } else if (number == 67) {
-            magicItemTableObject.itemName = "Demon armor";
+             generatedStrings.setName("Demon armor");
         } else if (number == 68) {
-            magicItemTableObject.itemName = "Dragon scale mail";
+             generatedStrings.setName("Dragon scale mail");
         } else if (number == 69) {
-            magicItemTableObject.itemName = "Dwarven plate";
+             generatedStrings.setName("Dwarven plate");
         } else if (number == 70) {
-            magicItemTableObject.itemName = "Dwarven thrower";
+             generatedStrings.setName("Dwarven thrower");
         } else if (number == 71) {
-            magicItemTableObject.itemName = "Efreeti bottle";
+             generatedStrings.setName("Efreeti bottle");
         } else if (number == 72) {
-            magicItemTableObject.itemName = "Figurine of wondrous power (obsidian steed)";
+             generatedStrings.setName("Figurine of wondrous power (obsidian steed)");
         } else if (number == 73) {
-            magicItemTableObject.itemName = "Frost brand";
+             generatedStrings.setName("Frost brand");
         } else if (number == 74) {
-            magicItemTableObject.itemName = "Helm of brilliance";
+             generatedStrings.setName("Helm of brilliance");
         } else if (number == 75) {
-            magicItemTableObject.itemName = "Horn of Valhalla (bronze)";
+             generatedStrings.setName("Horn of Valhalla (bronze)");
         } else if (number == 76) {
-            magicItemTableObject.itemName = "Instrument of the bards (Anstruth harp)";
+             generatedStrings.setName("Instrument of the bards (Anstruth harp)");
         } else if (number == 77) {
-            magicItemTableObject.itemName = "loun stone (absorption)";
+             generatedStrings.setName("loun stone (absorption)");
         } else if (number == 78) {
-            magicItemTableObject.itemName = "loun stone (agility)";
+             generatedStrings.setName("loun stone (agility)");
         } else if (number == 79) {
-            magicItemTableObject.itemName = "loun stone (fortitude)";
+             generatedStrings.setName("loun stone (fortitude)");
         } else if (number == 80) {
-            magicItemTableObject.itemName = "loun stone (insight)";
+             generatedStrings.setName("loun stone (insight)");
         } else if (number == 81) {
-            magicItemTableObject.itemName = "loun stone (intellect)";
+             generatedStrings.setName("loun stone (intellect)");
         } else if (number == 82) {
-            magicItemTableObject.itemName = "loun stone (leadership)";
+             generatedStrings.setName("loun stone (leadership)");
         } else if (number == 83) {
-            magicItemTableObject.itemName = "loun stone (strength)";
+             generatedStrings.setName("loun stone (strength)");
         } else if (number == 84) {
-            magicItemTableObject.itemName = "Armor, +2 leather";
+             generatedStrings.setName("Armor, +2 leather");
         } else if (number == 85) {
-            magicItemTableObject.itemName = "Manual of bodily health";
+             generatedStrings.setName("Manual of bodily health");
         } else if (number == 86) {
-            magicItemTableObject.itemName = "Manual of gainful exercise";
+             generatedStrings.setName("Manual of gainful exercise");
         } else if (number == 87) {
             magicItemTableObject.numberOfItem += d.roll(20);
-            magicItemTableObject.itemName = "Manual of golems";
+             generatedStrings.setName("Manual of golems");
             if (secondary < 6)
-                magicItemTableObject.itemName += " (clay";
+                generatedStrings.setName(generatedStrings.getName() + " (clay)");
             else if (secondary < 18)
-                magicItemTableObject.itemName += " (flesh";
+                generatedStrings.setName(generatedStrings.getName() + " (flesh)");
             else if (secondary == 18)
-                magicItemTableObject.itemName += " (iron";
+                generatedStrings.setName(generatedStrings.getName() + " (iron)");
             else
-                magicItemTableObject.itemName += " (stone";
-            magicItemTableObject.itemName += " or DM decides)";
+                generatedStrings.setName(generatedStrings.getName() + " (stone)");
+            generatedStrings.setName(generatedStrings.getName() + " or DM decides)");
         } else if (number == 88) {
-            magicItemTableObject.itemName = "Manual of quickness of action";
+             generatedStrings.setName("Manual of quickness of action");
         } else if (number == 89) {
-            magicItemTableObject.itemName = "Mirror of life trapping";
+             generatedStrings.setName("Mirror of life trapping");
         } else if (number == 90) {
-            magicItemTableObject.itemName = "Nine lives stealer";
+             generatedStrings.setName("Nine lives stealer");
         } else if (number == 91) {
-            magicItemTableObject.itemName = "Oath bow";
+             generatedStrings.setName("Oath bow");
         } else if (number == 92) {
-            magicItemTableObject.itemName = "Armor, +2 scale mail";
+             generatedStrings.setName("Armor, +2 scale mail");
         } else if (number == 93) {
-            magicItemTableObject.itemName = "Spellguard shield";
+             generatedStrings.setName("Spellguard shield");
         } else if (number == 94) {
-            magicItemTableObject.itemName = "Armor, +1 splint";
+             generatedStrings.setName("Armor, +1 splint");
         } else if (number == 95) {
-            magicItemTableObject.itemName = "Armor of resistance (splint)";
+             generatedStrings.setName("Armor of resistance (splint)");
         } else if (number == 96) {
-            magicItemTableObject.itemName = "Armor, +1 studded leather";
+             generatedStrings.setName("Armor, +1 studded leather");
         } else if (number == 97) {
-            magicItemTableObject.itemName = "Armor of " + damageType.getDamageType() + " resistance (studded leather)";
+             generatedStrings.setName("Armor of " + damageType.getDamageType() + " resistance (studded leather)");
         } else if (number == 98) {
-            magicItemTableObject.itemName = "Tome of clear thought";
+             generatedStrings.setName("Tome of clear thought");
         } else if (number == 99) {
-            magicItemTableObject.itemName = "Tome of leadership and influence";
+             generatedStrings.setName("Tome of leadership and influence");
         } else {
-            magicItemTableObject.itemName = "Tome of understanding";
+             generatedStrings.setName("Tome of understanding");
         }
-        generateItemString(magicItemTableObject, "(Table H)");
+        generatedStrings.setMagicItemtable("(Table H)");
+        magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
     }
 }

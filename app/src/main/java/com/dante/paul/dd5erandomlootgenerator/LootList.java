@@ -76,11 +76,11 @@ public class LootList {
             storage = gems;
         else
             storage = loot;
-        if (storage.containsKey(item.itemName)) {
-            numberOfItems = storage.get(item.itemName);
-            storage.put(item.itemName, numberOfItems + item.numberOfItem);
+        if (storage.containsKey(item.getName())) {
+            numberOfItems = storage.get(item.getName());
+            storage.put(item.getName(), numberOfItems + item.numberOfItem);
         } else
-            storage.put(item.itemName, item.numberOfItem);
+            storage.put(item.getName(), item.numberOfItem);
     }
 
 

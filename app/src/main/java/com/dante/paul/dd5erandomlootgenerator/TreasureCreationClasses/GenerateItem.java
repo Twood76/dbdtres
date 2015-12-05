@@ -2,6 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_B;
@@ -12,6 +13,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicI
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_G;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_H;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_I;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.TableObject;
 
 /**
  * Created by PaulD on 2015-12-03.
@@ -22,11 +24,12 @@ public class GenerateItem {
     int numberOfItems;
     MagicItemTable table;
     String treasure = "";
+
     public GenerateItem(int numberOfItems) {
         this.numberOfItems = numberOfItems;
     }
 
-    public String generateItem(ChallengeRating challengeRating){
+    public String generateItem(ChallengeRating challengeRating) {
         for (int counter = 0; counter < numberOfItems; counter++) {
             d100 = d.roll(100);
             switch (challengeRating) {
@@ -343,14 +346,20 @@ public class GenerateItem {
                     break;
             }
 
-            treasure +=  generateMagicItems(table);
+            treasure += generateMagicItems(table);
         }
         return treasure;
-        }
+    }
+
     private String generateMagicItems(MagicItemTable table) {
         int random100;
-            random100 = d.roll(100);
-            String item = table.getItem(random100).numberOfItem + "x " + table.getItem(random100).itemName + "\r\n";
+        String item;
+        random100 = d.roll(100);
+        TableObject magicItemTable = table.getItem(random100);
+        if (magicItemTable.getItemType() != TypeOfItem.SPELL)
+            item = magicItemTable.numberOfItem + "x " + magicItemTable.getName() + "\r\n";
+        else
+            item = magicItemTable.numberOfItem + "x " + magicItemTable.getLevel() + "\n\r" + magicItemTable.getSpellClass() + "\r\n  " + magicItemTable.getName() + "\r\n  " + magicItemTable.getItemTable() + "\r\n";
         return item;
     }
 }

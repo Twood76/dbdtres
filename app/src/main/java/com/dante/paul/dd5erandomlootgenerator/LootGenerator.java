@@ -146,7 +146,7 @@ public class LootGenerator extends AppCompatActivity {
         int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
         GenerateItem treasure = new GenerateItem(iterations);
         loot = treasure.generateItem(challengeRating);
-        lootSummary = "Individual Items \r\n Level " + challengeRatingString + "\r\n run ";
+        lootSummary = "Individual Items Level " + challengeRatingString + "\r\n run ";
         if (iterations == 1)
             lootSummary += iterations + " time";
         else

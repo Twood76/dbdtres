@@ -1,6 +1,8 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_A;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables.MagicItemTable_B;
@@ -25,6 +27,7 @@ public class MagicTypes extends ValuableItems {
 
     //TODO randomly generate spells of given level
     public MagicItemTableObject getItem(String table) {
+        AbstractGeneratedStrings generatedStrings = new GenerateItemStrings();
         number = d.roll(100);
         switch (table) {
             case "A":
@@ -55,8 +58,9 @@ public class MagicTypes extends ValuableItems {
             case "I":
                 magicItemTable = new MagicItemTable_I();
             default:
-                magicItemTableObject.itemName = "Something is fucked with magic item generation!";
-                System.out.println(magicItemTableObject.itemName);
+                 generatedStrings.setName("Something is fucked with magic item generation!");
+                magicItemTableObject.generatedStrings = generatedStrings;
+                System.out.println(magicItemTableObject.getName());
         }
         magicItemTableObject = magicItemTable.getItem(number);
         return magicItemTableObject;

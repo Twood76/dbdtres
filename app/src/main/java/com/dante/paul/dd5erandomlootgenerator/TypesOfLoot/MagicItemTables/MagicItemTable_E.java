@@ -1,6 +1,8 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 /**
@@ -13,23 +15,31 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
 
         if (number < 31) {
             spells = new GenerateSpell(8);
-            magicItemTableObject.itemName = spells.generateSpell();
+            generatedStrings = new GenerateSpellStrings();
+            generatedStrings = spells.generateSpell();
         } else if (number < 56) {
-            magicItemTableObject.itemName = "Potion of storm giant strength";
+            generatedStrings = new GenerateItemStrings();
+             generatedStrings.setName("Potion of storm giant strength");
         } else if (number < 71) {
-            magicItemTableObject.itemName = "Potion of supreme healing";
+            generatedStrings = new GenerateItemStrings();
+             generatedStrings.setName("Potion of supreme healing");
         } else if (number < 86) {
             spells = new GenerateSpell(9);
-            magicItemTableObject.itemName = spells.generateSpell();
+            generatedStrings = new GenerateSpellStrings();
+            generatedStrings = spells.generateSpell();
         } else if (number < 94) {
-            magicItemTableObject.itemName = "Universal solvent";
+            generatedStrings = new GenerateItemStrings();
+             generatedStrings.setName("Universal solvent");
         } else if (number < 99) {
-            magicItemTableObject.itemName = "Arrow of slaying";
+            generatedStrings = new GenerateItemStrings();
+             generatedStrings.setName("Arrow of slaying");
         } else {
-            magicItemTableObject.itemName = "Sovereign glue";
+            generatedStrings = new GenerateItemStrings();
+             generatedStrings.setName("Sovereign glue");
         }
 
-        generateItemString(magicItemTableObject, "(Table E)");
+        generatedStrings.setMagicItemtable("(Table E)");
+        magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
     }
 }
