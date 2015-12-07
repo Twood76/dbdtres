@@ -21,7 +21,7 @@ public class GenerateSpell {
     MagicItemTableObject magicItemTableObject = new MagicItemTableObject();
     AbstractSpells spells;
     int level;
-    String spellType;
+    String spellClass;
     GenerateSpellStrings generateSpellStrings = new GenerateSpellStrings();
 
     //RANDOM SELL CLASS AND LEVEL-------------------------------------------------------------------
@@ -32,35 +32,35 @@ public class GenerateSpell {
         switch (secondary) {
             case 1:
                 spells = new BardSpells();
-                spellType = "Bard";
+                spellClass = "Bard";
                 break;
             case 2:
                 spells = new ClericSpells();
-                spellType = "Cleric";
+                spellClass = "Cleric";
                 break;
             case 3:
                 spells = new DruidSpells();
-                spellType = "Druid";
+                spellClass = "Druid";
                 break;
             case 4:
                 spells = new SorcererSpells();
-                spellType = "Sorcerer";
+                spellClass = "Sorcerer";
                 break;
             case 5:
                 spells = new WarlockSpells();
-                spellType = "Warlock";
+                spellClass = "Warlock";
                 break;
             case 6:
                 spells = new WizardSpells();
-                spellType = "Wizard";
+                spellClass = "Wizard";
                 break;
             case 7:
                 spells = new RangerSpells();
-                spellType = "Ranger";
+                spellClass = "Ranger";
                 break;
             default:
                 spells = new PaladinSpells();
-                spellType = "Paladin";
+                spellClass = "Paladin";
                 break;
         }
         if (secondary > 6)
@@ -71,12 +71,12 @@ public class GenerateSpell {
     }
 
     //RANDOM SPELL LEVEL---------------------------------------------------------------------------
-    public GenerateSpell(AbstractSpells spells, String spellType) {
+    public GenerateSpell(AbstractSpells spells, String spellClass) {
 
         this.spells=spells;
-        this.spellType=spellType;
+        this.spellClass=spellClass;
         
-        if (spellType.equals("Paladin") || spellType.equals("Ranger"))
+        if (spellClass.equals("Paladin") || spellClass.equals("Ranger"))
             level = d.roll(5);
         else
             level = d.roll(10) - 1;
@@ -95,44 +95,44 @@ public class GenerateSpell {
         switch (secondary) {
             case 1:
                 spells = new BardSpells();
-                spellType = "Bard";
+                spellClass = "Bard";
                 break;
             case 2:
                 spells = new ClericSpells();
-                spellType = "Cleric";
+                spellClass = "Cleric";
                 break;
             case 3:
                 spells = new DruidSpells();
-                spellType = "Druid";
+                spellClass = "Druid";
                 break;
             case 4:
                 spells = new SorcererSpells();
-                spellType = "Sorcerer";
+                spellClass = "Sorcerer";
                 break;
             case 5:
                 spells = new WarlockSpells();
-                spellType = "Warlock";
+                spellClass = "Warlock";
                 break;
             case 6:
                 spells = new WizardSpells();
-                spellType = "Wizard";
+                spellClass = "Wizard";
                 break;
             case 7:
                 spells = new RangerSpells();
-                spellType = "Ranger";
+                spellClass = "Ranger";
                 break;
             default:
                 spells = new PaladinSpells();
-                spellType = "Paladin";
+                spellClass = "Paladin";
                 break;
         }
-        generateSpellStrings.setSpellCLass(spellType + " Spell:");
+        generateSpellStrings.setSpellCLass(spellClass + " Spell:");
     }
 
     //KNOWN CLASS AND LEVEL------------------------------------------------------------------------
-    public GenerateSpell(AbstractSpells spells, String spellType, int level){
+    public GenerateSpell(AbstractSpells spells, String spellClass, int level){
         this.spells = spells;
-        this.spellType = spellType;
+        this.spellClass = spellClass;
         this.level = level;
     }
     public GenerateSpellStrings generateSpell() {
@@ -150,7 +150,7 @@ public class GenerateSpell {
         scroll = spells.getSpell(level);
         generateSpellStrings.level = "Spell Scroll (Level " + level + ")";
         generateSpellStrings.name = scroll;
-        generateSpellStrings.setSpellCLass(spellType);
+        generateSpellStrings.spellCLass = spellClass;
         return generateSpellStrings;
     }
 

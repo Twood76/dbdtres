@@ -357,9 +357,9 @@ public class GenerateItem {
         random100 = d.roll(100);
         TableObject magicItemTable = table.getItem(random100);
         if (magicItemTable.getItemType() != TypeOfItem.SPELL)
-            item = magicItemTable.numberOfItem + "x " + magicItemTable.getName() + "\r\n";
+            item = magicItemTable.numberOfItem + "x " + magicItemTable.getName() + "\r\n  ";
         else
-            item = magicItemTable.numberOfItem + "x " + magicItemTable.getLevel() + "\n\r" + magicItemTable.getSpellClass() + "\r\n  " + magicItemTable.getName() + "\r\n  ";
+            item = magicItemTable.numberOfItem + "x " + magicItemTable.getSpellClass() + " " + magicItemTable.getLevel() + "\r\n  " + magicItemTable.getName() + "\r\n  ";
         return item;
     }
 }

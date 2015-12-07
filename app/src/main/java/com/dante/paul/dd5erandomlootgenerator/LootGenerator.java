@@ -37,7 +37,6 @@ public class LootGenerator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loot_generator);
 
-
         //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
         challengeSpinner = (Spinner) findViewById(R.id.challenge_spinner);
 
@@ -113,20 +112,21 @@ public class LootGenerator extends AppCompatActivity {
             case R.id.radio_individual:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
                 treasure.generateTreasure();
-                lootSummary = "Individual Treasure Level " + challengeRatingString + " run ";
+                lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Treasure "
+            ;
                 if (iterations == 1)
-                    lootSummary += iterations + " time";
+                    lootSummary += iterations + "x time";
                 else
-                    lootSummary += iterations + " times";
+                    lootSummary += iterations + "x times";
                 break;
             default:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
                 treasure.generateTreasure();
-                lootSummary = "Horde Treasure Level " + challengeRatingString + " run ";
+                lootSummary = "Challenge Level " + challengeRatingString + "\nHorde Treasure ";
                 if (iterations == 1)
-                    lootSummary += iterations + " time";
+                    lootSummary += iterations + "x time";
                 else
-                    lootSummary += iterations + " times";
+                    lootSummary += iterations + "x times";
         }
 
         DialogFragment how = new GenerateLootMessage();
@@ -148,11 +148,11 @@ public class LootGenerator extends AppCompatActivity {
         int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
         GenerateItem treasure = new GenerateItem(iterations);
         loot = treasure.generateItem(challengeRating);
-        lootSummary = "Individual Items Level " + challengeRatingString + "\r\n run ";
+        lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Item ";
         if (iterations == 1)
-            lootSummary += iterations + " time";
+            lootSummary += iterations + "x time";
         else
-            lootSummary += iterations + " times";
+            lootSummary += iterations + "x times";
 
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
@@ -187,7 +187,7 @@ public class LootGenerator extends AppCompatActivity {
         }
         String lootSummary ="Generated Spell";
         GenerateSpellStrings generatedSpellStrings = generateSpell.generateSpell();
-        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevel() + "\r\r  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable();
+        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevel() + "\r\n  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable() + "\r\n";
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 

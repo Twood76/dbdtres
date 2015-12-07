@@ -274,7 +274,6 @@ public class GemsArtAndMagicItems extends Loot {
                     generateMagicItems(numberOfItems, table);
                 }
                 break;
-            //TODO Not finished converting from FIVE and Still need to do SEVENTEEN
             case ELEVEN:
                 if (d100 < 3) {//no gems or art
                 } else if (d100 < 7) {
