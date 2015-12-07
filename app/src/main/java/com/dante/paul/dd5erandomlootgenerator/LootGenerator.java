@@ -12,6 +12,7 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GenerateLootMessage;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.AbstractSpells;
@@ -102,11 +103,12 @@ public class LootGenerator extends AppCompatActivity {
 
     public void generateTreasure(View view) {
         String lootSummary;
+        LootList list = LootList.getInstance();
+        list.deleteAll();
         Treasure treasure;
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
         int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
-
         switch (typeOfEncounter.getCheckedRadioButtonId()) {
             case R.id.radio_individual:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
@@ -126,7 +128,7 @@ public class LootGenerator extends AppCompatActivity {
                 else
                     lootSummary += iterations + " times";
         }
-        LootList list = LootList.getInstance();
+
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 
@@ -167,7 +169,6 @@ public class LootGenerator extends AppCompatActivity {
         int level = -1;
         AbstractSpells casterType;
         GenerateSpell generateSpell;
-        int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
         String levelString = levelSpinner.getSelectedItem().toString();
         if (!levelString.equals("Random"))
             level = Integer.parseInt(levelString);
@@ -184,18 +185,34 @@ public class LootGenerator extends AppCompatActivity {
             else
                 generateSpell = new GenerateSpell(level);
         }
+        String lootSummary ="Generated Spell";
+        GenerateSpellStrings generatedSpellStrings = generateSpell.generateSpell();
+        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevel() + "\r\r  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable();
+        DialogFragment how = new GenerateLootMessage();
+        Bundle args = new Bundle();
+
+        args.putString("loot_summary", lootSummary);
+        args.putString("loot", loot);
+        how.setArguments(args);
+        how.show(getFragmentManager(), "tag");
     }
 
     private ChallengeRating getChallengeRating(String challengeRatingString) {
         ChallengeRating challengeRating;
-        if (challengeRatingString.equals("0-4"))
-            challengeRating = ChallengeRating.ZERO;
-        else if (challengeRatingString.equals("5-10"))
-            challengeRating = ChallengeRating.FIVE;
-        else if (challengeRatingString.equals("12-16"))
-            challengeRating = ChallengeRating.ELEVEN;
-        else
-            challengeRating = ChallengeRating.SEVENTEEN;
+        switch (challengeRatingString) {
+            case "0-4":
+                challengeRating = ChallengeRating.ZERO;
+                break;
+            case "5-10":
+                challengeRating = ChallengeRating.FIVE;
+                break;
+            case "12-16":
+                challengeRating = ChallengeRating.ELEVEN;
+                break;
+            default:
+                challengeRating = ChallengeRating.SEVENTEEN;
+                break;
+        }
         return challengeRating;
     }
 

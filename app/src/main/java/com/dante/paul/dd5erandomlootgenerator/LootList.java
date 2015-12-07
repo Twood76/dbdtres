@@ -34,15 +34,19 @@ public class LootList {
 
     private String printCoins (String treasure){
         Set<String> keys = coins.keySet();
+        treasure += "\r\n";
+        treasure += "Coins \r\n";
         for (String key : keys) {
             treasure += coins.get(key) + key + "\r\n";
         }
         return treasure;
     }
 
-    private String printTreasure(Map storage, String treasure) {
+    private String printTreasure(Map storage, String treasure, String type) {
         int count = 0;
         Set<String> keys = storage.keySet();
+        treasure += "\r\n";
+        treasure += type + "\r\n";
         for (String key : keys) {
             treasure += storage.get(key) + "x " + key + "\r\n";
         }
@@ -51,18 +55,17 @@ public class LootList {
 
 
     public String getTreasure() {
+        LootList list = LootList.getInstance();
         String treasure;
-        treasure = "Coins \r\n";
+        treasure = "";
+        if (!list.getCoins().isEmpty())
         treasure = printCoins(treasure);
-        System.out.println();
-        System.out.println("Gems");
-        treasure = printTreasure(getGems(), treasure);
-        treasure += "\r\n";
-        treasure += "Art \r\n";
-        treasure = printTreasure(getArt(), treasure);
-        treasure += "\r\n";
-        treasure += "Magic Items\r\n";
-        treasure = printTreasure(getLoot(),treasure);
+        if (!list.getGems().isEmpty())
+            treasure = printTreasure(getGems(), treasure, "Gemstones");
+        if (!list.getArt().isEmpty())
+            treasure = printTreasure(getArt(), treasure, "Artwork");
+        if (!list.getLoot().isEmpty())
+        treasure = printTreasure(getLoot(),treasure, "Items");
         return treasure;
     }
 

@@ -150,6 +150,7 @@ public class GenerateSpell {
         scroll = spells.getSpell(level);
         generateSpellStrings.level = "Spell Scroll (Level " + level + ")";
         generateSpellStrings.name = scroll;
+        generateSpellStrings.setSpellCLass(spellType);
         return generateSpellStrings;
     }
 

@@ -12,7 +12,7 @@ public abstract class TableObject {
 
 
     public String getName(){
-        return generatedStrings.getName();
+        return generatedStrings.getName() + "\r\n  " + generatedStrings.getMagicItemtable();
     }
 
     public TypeOfItem getItemType(){

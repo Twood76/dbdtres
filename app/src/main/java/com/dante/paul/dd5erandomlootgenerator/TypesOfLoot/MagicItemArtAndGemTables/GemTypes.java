@@ -1,4 +1,4 @@
-package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
+package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
@@ -21,7 +21,7 @@ public class GemTypes extends ValuableItems {
         switch (value) {
             case 10:
                 number = d.roll(12);
-                valueString = " Value 10 GP";
+                valueString = " Value 10 GP.";
                 switch (number) {
                     case 1:
                         gemName = "Azurite (opaque mottled deep blue).";
@@ -141,7 +141,7 @@ public class GemTypes extends ValuableItems {
                             gemName = "Quartz (transparent yellow).";
                         break;
                     case 10:
-                        gemName = "Sardonyx (opaque bands of red and white). Value 50 GP";
+                        gemName = "Sardonyx (opaque bands of red and white). Value 50 GP.";
                         break;
                     case 11:
                         gemName = "Star rose quartz (translucent rosy stone with white star-shaped center).";
@@ -153,7 +153,7 @@ public class GemTypes extends ValuableItems {
                 break;
             case 100:
                 number = d.roll(10);
-                valueString = " Value 10 GP";
+                valueString = " Value 10 GP.";
                 switch (number) {
                     case 1:
                         option = d.roll(2);
@@ -229,7 +229,7 @@ public class GemTypes extends ValuableItems {
                 break;
             case 500:
                 number = d.roll(6);
-                valueString = " Value 500 GP";
+                valueString = " Value 500 GP.";
                 switch (number) {
                     case 1:
                         gemName = "Alexandrite (transparent dark green).";
@@ -253,7 +253,7 @@ public class GemTypes extends ValuableItems {
                 break;
             case 1000:
                 number = d.roll(8);
-                valueString = " Value 1000 GP";
+                valueString = " Value 1000 GP.";
                 switch (number) {
                     case 1:
                         gemName = "Black opal (translucent dark green with black mottling and golden flecks).";
@@ -295,7 +295,7 @@ public class GemTypes extends ValuableItems {
                 break;
             default: //5000
                 number = d.roll(4);
-                valueString = " Value 5000 GP";
+                valueString = " Value 5000 GP.";
                 switch (number) {
                     case 1:
                         gemName = "Black sapphire (translucent lustrous black with glowing highlights).";

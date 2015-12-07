@@ -49,14 +49,12 @@
                     android:id="@+id/radio_individual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
                     android:text="@string/individual" />
 
                 <RadioButton
                     android:id="@+id/radio_horde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
                     android:text="@string/horde" />
             </RadioGroup>
 
