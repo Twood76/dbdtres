@@ -112,21 +112,14 @@ public class LootGenerator extends AppCompatActivity {
             case R.id.radio_individual:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.INDIVIDUAL, iterations);
                 treasure.generateTreasure();
-                lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Treasure "
-            ;
-                if (iterations == 1)
-                    lootSummary += iterations + "x time";
-                else
-                    lootSummary += iterations + "x times";
+                lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Treasure ";
+                lootSummary += " x" + iterations;
                 break;
             default:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
                 treasure.generateTreasure();
                 lootSummary = "Challenge Level " + challengeRatingString + "\nHorde Treasure ";
-                if (iterations == 1)
-                    lootSummary += iterations + "x time";
-                else
-                    lootSummary += iterations + "x times";
+                lootSummary += " x" + iterations;
         }
 
         DialogFragment how = new GenerateLootMessage();
@@ -149,10 +142,7 @@ public class LootGenerator extends AppCompatActivity {
         GenerateItem treasure = new GenerateItem(iterations);
         loot = treasure.generateItem(challengeRating);
         lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Item ";
-        if (iterations == 1)
-            lootSummary += iterations + "x time";
-        else
-            lootSummary += iterations + "x times";
+            lootSummary += " x" + iterations;
 
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();

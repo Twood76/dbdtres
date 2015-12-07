@@ -3,6 +3,16 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTab
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_A;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_B;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_C;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_D;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_E;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_F;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_G;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_H;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_I;
 
 /**
  * Created by PaulD on 2015-11-20.

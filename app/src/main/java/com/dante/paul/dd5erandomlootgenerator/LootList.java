@@ -35,7 +35,7 @@ public class LootList {
     private String printCoins (String treasure){
         Set<String> keys = coins.keySet();
         treasure += "\r\n";
-        treasure += "Coins \r\n";
+        treasure += "Coins: \r\n";
         for (String key : keys) {
             treasure += coins.get(key) + key + "\r\n";
         }
@@ -61,11 +61,11 @@ public class LootList {
         if (!list.getCoins().isEmpty())
         treasure = printCoins(treasure);
         if (!list.getGems().isEmpty())
-            treasure = printTreasure(getGems(), treasure, "Gemstones");
+            treasure = printTreasure(getGems(), treasure, "Gemstones:");
         if (!list.getArt().isEmpty())
-            treasure = printTreasure(getArt(), treasure, "Artwork");
+            treasure = printTreasure(getArt(), treasure, "Artwork:");
         if (!list.getLoot().isEmpty())
-        treasure = printTreasure(getLoot(),treasure, "Items");
+        treasure = printTreasure(getLoot(),treasure, "Items:");
         return treasure;
     }
 
