@@ -12,7 +12,7 @@
     tools:context="com.dante.paul.dd5erandomlootgenerator.LootGenerator"
     tools:showIn="@layout/activity_loot_generator">
 
-    <TextView android:text="@string/app_name" android:layout_width="346dp"
+    <TextView android:layout_width="346dp"
         android:layout_height="wrap_content" android:gravity="center_horizontal"
         android:textColor="@color/black" android:textSize="60px" android:textStyle="bold"/>
 
