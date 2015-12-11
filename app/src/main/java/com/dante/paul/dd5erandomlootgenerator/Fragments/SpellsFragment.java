@@ -34,14 +34,14 @@ public class SpellsFragment extends Fragment{
 
         //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
         levelSpinner = (Spinner) view.findViewById(R.id.level_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.level_array, android.R.layout.simple_spinner_item); // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.level_array, R.layout.spinner); // Create an ArrayAdapter using the string array and a default spinner layout
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         levelSpinner.setAdapter(adapter);
 
 
         //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
         classSpinner = (Spinner) view.findViewById(R.id.class_spinner);
-        adapter = ArrayAdapter.createFromResource(getActivity(), R.array.class_array, android.R.layout.simple_spinner_item); // Create an ArrayAdapter using the string array and a default spinner layout
+        adapter = ArrayAdapter.createFromResource(getActivity(), R.array.class_array, R.layout.spinner); // Create an ArrayAdapter using the string array and a default spinner layout
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         classSpinner.setAdapter(adapter);
         Button button = (Button) view.findViewById(R.id.spell_send);

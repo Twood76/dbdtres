@@ -31,7 +31,7 @@ public class TreasureFragment extends Fragment{
 
         //setup the CHALLENGE LEVEL SPINNER--------------------------------------------------------
         challengeSpinner = (Spinner) view.findViewById(R.id.challenge_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.challenge_array, android.R.layout.simple_spinner_item); // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.challenge_array, R.layout.spinner); // Create an ArrayAdapter using the string array and a default spinner layout
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         challengeSpinner.setAdapter(adapter);
         //setup the ITERATION SPINNER--------------------------------------------------------------
@@ -40,7 +40,7 @@ public class TreasureFragment extends Fragment{
             iterationArray[i] = Integer.toString(i+1);
         }
         iterationSpinner = (Spinner) view.findViewById(R.id.iteration_spinner);
-        adapter= new ArrayAdapter<CharSequence>(getActivity(),android.R.layout.simple_spinner_item, iterationArray);
+        adapter= new ArrayAdapter<CharSequence>(getActivity(),R.layout.spinner, iterationArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Specify the layout to use when the list of choices appears
         iterationSpinner.setAdapter(adapter);
         typeOfEncounter = (RadioGroup) view.findViewById(R.id.radio_encounter);
