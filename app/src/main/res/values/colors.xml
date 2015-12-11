@@ -9,5 +9,6 @@
     <color name="black">#000000</color>
     <color name="blue">#D9ccff</color>
     <color name="brownochre">#87421F</color>
-    <color name="gold">#80EEDD82</color>
+    <color name="gold">#60EEDD82</color>
+    <color name="silver">#ffd9d9d9</color>
 </resources>

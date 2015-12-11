@@ -1,5 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator;
 
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -51,6 +52,20 @@ public class LootGenerator extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_loot_generator, menu);
+        return true;
+    }
+    public boolean about(MenuItem item){
+        //handle click "about" in menu
+        String aboutSummary, about;
+        aboutSummary = "D&D 5e Loot Generator v1.0";
+        about = "Developed by Paul Dante to help save DMs some time. \r\n \r\nPlease rate and provide feedback of how I can improve this app.\r\n \r\nBackground image of scroll provided by www.myfreetextures.com";
+        DialogFragment how = new GenerateAboutMessage();
+        Bundle args = new Bundle();
+
+        args.putString("about_summary", aboutSummary);
+        args.putString("about", about);
+        how.setArguments(args);
+        how.show(getFragmentManager(), "tag");
         return true;
     }
 

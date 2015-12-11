@@ -1,4 +1,4 @@
-package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot;
+package com.dante.paul.dd5erandomlootgenerator;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,21 +7,21 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 /**
- * Created by PaulD on 2015-12-03.
+ * Created by PaulD on 2015-12-11.
  */
-public class GenerateLootMessage extends DialogFragment {
-    String lootMessage;
+public class GenerateAboutMessage extends DialogFragment {
+    String aboutMessage;
 
-    public GenerateLootMessage() {
-    }
+    public GenerateAboutMessage(){}
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Bundle args = getArguments();
-        lootMessage = args.getString("loot", "");
-        String lootTitle = args.getString("loot_summary","");
+        aboutMessage = args.getString("about", "");
+        String aboutTitle = args.getString("about_summary","");
         AlertDialog alert = new AlertDialog.Builder(getActivity())
-                .setTitle(lootTitle)
-                .setMessage(lootMessage)
+                .setTitle(aboutTitle)
+                .setMessage(aboutMessage)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

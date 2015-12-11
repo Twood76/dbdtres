@@ -3,12 +3,13 @@
     android:id="@+id/treasure"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -21,68 +22,47 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:checkedButton="@+id/radio_individual"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
 
             <RadioButton
                 android:id="@+id/radio_individual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/individual" />
+                android:text="@string/individual"
+                android:textSize="24sp"/>
 
             <RadioButton
                 android:id="@+id/radio_horde"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/horde" />
+                android:text="@string/horde"
+                android:textSize="24sp"/>
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingRight="5dp"
+            style="@style/textView_nexus5"
             android:text="@string/challenge"
-            android:textColor="@color/black" />
+            android:layout_marginTop="5dp"/>
 
         <Spinner
+            style="@style/spinner_nexus5"
             android:id="@+id/challenge_spinner"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edittext"
-            android:fadingEdge="horizontal"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
-            android:padding="0dp"
-            android:gravity="center"/>
+            android:layout_marginBottom="5dp" />
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingRight="5dp"
-            android:text="@string/iterations"
-            android:textColor="@color/black" />
+            style="@style/textView_nexus5"
+            android:text="@string/iterations" />
 
         <Spinner
-            android:id="@+id/iteration_spinner"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounded_edittext"
-            android:fadingEdge="horizontal"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
-            android:gravity="center" />
+            style="@style/spinner_nexus5"
+            android:id="@+id/iteration_spinner" />
 
         <Button
-            android:layout_marginTop="80dp"
+            style="@style/button_nexus5"
             android:id="@+id/treasure_send"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:onClick="generate"
-            android:text="@string/treasure_send" />
+            android:text="@string/treasure_send"/>
+
     </LinearLayout>
 </RelativeLayout>

@@ -44,8 +44,9 @@
     <string name="individual">Individual</string>
     <string name="horde">Horde</string>
     <string name="iterations_spinner">Iterations Spinner</string>
-    <string name="iterations">Number of Times to Run</string>
+    <string name="iterations">Number of Times to Run:</string>
     <string name="treasure">Treasure</string>
     <string name="spells">Spells</string>
     <string name="items">Items</string>
+    <string name="about">About</string>
 </resources>
