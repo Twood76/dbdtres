@@ -60,10 +60,10 @@
             android:id="@+id/iteration_spinner" />
 
         <Button
-            style="@style/button_nexus5_small"
+            style="@style/button_nexus5_normal"
             android:id="@+id/treasure_send"
             android:text="@string/treasure_send"
-            android:layout_marginTop="0dp"/>
+            android:layout_height="140dp"/>
 
     </LinearLayout>
 </RelativeLayout>

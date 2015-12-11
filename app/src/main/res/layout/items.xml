@@ -36,7 +36,7 @@
             android:id="@+id/iteration_spinner" />
 
         <Button
-            style="@style/button_nexus5"
+            style="@style/button_nexus5_small"
             android:id="@+id/item_send"
             android:text="@string/item_send" />
 

@@ -18,7 +18,16 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="button_nexus5">
+    <style name="button_nexus5_small">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">140dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:onClick">generate</item>
+        <item name="android:background">@drawable/button_design</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="button_nexus5_normal">
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">200dp</item>
         <item name="android:textSize">24sp</item>
