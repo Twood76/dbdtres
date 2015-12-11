@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spells"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <TextView
@@ -29,34 +36,34 @@
             android:paddingBottom="0dp"
             android:paddingTop="0dp"
             android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="5dp"
+            android:text="@string/level"
+            android:textColor="@color/black" />
+
+        <Spinner
+            android:id="@+id/level_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounded_edittext"
+            android:fadingEdge="horizontal"
+            android:outlineProvider="bounds"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/spell_send"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:contextClickable="false"
+            android:onClick="generate"
+            android:text="@string/spell_send" />
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingRight="5dp"
-        android:text="@string/level"
-        android:textColor="@color/black" />
-
-    <Spinner
-        android:id="@+id/level_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounded_edittext"
-        android:fadingEdge="horizontal"
-        android:outlineProvider="bounds"
-        android:paddingBottom="0dp"
-        android:paddingTop="0dp"
-        android:textAlignment="center" />
-
-    <Button
-        android:id="@string/treasure_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="generateSpell"
-        android:text="@string/spell_send"
-        android:contextClickable="false" />
-</LinearLayout>
+</RelativeLayout>

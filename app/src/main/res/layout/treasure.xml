@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/treasure"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -39,15 +46,15 @@
 
         <Spinner
             android:id="@+id/challenge_spinner"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
             android:background="@drawable/rounded_edittext"
             android:fadingEdge="horizontal"
-            android:outlineProvider="bounds"
             android:paddingBottom="0dp"
             android:paddingTop="0dp"
-            android:textAlignment="center" />
+            android:padding="0dp"
+            android:gravity="center"/>
 
 
         <TextView
@@ -65,20 +72,16 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/rounded_edittext"
             android:fadingEdge="horizontal"
-            android:outlineProvider="bounds"
             android:paddingBottom="0dp"
             android:paddingTop="0dp"
-            android:textAlignment="center" />
+            android:gravity="center"/>
 
         <Button
-            android:id="@string/treasure_send"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:id="@+id/treasure_send"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
             android:clickable="true"
-            android:contextClickable="false"
-            android:onClick="generateTreasure"
+            android:onClick="generate"
             android:text="@string/treasure_send" />
-
-
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
