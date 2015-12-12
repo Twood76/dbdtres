@@ -49,4 +49,9 @@
     <string name="spells">Spells</string>
     <string name="items">Items</string>
     <string name="about">About</string>
+    <string name="treasure_banner_ad">ca-app-pub-9108289994838354/8338356625</string>
+    <string name="spell_banner_ad">ca-app-pub-9108289994838354/2291823021</string>
+    <string name="item_banner_add">ca-app-pub-9108289994838354/9815089822</string>
+    <string name="test_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>
