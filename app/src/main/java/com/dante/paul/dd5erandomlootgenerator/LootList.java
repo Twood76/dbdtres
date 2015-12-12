@@ -110,6 +110,8 @@ public class LootList {
     public void deleteAll() {
         coins.clear();
         loot.clear();
+        gems.clear();
+        art.clear();
     }
 
 
