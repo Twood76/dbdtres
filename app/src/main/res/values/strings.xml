@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">D&amp;D 5e Random Loot Generator</string>
+    <string name="app_name">Loot Generator for D&amp;D 5e</string>
     <string name="action_settings">Settings</string>
     <string name="edit_message">Enter a message</string>
     <string name="treasure_send">Generate Treasure</string>
