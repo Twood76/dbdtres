@@ -8,9 +8,9 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.Coins;
 /**
  * Created by PaulD on 2015-11-23.
  */
-public class HordeCoins extends Loot implements Coins {
+public class HoardCoins extends Loot implements Coins {
 
-    public HordeCoins(ChallengeRating challengeRating, int d100) {
+    public HoardCoins(ChallengeRating challengeRating, int d100) {
         super(challengeRating, d100, TypeOfEncounter.HORDE);
     }
     @Override

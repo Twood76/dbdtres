@@ -34,10 +34,10 @@
                 android:textSize="24sp"/>
 
             <RadioButton
-                android:id="@+id/radio_horde"
+                android:id="@+id/radio_hoard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/horde"
+                android:text="@string/hoard"
                 android:textSize="24sp"/>
         </RadioGroup>
 

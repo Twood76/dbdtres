@@ -10,7 +10,7 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.Coins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.GemsArtAndMagicItems;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.HordeCoins;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.HoardCoins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.IndividualCoins;
 
 import org.junit.Before;
@@ -51,23 +51,23 @@ public class JUnitTest {
         assertNotNull(list.getCoins());
     }
     @Test
-    public void generateHordeCoins() throws Exception {
+    public void generateHoardCoins() throws Exception {
         LootList list = LootList.getInstance();
         list.getCoins().clear();
         list.getLoot().clear();
         Dice d = new Dice();
         int number = d.roll(100);
-        Coins coins = new HordeCoins(ChallengeRating.FIVE, number);
+        Coins coins = new HoardCoins(ChallengeRating.FIVE, number);
         coins.createStuff();
         Set<String> keys = list.getCoins().keySet();
         for(String key: keys){
             System.out.println(list.getCoins().get(key)  + key);
         }
-        System.out.println("Finish Horde Coins");
+        System.out.println("Finish Hoard Coins");
         assertNotNull(list.getCoins());
     }
     @Test
-    public void generateHordeItems() throws Exception {
+    public void generateHoardItems() throws Exception {
         LootList list = LootList.getInstance();
         Dice d = new Dice();
         int number = d.roll(100);
@@ -77,12 +77,12 @@ public class JUnitTest {
         for(String key: keys){
             System.out.println(list.getLoot().get(key) + "x "+ key);
         }
-        System.out.println("Finished Horde Items");
+        System.out.println("Finished Hoard Items");
         assertNotNull(list);
     }
     @Test
-    public void generateHordeTreasure() throws Exception{
-        System.out.println("Single Horde Treasure");
+    public void generateHoardTreasure() throws Exception{
+        System.out.println("Single Hoard Treasure");
         LootList list = LootList.getInstance();
         list.getCoins().clear();
         list.getLoot().clear();
@@ -92,8 +92,8 @@ public class JUnitTest {
     }
 
     @Test
-    public void generateMultipleHordeTreasures() throws Exception{
-        System.out.println("Multi-Horde Treasure");
+    public void generateMultipleHoardTreasures() throws Exception{
+        System.out.println("Multi-Hoard Treasure");
         LootList list = LootList.getInstance();
         list.getCoins().clear();
         list.getLoot().clear();
@@ -101,6 +101,6 @@ public class JUnitTest {
         Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1000);
         treasure.generateTreasure();
 
-        System.out.println("End of huge Horde Treasure");
+        System.out.println("End of huge Hoard Treasure");
     }
 }

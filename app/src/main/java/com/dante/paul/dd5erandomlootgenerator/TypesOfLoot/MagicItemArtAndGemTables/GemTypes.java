@@ -141,7 +141,7 @@ public class GemTypes extends ValuableItems {
                             gemName = "Quartz (transparent yellow).";
                         break;
                     case 10:
-                        gemName = "Sardonyx (opaque bands of red and white). Value 50 GP.";
+                        gemName = "Sardonyx (opaque bands of red and white).";
                         break;
                     case 11:
                         gemName = "Star rose quartz (translucent rosy stone with white star-shaped center).";

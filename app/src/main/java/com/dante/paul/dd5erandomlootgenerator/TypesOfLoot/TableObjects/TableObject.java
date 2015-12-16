@@ -12,7 +12,7 @@ public abstract class TableObject {
 
 
     public String getName(){
-        return generatedStrings.getName() + "\r\n  " + generatedStrings.getMagicItemtable();
+        return generatedStrings.getName();
     }
 
     public TypeOfItem getItemType(){
@@ -23,7 +23,7 @@ public abstract class TableObject {
         generatedStrings.setTypeOfItem(typeOfItem);
     }
     public void setName(String name){
-        generatedStrings.setName(name);
+        generatedStrings.setName(name + "\r\n  " + generatedStrings.getMagicItemtable());
     }
 
     public String getLevel(){

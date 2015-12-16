@@ -81,7 +81,7 @@ public class TreasureFragment extends Fragment{
             default:
                 treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
                 treasure.generateTreasure();
-                lootSummary = "Challenge Level " + challengeRatingString + "\nHorde Treasure ";
+                lootSummary = "Challenge Level " + challengeRatingString + "\nHoard Treasure ";
                 lootSummary += " x" + iterations;
         }
 

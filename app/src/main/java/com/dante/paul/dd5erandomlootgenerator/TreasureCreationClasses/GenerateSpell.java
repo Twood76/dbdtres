@@ -151,6 +151,7 @@ public class GenerateSpell {
         generateSpellStrings.level = "Spell Scroll (Level " + level + ")";
         generateSpellStrings.name = scroll;
         generateSpellStrings.spellCLass = spellClass;
+
         return generateSpellStrings;
     }
 

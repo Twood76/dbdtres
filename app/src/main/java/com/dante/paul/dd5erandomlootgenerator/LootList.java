@@ -73,12 +73,17 @@ public class LootList {
     //Takes a magic item and puts it in the loot list
     public void addToLoot(TableObject item) {
         Map<String,Integer> storage;
+        String fullNameOfSpell;
         if (item.getClass() == ArtTableObject.class)
             storage = art;
         else if (item.getClass() == GemTableObject.class)
             storage = gems;
         else
             storage = loot;
+        if (item.getSpellClass() != ""){
+            fullNameOfSpell = item.getSpellClass()+ " " + item.getLevel() + "\r\n " + item.getName();
+            item.setName(fullNameOfSpell);
+        }
         if (storage.containsKey(item.getName())) {
             numberOfItems = storage.get(item.getName());
             storage.put(item.getName(), numberOfItems + item.numberOfItem);

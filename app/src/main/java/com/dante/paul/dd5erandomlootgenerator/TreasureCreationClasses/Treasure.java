@@ -5,7 +5,7 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.GemsArtAndMagicItems;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.HordeCoins;
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.HoardCoins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.IndividualCoins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.Loot;
 
@@ -44,7 +44,7 @@ public class Treasure implements TreasureTable {
             Loot coins = new IndividualCoins(challengeRating, d100);
             coins.createStuff();
         } else {
-            Loot coins = new HordeCoins(challengeRating, d100);
+            Loot coins = new HoardCoins(challengeRating, d100);
             coins.createStuff();
         }
     }
