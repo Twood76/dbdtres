@@ -359,7 +359,7 @@ public class GenerateItem {
         if (magicItemTable.getItemType() != TypeOfItem.SPELL)
             item = magicItemTable.numberOfItem + "x " + magicItemTable.getName() + "\r\n  ";
         else
-            item = magicItemTable.numberOfItem + "x " + magicItemTable.getSpellClass() + " " + magicItemTable.getLevel() + "\r\n  " + magicItemTable.getName() + "\r\n  ";
+            item = magicItemTable.numberOfItem + "x " + magicItemTable.getSpellClass() + " " + magicItemTable.getLevel() + "\r\n  ";
         return item;
     }
 }

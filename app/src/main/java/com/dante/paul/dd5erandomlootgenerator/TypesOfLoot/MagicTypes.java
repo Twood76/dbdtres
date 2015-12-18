@@ -46,7 +46,6 @@ public class MagicTypes extends ValuableItems {
             case "E":
                 magicItemTable = new MagicItemTable_E();
                 break;
-            //TODO create other magic item tables
             case "F":
                 magicItemTable = new MagicItemTable_F();
                 break;

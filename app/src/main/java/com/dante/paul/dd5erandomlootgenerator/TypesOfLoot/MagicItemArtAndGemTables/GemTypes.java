@@ -327,6 +327,7 @@ public class GemTypes extends ValuableItems {
                 break;
         }
         AbstractGeneratedStrings generatedStrings = new GenerateArtorGemString();
+        //TODO not sure why the gem value got removed, but temp fixed it
         generatedStrings.setName(gemName);
         generatedStrings.setMagicItemtable(valueString);
         gemTableObject.generatedStrings = generatedStrings;

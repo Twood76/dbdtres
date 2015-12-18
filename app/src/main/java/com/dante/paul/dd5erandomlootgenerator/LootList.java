@@ -84,6 +84,7 @@ public class LootList {
             fullNameOfSpell = item.getSpellClass()+ " " + item.getLevel() + "\r\n " + item.getName();
             item.setName(fullNameOfSpell);
         }
+        item.setName(item.getName() + "\r\n" + item.getItemTable());
         if (storage.containsKey(item.getName())) {
             numberOfItems = storage.get(item.getName());
             storage.put(item.getName(), numberOfItems + item.numberOfItem);
