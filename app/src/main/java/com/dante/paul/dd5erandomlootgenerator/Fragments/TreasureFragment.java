@@ -17,6 +17,8 @@ import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.R;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GenerateLootMessage;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 /**
  * Created by PaulD on 2015-12-10.
@@ -52,7 +54,9 @@ public class TreasureFragment extends Fragment{
             }
         });
 
-
+        AdView mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     return view;
     }
 

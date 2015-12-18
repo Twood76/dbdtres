@@ -23,6 +23,8 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.RangerSpel
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.SorcererSpells;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WarlockSpells;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpells;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 
 public class SpellsFragment extends Fragment{
@@ -52,7 +54,9 @@ public class SpellsFragment extends Fragment{
             }
         });
 
-
+        AdView mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         return view;
     }
     public void generateSpell() {
