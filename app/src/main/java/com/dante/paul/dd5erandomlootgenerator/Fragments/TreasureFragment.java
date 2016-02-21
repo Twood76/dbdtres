@@ -101,7 +101,7 @@ public class TreasureFragment extends Fragment{
             case "5-10":
                 challengeRating = ChallengeRating.FIVE;
                 break;
-            case "12-16":
+            case "11-16":
                 challengeRating = ChallengeRating.ELEVEN;
                 break;
             default:
