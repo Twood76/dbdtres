@@ -49,9 +49,10 @@ public class ItemsFragment extends Fragment {
                 generateItem();
             }
         });
-        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);;
+
+//        AdView mAdView = (AdView) view.findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);;
         return view;
     }
     public void generateItem() {
@@ -74,6 +75,7 @@ public class ItemsFragment extends Fragment {
         args.putString("loot", loot);
         how.setArguments(args);
         how.show(getActivity().getFragmentManager(), "tag");
+
 
     }
     private ChallengeRating getChallengeRating(String challengeRatingString) {
