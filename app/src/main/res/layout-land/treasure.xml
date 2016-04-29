@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/treasure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radio_encounter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checkedButton="@+id/radio_individual"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/radio_individual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/individual"
+                android:textSize="24sp"/>
+
+            <RadioButton
+                android:id="@+id/radio_hoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hoard"
+                android:textSize="24sp"/>
+        </RadioGroup>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="horizontal">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:orientation="vertical">
+                <TextView
+                    style="@style/textView_nexus5_land"
+                    android:text="@string/challenge"
+                    android:layout_marginTop="0dp"/>
+
+                <Spinner
+                    style="@style/spinner_nexus5_land"
+                    android:id="@+id/challenge_spinner"
+                    android:layout_marginBottom="0dp" />
+
+
+                <TextView
+                    style="@style/textView_nexus5_land"
+                    android:text="@string/iterations" />
+
+                <Spinner
+                    style="@style/spinner_nexus5_land"
+                    android:id="@+id/iteration_spinner" />
+            </LinearLayout>
+            <Button
+                style="@style/button_nexus5_normal_land"
+                android:id="@+id/treasure_send"
+                android:text="@string/treasure_send"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/treasure_banner_ad">
+    </com.google.android.gms.ads.AdView>
+    -->
+</RelativeLayout>
