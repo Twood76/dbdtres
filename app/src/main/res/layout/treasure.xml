@@ -61,7 +61,7 @@
             android:id="@+id/iteration_spinner" />
 
         <Button
-            style="@style/button_nexus5_normal_land"
+            style="@style/button_nexus5_land"
             android:id="@+id/treasure_send"
             android:text="@string/treasure_send"
             android:layout_marginTop="0dp"/>

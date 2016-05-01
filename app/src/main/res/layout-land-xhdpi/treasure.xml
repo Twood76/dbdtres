@@ -19,18 +19,28 @@
             android:layout_gravity="center"
             android:checkedButton="@+id/radio_individual"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:layout_marginLeft="15dp">
             <!--android:layout_below="@id/textView" -->
+            <RadioButton
+                android:id="@+id/radio_individual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/individual"
+                android:textSize="24sp"/>
 
+            <RadioButton
+                android:id="@+id/radio_hoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hoard"
+                android:textSize="24sp"/>
         </RadioGroup>
 
                 <TextView
                     style="@style/textView_nexus5_land"
                     android:id="@+id/challenge"
                     android:text="@string/challenge"
-                    android:layout_below="@+id/radio_hoard"
+                    android:layout_below="@+id/radio_encounter"
                     android:layout_alignLeft="@+id/challenge_spinner"
                     android:layout_alignStart="@+id/challenge_spinner"/>
 
@@ -58,14 +68,11 @@
 
 
             <Button
-                    style="@style/button_nexus5_small_land"
+                    style="@style/button_nexus5_land"
                     android:id="@+id/treasure_send"
                     android:text="@string/treasure_send"
-                    android:layout_below="@+id/radio_encounter"
-                    android:layout_alignLeft="@+id/textView"
-                    android:layout_alignStart="@+id/textView"/>
-
-
+                    android:layout_toRightOf="@id/challenge_spinner"
+                    android:layout_marginLeft="100dp"/>
 
 
 
@@ -80,24 +87,6 @@
         android:layout_alignEnd="@+id/treasure_send">
     </com.google.android.gms.ads.AdView>
 
-    <RadioButton
-        android:id="@+id/radio_hoard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hoard"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/radio_individual"
-        android:layout_toEndOf="@+id/radio_individual"/>
 
-    <RadioButton
-        android:id="@+id/radio_individual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/individual"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/radio_encounter"
-        android:layout_alignStart="@+id/radio_encounter"/>
 
 </RelativeLayout>
