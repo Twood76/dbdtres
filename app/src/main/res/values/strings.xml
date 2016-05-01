@@ -12,7 +12,7 @@
         <item>17+</item>
     </string-array>
     <string name="spell_send">Generate Spell</string>
-    <string name="level">Spell Level</string>
+    <string name="level">Spell Level:</string>
     <string name="level_spinner">Spell Level</string>
     <string-array name="level_array">
         <item>Random</item>

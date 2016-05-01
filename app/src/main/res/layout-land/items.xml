@@ -7,15 +7,25 @@
 
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         style="@style/textView_nexus5_land"
         android:id="@+id/challenge"
         android:text="@string/challenge"
-/>
+        android:layout_alignTop="@+id/item_send"
+        android:layout_alignLeft="@+id/challenge_spinner"
+        android:layout_alignStart="@+id/challenge_spinner"/>
 
     <Spinner
         style="@style/spinner_nexus5_land"
         android:id="@+id/challenge_spinner"
         android:layout_below="@id/challenge"
+        android:layout_marginLeft="20dp"
 />
 
 
@@ -39,8 +49,8 @@
         style="@style/button_nexus5_small_land"
         android:id="@+id/item_send"
         android:text="@string/item_send"
-        android:layout_alignTop="@id/challenge"
-        android:layout_toRightOf="@id/challenge"/>
+        android:layout_toRightOf="@id/challenge_spinner"
+        android:layout_marginLeft="100dp"/>
 
 
     <com.google.android.gms.ads.AdView
@@ -49,8 +59,9 @@
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
         ads:adUnitId="@string/test_banner_ad"
-        android:layout_toRightOf="@id/iteration_spinner"
-        android:layout_below="@id/item_send">
+        android:layout_alignBottom="@+id/iteration_spinner"
+        android:layout_alignRight="@+id/item_send"
+        android:layout_alignEnd="@+id/item_send">
     </com.google.android.gms.ads.AdView>
 
 
