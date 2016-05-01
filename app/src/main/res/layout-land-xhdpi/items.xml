@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/test_banner_ad"
+        ads:adUnitId="@string/item_banner_ad"
         android:layout_alignBottom="@+id/iteration_spinner"
         android:layout_alignRight="@+id/item_send"
         android:layout_alignEnd="@+id/item_send">

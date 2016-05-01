@@ -4,7 +4,7 @@
     <supports-screens android:smallScreens="false"
         android:normalScreens="true"
         android:largeScreens="true"
-        android:xlargeScreens="false"
+        android:xlargeScreens="true"
         />
 
     <application
