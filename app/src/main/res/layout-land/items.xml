@@ -10,15 +10,13 @@
         style="@style/textView_nexus5_land"
         android:id="@+id/challenge"
         android:text="@string/challenge"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/challenge_spinner"
-        android:layout_alignStart="@+id/challenge_spinner"/>
+/>
 
     <Spinner
         style="@style/spinner_nexus5_land"
         android:id="@+id/challenge_spinner"
         android:layout_below="@id/challenge"
-        android:layout_marginLeft="20dp"/>
+/>
 
 
     <TextView
@@ -26,13 +24,14 @@
         android:text="@string/iterations"
         android:id="@+id/iteration"
         android:layout_below="@id/challenge_spinner"
-        android:layout_marginLeft="20dp"/>
+
+/>
 
     <Spinner
         style="@style/spinner_nexus5_land"
         android:id="@+id/iteration_spinner"
         android:layout_below="@id/iteration"
-        android:layout_marginLeft="20dp"/>
+/>
 
 
 
@@ -40,9 +39,8 @@
         style="@style/button_nexus5_small_land"
         android:id="@+id/item_send"
         android:text="@string/item_send"
-        android:layout_alignTop="@+id/challenge_spinner"
-        android:layout_toRightOf="@+id/iteration"
-        android:layout_toEndOf="@+id/iteration"/>
+        android:layout_alignTop="@id/challenge"
+        android:layout_toRightOf="@id/challenge"/>
 
 
     <com.google.android.gms.ads.AdView
@@ -51,9 +49,8 @@
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
         ads:adUnitId="@string/test_banner_ad"
-        android:layout_below="@+id/iteration_spinner"
-        android:layout_alignRight="@+id/item_send"
-        android:layout_alignEnd="@+id/item_send">
+        android:layout_toRightOf="@id/iteration_spinner"
+        android:layout_below="@id/item_send">
     </com.google.android.gms.ads.AdView>
 
 
