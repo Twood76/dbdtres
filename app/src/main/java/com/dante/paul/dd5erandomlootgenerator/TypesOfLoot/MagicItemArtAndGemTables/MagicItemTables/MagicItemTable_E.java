@@ -12,7 +12,6 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
 
     public MagicItemTableObject getItem(int number) {
 
-
         if (number < 31) {
             spells = new GenerateSpell(8);
             generatedStrings = new GenerateSpellStrings();

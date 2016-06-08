@@ -9,7 +9,6 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
 public class MagicItemTable_F extends AbstractMagicItemTable implements MagicItemTable {
 
     public MagicItemTableObject getItem(int number) {
-        String magicItem;
         generatedStrings = new GenerateItemStrings();
         if (number < 16) {
              generatedStrings.setName("Weapon (any), +1");

@@ -67,7 +67,7 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
             generatedStrings.setName("Dust of sneezing and choking");
         } else if (number < 82) {
             generatedStrings = new GenerateItemStrings();
-            int secondary = d.roll(4);
+            secondary = d.roll(4);
             if (secondary == 1)
                 generatedStrings.setName("Blue sapphire elemental gem (air elemental)");
             else if (secondary == 2)

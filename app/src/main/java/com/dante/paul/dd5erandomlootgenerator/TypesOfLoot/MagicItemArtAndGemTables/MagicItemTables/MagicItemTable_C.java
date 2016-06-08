@@ -13,7 +13,6 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
 
     public MagicItemTableObject getItem(int number) {
         MonsterType monsterType = new MonsterType();
-        String magicItem;
 
         if (number < 16) {
             generatedStrings = new GenerateItemStrings();

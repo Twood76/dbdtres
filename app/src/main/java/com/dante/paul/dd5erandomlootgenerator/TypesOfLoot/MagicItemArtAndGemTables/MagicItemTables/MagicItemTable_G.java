@@ -11,7 +11,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
     DamageType damageType = new DamageType();
 
     public MagicItemTableObject getItem(int number) {
-        String magicItem = null;
         generatedStrings = new GenerateItemStrings();
         if (number < 12) {
              generatedStrings.setName("Weapon (any), +2");
