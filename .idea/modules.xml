@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/D&amp;D5eRandomLootGenerator.iml" filepath="$PROJECT_DIR$/D&amp;D5eRandomLootGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DnDLoot.iml" filepath="$PROJECT_DIR$/DnDLoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
