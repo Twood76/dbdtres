@@ -31,7 +31,7 @@ public class GenerateItem implements TreasureTable{
         list.getItems();
     }
     private void generateItems(){
-        for(int counter = 0; counter<numberOfItems; counter++) {
+        for(int counter = 0; counter < numberOfItems; counter++) {
             Loot items = new JustMagicItems(challengeRating, d100);
             items.createStuff();
         }

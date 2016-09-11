@@ -58,7 +58,7 @@ public class MagicTypes extends ValuableItems {
             case "I":
                 magicItemTable = new MagicItemTable_I();
             default:
-                 generatedStrings.setName("Something is fucked with magic item generation!");
+                 generatedStrings.setName("Something went horribly with magic spell generation!");
                 magicItemTableObject.generatedStrings = generatedStrings;
                 System.out.println(magicItemTableObject.getName());
         }

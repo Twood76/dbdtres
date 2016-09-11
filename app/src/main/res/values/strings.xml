@@ -53,5 +53,5 @@
     <string name="spell_banner_ad">ca-app-pub-9108289994838354/8779529427</string>
     <string name="item_banner_ad">ca-app-pub-9108289994838354/2732995820</string>
     <string name="test_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
-
+    <string name="txtCredits"><a href=" PayPal.Me/PDante">here</a></string>
 </resources>

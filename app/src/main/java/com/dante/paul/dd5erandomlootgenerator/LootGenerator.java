@@ -6,8 +6,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class LootGenerator extends AppCompatActivity {
 
@@ -59,8 +61,9 @@ public class LootGenerator extends AppCompatActivity {
     public boolean about(MenuItem item){
         //handle click "about" in menu
         String aboutSummary, about;
-        aboutSummary = "D&D 5e Loot Generator v1.0";
-        about = "Developed by Paul Dante to help save DMs some time. \r\n \r\nPlease rate and provide feedback of how I can improve this app.\r\n \r\nBackground image of scroll provided by www.myfreetextures.com";
+        aboutSummary = "D&D 5e Loot Generator v1.9";
+        about = "Developed by Paul Dante to help save DMs some time. \r\n \r\nPlease rate and provide feedback of how I can improve this app.\r\n \r\nIf you like the app and would like to make a donation: PayPal.Me/PDante \n" +
+                " \nBackground image of scroll provided by www.myfreetextures.com";
         DialogFragment how = new GenerateAboutMessage();
         Bundle args = new Bundle();
 
