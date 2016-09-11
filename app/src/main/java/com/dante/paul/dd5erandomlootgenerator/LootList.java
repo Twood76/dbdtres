@@ -4,10 +4,14 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.ArtTableO
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.GemTableObject;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.TableObject;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * Created by PaulD on 2015-11-20.
@@ -36,17 +40,23 @@ public class LootList {
         Set<String> keys = coins.keySet();
         treasure += "\r\n";
         treasure += "Coins: \r\n";
-        for (String key : keys) {
-            treasure += coins.get(key) + key + "\r\n";
-        }
+        if (coins.containsKey("cp"))
+            treasure += coins.get("cp") + "cp" + "\r\n";
+        if (coins.containsKey("sp"))
+            treasure += coins.get("sp") + "sp" + "\r\n";
+        if (coins.containsKey("gp"))
+            treasure += coins.get("gp") + "gp" + "\r\n";
+        if (coins.containsKey("pp"))
+            treasure += coins.get("pp") + "pp" + "\r\n";
         return treasure;
     }
 
     private String printTreasure(Map storage, String treasure, String type) {
-        Set<String> keys = storage.keySet();
         treasure += "\r\n";
         treasure += type + "\r\n";
-        for (String key : keys) {
+        List keys = new ArrayList(storage.keySet());
+        Collections.sort(keys);
+        for (Object key : keys) {
             treasure += storage.get(key) + "x " + key + "\r\n";
         }
     return treasure;
