@@ -2,7 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTab
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
-import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateArtorGemString;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateArtOrGemString;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.ArtTableObject;
 
 /**
@@ -192,7 +192,7 @@ public class ArtTypes extends ValuableItems {
                 }
                 break;
         }
-        AbstractGeneratedStrings generatedStrings = new GenerateArtorGemString();
+        AbstractGeneratedStrings generatedStrings = new GenerateArtOrGemString();
         generatedStrings.setName(artName );
         generatedStrings.setMagicItemtable(valueString);
         artTableObject.generatedStrings = generatedStrings;

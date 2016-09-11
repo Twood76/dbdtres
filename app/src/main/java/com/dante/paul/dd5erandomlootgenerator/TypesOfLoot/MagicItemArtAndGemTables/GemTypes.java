@@ -2,7 +2,7 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTab
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
-import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateArtorGemString;
+import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateArtOrGemString;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.GemTableObject;
 
 /**
@@ -326,7 +326,7 @@ public class GemTypes extends ValuableItems {
                 }
                 break;
         }
-        AbstractGeneratedStrings generatedStrings = new GenerateArtorGemString();
+        AbstractGeneratedStrings generatedStrings = new GenerateArtOrGemString();
         //TODO not sure why the gem value got removed, but temp fixed it
         generatedStrings.setName(gemName);
         generatedStrings.setMagicItemtable(valueString);

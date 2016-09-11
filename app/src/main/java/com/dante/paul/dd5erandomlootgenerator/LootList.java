@@ -43,7 +43,6 @@ public class LootList {
     }
 
     private String printTreasure(Map storage, String treasure, String type) {
-        int count = 0;
         Set<String> keys = storage.keySet();
         treasure += "\r\n";
         treasure += type + "\r\n";
@@ -68,7 +67,12 @@ public class LootList {
         treasure = printTreasure(getLoot(),treasure, "Items:");
         return treasure;
     }
-
+    public String getItems() {
+        String treasure;
+        treasure = "";
+        treasure = printTreasure(getLoot(),treasure, "Items:");
+        return treasure;
+    }
 
     //Takes a magic item and puts it in the loot list
     public void addToLoot(TableObject item) {

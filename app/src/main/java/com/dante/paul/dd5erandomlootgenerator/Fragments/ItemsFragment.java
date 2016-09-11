@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.R;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItem;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.GenerateLootMessage;
@@ -58,14 +59,15 @@ public class ItemsFragment extends Fragment {
     }
     public void generateItem() {
         String lootSummary;
-        String loot;
+        LootList list = LootList.getInstance();
+        list.deleteAll();
         challengeSpinner = (Spinner) view.findViewById(R.id.challenge_spinner);
         String challengeRatingString = challengeSpinner.getSelectedItem().toString();
         ChallengeRating challengeRating = getChallengeRating(challengeRatingString);
 
         int iterations = Integer.parseInt(iterationSpinner.getSelectedItem().toString());
-        GenerateItem treasure = new GenerateItem(iterations);
-        loot = treasure.generateItem(challengeRating);
+        GenerateItem treasure = new GenerateItem(challengeRating,iterations);
+        treasure.generateTreasure();
         lootSummary = "Challenge Level " + challengeRatingString + "\nIndividual Item ";
         lootSummary += " x" + iterations;
 
@@ -73,7 +75,7 @@ public class ItemsFragment extends Fragment {
         Bundle args = new Bundle();
 
         args.putString("loot_summary", lootSummary);
-        args.putString("loot", loot);
+        args.putString("loot", list.getItems());
         how.setArguments(args);
         how.show(getActivity().getFragmentManager(), "tag");
 

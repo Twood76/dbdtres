@@ -5,9 +5,9 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
 /**
  * Created by PaulD on 2015-12-04.
  */
-public class GenerateArtorGemString extends AbstractGeneratedStrings {
+public class GenerateArtOrGemString extends AbstractGeneratedStrings {
 
-    public GenerateArtorGemString() {
+    public GenerateArtOrGemString() {
         typeOfItem = TypeOfItem.ARTorGEM;
     }
 }
