@@ -37,6 +37,20 @@ public class JUnitTest {
         assertTrue(test2 > 9 && test2 < 41);
     }
     @Test
+    public void generateRandomDiceRols(){
+        Dice d = new Dice();
+        int count = 0;
+        int[] value = new int[100];
+        int num;
+        for (int i = 0; i < 10000; i++) {
+            num = d.roll(100);
+            if (num == 100)
+                count += 1;
+            value[num-1] += 1;
+        }
+        assertTrue(count > 0);
+    }
+    @Test
     public void generateIndividualCoins() throws Exception {
         LootList list = LootList.getInstance();
         Dice d = new Dice();

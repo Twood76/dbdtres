@@ -25,7 +25,7 @@ public class Dice implements Roll {
 
     private int random(int dieType) {
         Random rand = new Random();
-        int roll = rand.nextInt((dieType - 1) + 1) + 1;
+        int roll = rand.nextInt(dieType) + 1;
             return roll;
     }
 }

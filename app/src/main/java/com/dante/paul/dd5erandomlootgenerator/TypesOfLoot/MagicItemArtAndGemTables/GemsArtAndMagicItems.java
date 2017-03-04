@@ -14,10 +14,13 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTabl
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_H;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_I;
 
+
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItems;
+
 /**
  * Created by PaulD on 2015-11-20.
  */
-public class GemsArtAndMagicItems extends Loot {
+public class GemsArtAndMagicItems extends Loot implements MagicItems {
     private int numberOfItems;
     private GemTypes g = new GemTypes();
     private ArtTypes a = new ArtTypes();
@@ -29,7 +32,7 @@ public class GemsArtAndMagicItems extends Loot {
     }
 
     @Override
-    public void createStuff() {
+    public MagicItemTable createStuff() {
         switch (challenge) {
             case ZERO:
                 if (d100 < 7) {//no gems or art
@@ -111,15 +114,18 @@ public class GemsArtAndMagicItems extends Loot {
                 }else if (d100 < 100){
                     numberOfItems = d.roll(2, 4);
                     generateGemsOrArt(numberOfItems, 25, a);
-                    numberOfItems = d.roll(1, 4);
+                    numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_G();
-                    generateMagicItems(numberOfItems, table);
-                }else{
+                    generateMagicItems(1, table);
+                }else if (d100 == 100){
                     numberOfItems = d.roll(2, 6);
                     generateGemsOrArt(numberOfItems, 50, g);
-                    numberOfItems = d.roll(1, 4);
+                    numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_G();
                     generateMagicItems(numberOfItems, table);
+                } else {
+                    numberOfItems = d.roll(2, 6);
+                    generateGemsOrArt(numberOfItems, 10, g);
                 }
                 break;
 
@@ -276,12 +282,15 @@ public class GemsArtAndMagicItems extends Loot {
                     numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
-                }else{
+                }else if (d100 == 100){
                     numberOfItems = d.roll(2, 4);
                     generateGemsOrArt(numberOfItems, 250, a);
                     numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_H();
                     generateMagicItems(numberOfItems, table);
+                } else {
+                    numberOfItems = d.roll(2, 4);
+                    generateGemsOrArt(numberOfItems, 25, a);
                 }
                 break;
             case ELEVEN:
@@ -485,12 +494,15 @@ public class GemsArtAndMagicItems extends Loot {
                     numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
-                }else{
+                }else if (d100 == 100){
                     numberOfItems = d.roll(3, 6);
                     generateGemsOrArt(numberOfItems, 1000, g);
                     numberOfItems = d.roll(1, 1);
                     table = new MagicItemTable_I();
                     generateMagicItems(numberOfItems, table);
+                }else {
+                    numberOfItems = d.roll(2, 4);
+                    generateGemsOrArt(numberOfItems, 250, a);
                 }
                 break;
 
@@ -643,6 +655,7 @@ public class GemsArtAndMagicItems extends Loot {
                 }
                 break;
         }
+        return table;
     }
 
     private void generateGemsOrArt(int numberOfItems, int value, ValuableItems vI) {

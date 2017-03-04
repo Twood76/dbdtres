@@ -12,16 +12,22 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTabl
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_C;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_D;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_E;
+
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables
+        .MagicItemTables.MagicItemTable_Empty;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_F;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_G;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_H;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables.MagicItemTable_I;
 
+
+import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItems;
+
 /**
  * Created by pdante on 9/10/2016.
  */
-public class JustMagicItems extends Loot {
-    private MagicItemTable table;
+public class JustMagicItems extends Loot implements MagicItems {
+    protected MagicItemTable table;
     private Dice d = new Dice();
 
     public JustMagicItems(ChallengeRating challengeRating, int d100) {
@@ -29,10 +35,13 @@ public class JustMagicItems extends Loot {
     }
 
     @Override
-    public void createStuff() {
+    public MagicItemTable createStuff() {
         switch (challenge) {
             case ZERO:
-                if (d100 < 45) {
+                if(d100 <37){
+                    d100 = d.roll(100);
+                    table = createStuff();
+                } else if (d100 < 45) {
                     table = new MagicItemTable_A();
                 } else if (d100 < 53) {
                     table = new MagicItemTable_A();
@@ -74,7 +83,10 @@ public class JustMagicItems extends Loot {
                 break;
 
             case FIVE:
-                if (d100 < 33) {
+                if(d100 <29){
+                    d100 = d.roll(100);
+                    table = createStuff();
+                } else if (d100 < 33) {
                     table = new MagicItemTable_A();
 
                 } else if (d100 < 37) {
@@ -150,7 +162,10 @@ public class JustMagicItems extends Loot {
                 break;
 
             case ELEVEN:
-                if (d100 < 20) {
+                if(d100 <16){
+                    d100 = d.roll(100);
+                    table = createStuff();
+                } else if (d100 < 20) {
                     int secondary = d.roll(2);
                     if (secondary == 1)
                         table = new MagicItemTable_A();
@@ -267,8 +282,11 @@ public class JustMagicItems extends Loot {
                 break;
 
             default: //SEVENTEEN
-                if (d100 < 2) {//no gems or art
-                } else if (d100 < 6) {
+                if(d100 <3){
+                    d100 = d.roll(100);
+                    table = createStuff();
+                }
+                else if (d100 < 6) {
                     table = new MagicItemTable_C();
 
                 } else if (d100 < 9) {
@@ -339,11 +357,12 @@ public class JustMagicItems extends Loot {
 
                 } else {
                     table = new MagicItemTable_I();
-
                 }
                 break;
         }
-        generateMagicItems(table);
+        if(!(table instanceof MagicItemTable_Empty))
+            generateMagicItems(table);
+        return new MagicItemTable_Empty();
     }
 
     private void generateMagicItems(MagicItemTable table) {

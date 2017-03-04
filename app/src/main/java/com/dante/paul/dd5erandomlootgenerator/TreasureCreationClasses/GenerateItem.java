@@ -26,13 +26,13 @@ public class GenerateItem implements TreasureTable{
 
     @Override
     public void generateTreasure() {
-        d100 = d.roll(100);
         generateItems();
         list.getItems();
     }
     private void generateItems(){
         for(int counter = 0; counter < numberOfItems; counter++) {
-            Loot items = new JustMagicItems(challengeRating, d100);
+            d100 = d.roll(100);
+            JustMagicItems items = new JustMagicItems(challengeRating, d100);
             items.createStuff();
         }
     }

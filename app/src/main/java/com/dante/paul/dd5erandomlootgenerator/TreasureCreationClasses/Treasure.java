@@ -41,15 +41,15 @@ public class Treasure implements TreasureTable {
 
     private void generateCoins() {
         if (toE == TypeOfEncounter.INDIVIDUAL) {
-            Loot coins = new IndividualCoins(challengeRating, d100);
+            IndividualCoins coins = new IndividualCoins(challengeRating, d100);
             coins.createStuff();
         } else {
-            Loot coins = new HoardCoins(challengeRating, d100);
+            HoardCoins coins = new HoardCoins(challengeRating, d100);
             coins.createStuff();
         }
     }
     private void generateItems(){
-        Loot items = new GemsArtAndMagicItems(challengeRating, d100);
+        GemsArtAndMagicItems items = new GemsArtAndMagicItems(challengeRating, d100);
         items.createStuff();
     }
 }
