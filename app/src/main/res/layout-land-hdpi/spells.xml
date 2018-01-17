@@ -13,12 +13,13 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        style="@style/textView_nexus5_land_small"
         android:id="@+id/spell_class"
-        android:text="@string/spell_class"
-        android:layout_alignTop="@+id/spell_send"
-        android:layout_alignLeft="@+id/class_spinner"
-        android:layout_alignStart="@+id/class_spinner"/>
+        style="@style/textView_nexus5_land_small"
+        android:layout_above="@+id/spell_send"
+        android:layout_alignEnd="@+id/level"
+        android:layout_alignRight="@+id/level"
+        android:layout_marginTop="20dp"
+        android:text="@string/spell_class"/>
 
     <Spinner
         style="@style/spinner_nexus5_land_small"
@@ -29,11 +30,12 @@
 
 
     <TextView
-        style="@style/textView_nexus5_land_small"
-        android:text="@string/level"
         android:id="@+id/level"
+        style="@style/textView_nexus5_land_small"
         android:layout_below="@id/class_spinner"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/level"/>
 
     <Spinner
         style="@style/spinner_nexus5_land_small"
@@ -48,19 +50,10 @@
         android:id="@+id/spell_send"
         android:text="@string/spell_send"
         android:layout_toRightOf="@id/class_spinner"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="60dp"
         />
 
 
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/spell_banner_ad"
-        android:layout_alignTop="@+id/level_spinner"
-        android:layout_alignRight="@+id/spell_send"
-        android:layout_alignEnd="@+id/spell_send">
-    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

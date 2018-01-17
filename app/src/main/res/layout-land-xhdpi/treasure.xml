@@ -52,12 +52,13 @@
                     android:layout_marginLeft="20dp"/>
 
 
-                <TextView
-                    style="@style/textView_nexus5_land"
-                    android:text="@string/iterations"
-                    android:id="@+id/iteration"
-                    android:layout_below="@id/challenge_spinner"
-                    android:layout_marginLeft="20dp"/>
+    <TextView
+        android:id="@+id/iteration"
+        style="@style/textView_nexus5_land"
+        android:layout_below="@id/challenge_spinner"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/iterations"/>
 
                     <Spinner
                         style="@style/spinner_nexus5_land"
@@ -66,27 +67,15 @@
                         android:layout_marginLeft="20dp"/>
 
 
+    <Button
+        android:id="@+id/treasure_send"
+        style="@style/button_nexus5_land"
 
-            <Button
-                    style="@style/button_nexus5_land"
-                    android:id="@+id/treasure_send"
-                    android:text="@string/treasure_send"
-                    android:layout_toRightOf="@id/challenge_spinner"
-                    android:layout_marginLeft="100dp"/>
-
-
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/treasure_banner_ad"
-        android:layout_alignBottom="@+id/iteration_spinner"
-        android:layout_alignRight="@+id/treasure_send"
-        android:layout_alignEnd="@+id/treasure_send">
-    </com.google.android.gms.ads.AdView>
-
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:text="@string/treasure_send"/>
 
 
 </RelativeLayout>

@@ -1,23 +1,32 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'dnd5elootpremium'
+            keyPassword '!Uvz#a7@XfusV*ZYaspU'
+            storeFile file('D:/Documents/Android Keystore/Android.jks')
+            storePassword 'f*b2c!FFoGb$2EYpsFFo'
+        }
+    }
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
     defaultConfig {
-        applicationId "com.dante.paul.lootgeneratorfordnd5e"
+        applicationId "com.dante.paul.lootgeneratorfordnd5epremium"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 10
-        versionName "1.10"
+        versionCode 1
+        versionName "1.1"
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
         debug {
             debuggable true
             zipAlignEnabled true
+            signingConfig signingConfigs.config
         }
     }
     productFlavors {
@@ -29,5 +38,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
-    compile 'com.google.android.gms:play-services-ads:8.3.0'
+    //compile 'com.google.android.gms:play-services-ads:8.3.0'
 }

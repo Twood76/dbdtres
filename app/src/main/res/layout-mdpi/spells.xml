@@ -40,16 +40,8 @@
             style="@style/button_nexus5_normal"
             android:id="@+id/spell_send"
             android:text="@string/spell_send"
-            android:layout_height="100dp"/>
+            android:layout_height="150dp"/>
 
     </LinearLayout>
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/spell_banner_ad">
-    </com.google.android.gms.ads.AdView>
+
 </RelativeLayout>

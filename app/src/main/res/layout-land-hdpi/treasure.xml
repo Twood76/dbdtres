@@ -66,27 +66,13 @@
                         android:layout_marginLeft="20dp"/>
 
 
-
-            <Button
-                    style="@style/button_nexus5_small_land"
-                    android:id="@+id/treasure_send"
-                    android:text="@string/treasure_send"
-                    android:layout_toRightOf="@id/challenge_spinner"
-                    android:layout_marginLeft="60dp"/>
-
-
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/treasure_banner_ad"
-        android:layout_alignTop="@+id/iteration_spinner"
-        android:layout_alignRight="@+id/treasure_send"
-        android:layout_alignEnd="@+id/treasure_send">
-    </com.google.android.gms.ads.AdView>
-
+    <Button
+        android:id="@+id/treasure_send"
+        style="@style/button_nexus5_small_land"
+        android:layout_alignBottom="@+id/iteration"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/treasure_send"/>
 
 
 </RelativeLayout>
