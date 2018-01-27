@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
+import com.dante.paul.dd5erandomlootgenerator.LootGenerator;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.R;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItem;
@@ -51,10 +52,12 @@ public class ItemsFragment extends Fragment {
             }
         });
 
-        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
+        if(LootGenerator.adVersion) {
+            AdView mAdView = (AdView) view.findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
         return view;
     }
     public void generateItem() {

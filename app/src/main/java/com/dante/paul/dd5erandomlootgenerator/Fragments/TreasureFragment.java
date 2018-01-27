@@ -13,6 +13,7 @@ import android.widget.Spinner;
 
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
+import com.dante.paul.dd5erandomlootgenerator.LootGenerator;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
 import com.dante.paul.dd5erandomlootgenerator.R;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.Treasure;
@@ -27,6 +28,7 @@ public class TreasureFragment extends Fragment{
     Spinner challengeSpinner, iterationSpinner;
     RadioGroup typeOfEncounter;
     View view;
+    boolean adVersion;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.treasure, container, false);
@@ -53,10 +55,11 @@ public class TreasureFragment extends Fragment{
                 generateTreasure();
             }
         });
-
-        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        if(LootGenerator.adVersion) {
+            AdView mAdView = (AdView) view.findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
     return view;
     }
 
