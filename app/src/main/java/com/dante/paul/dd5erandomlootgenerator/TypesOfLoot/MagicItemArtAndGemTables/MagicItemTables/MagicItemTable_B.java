@@ -10,7 +10,77 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_B extends AbstractMagicItemTable implements MagicItemTable {
-    DamageType damageType = new DamageType();
+
+
+    public MagicItemTable_B(int additionalRows) {
+        tableLetter = "B";
+        tableName = creatTableName(tableLetter);
+        table = new MagicItemTableObject[100 + additionalRows];
+        fillTable();
+    }
+    @Override
+    public void fillTable(){
+        int counter = 0;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<15; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 15;
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<22; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 22;
+        generatedStrings.setName("Damage Resistence");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<29; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 29;
+        generatedStrings.setName("Create Spell");
+        generatedStrings.setMagicItemtable("1");
+        for(int i = counter ;i<90; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 90;
+        generatedStrings.setName("Create Spell");
+        generatedStrings.setMagicItemtable("2");
+        for(int i = counter ;i<94; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 94;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<98; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 98;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Bag of holding");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<99; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 99;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Driftglobe");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<100; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+    }
 
 
     public MagicItemTableObject getItem(int number) {

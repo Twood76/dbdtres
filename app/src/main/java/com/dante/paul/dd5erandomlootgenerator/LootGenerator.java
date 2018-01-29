@@ -76,6 +76,8 @@ public class LootGenerator extends AppCompatActivity {
             editor.putBoolean("loaded",false);
         if(!sharedPreferences.contains("premium"))
             editor.putBoolean("premium", false);
+        if(!sharedPreferences.contains("newestTreasure"))
+            editor.putInt("newestTreasure",1);
         //TODO check with google for premium status
         //TODO stop table loading if loaded, so also need to save tables... maybe. Need to see if
         // this makes sense to do
@@ -107,4 +109,8 @@ public class LootGenerator extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public boolean testLocal(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("LootGenPref",MODE_PRIVATE);
+        return sharedPreferences.contains("loaded");
+    }
 }

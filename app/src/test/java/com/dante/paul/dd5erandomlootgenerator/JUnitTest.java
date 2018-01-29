@@ -4,6 +4,9 @@ package com.dante.paul.dd5erandomlootgenerator;
  * Created by PaulD on 2015-12-01.
  */
 
+import android.content.SharedPreferences;
+import android.test.mock.MockContext;
+
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
@@ -18,6 +21,7 @@ import org.junit.Test;
 
 import java.util.Set;
 
+import static android.content.Context.MODE_PRIVATE;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -116,5 +120,12 @@ public class JUnitTest {
         treasure.generateTreasure();
 
         System.out.println("End of huge Hoard Treasure");
+    }
+    @Test
+    public void testLocalStorage() throws Exception{
+        System.out.println("Local Storage");
+        LootGenerator lootGenerator = new LootGenerator();
+
+        assertTrue(lootGenerator.testLocal());
     }
 }

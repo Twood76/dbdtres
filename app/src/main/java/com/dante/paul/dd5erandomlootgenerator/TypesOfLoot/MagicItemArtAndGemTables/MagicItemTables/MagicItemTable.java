@@ -8,4 +8,6 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
 public interface MagicItemTable {
 
     MagicItemTableObject getItem(int number);
+
+    void fillTable();
 }
