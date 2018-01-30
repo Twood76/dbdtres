@@ -24,8 +24,8 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         }
         fillTable();
     }
-    @Override
-    public void fillTable(){
+
+    public void oldfillTable(){
         int counter = 0;
         generatedStrings = new GenerateItemStrings();
         generatedStrings.setName("Potion of greater healing");
@@ -106,16 +106,26 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         addItem("Dust of disappearance",2,TypeofTableItem.OTHER,true);
         addItem("Dust of dryness",2,TypeofTableItem.OTHER,true);
         addItem("Dust of sneezing and choking",2,TypeofTableItem.OTHER,true);
-        addItem("Elemental gem",2,TypeofTableItem.GEM,true, true);
-        addItem("Dust of dryness",2,TypeofTableItem.OTHER,true);
-
-        addScroll(10, true, 0);
-        addItem("Potion of climbing",10,TypeofTableItem.POTION,true);
-        addScroll(20, true, 1);
-        addScroll(4, true, 2);
-        addItem("Potion of greater healing",4,TypeofTableItem.POTION,true);
-        addItem("Bag of holding",1,TypeofTableItem.OTHER,true);
+        addItem("Elemental gem",2,TypeofTableItem.GEM,true, false);
+        addItem("Philter of love",2,TypeofTableItem.OTHER,true);
+        addItem("Alchemy jug",1,TypeofTableItem.OTHER,true);
+        addItem("Cap of water breathing",1,TypeofTableItem.OTHERCLOTHING,true);
+        addItem("Cloak of manta ray",1,TypeofTableItem.CLOAK,true);
         addItem("Driftglobe",1,TypeofTableItem.OTHER,true);
+        addItem("Goggles of night",1,TypeofTableItem.OTHER,true);
+        addItem("Helm of comprehending languages",1,TypeofTableItem.OTHERCLOTHING,true);
+        addItem("Immovable rod",1,TypeofTableItem.ROD,true);
+        addItem("Lantern of revealing",1,TypeofTableItem.OTHER,true);
+        addItem("Mariner's armor",1,TypeofTableItem.ARMOR,true);
+        addItem("Mithral armor",1,TypeofTableItem.ARMOR,true);
+        addItem("Potion of poison", 1, TypeofTableItem.POTION, true);
+        addItem("Ring of swimming", 1, TypeofTableItem.RING, true);
+        addItem("Robe of useful items", 1, TypeofTableItem.ROBE, true);
+        addItem("Rope of climbing", 1, TypeofTableItem.OTHER, true);
+        addItem("Saddle of the cavalier", 1, TypeofTableItem.OTHER, true);
+        addItem("Wand of magic detection", 1, TypeofTableItem.WAND, true);
+        addItem("Wand of secrets", 1, TypeofTableItem.WAND, true);
+
     }
     public MagicItemTableObject getItem(int number) {
         if (number < 16) {

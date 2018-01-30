@@ -1,17 +1,62 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeofTableItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.MonsterType;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
 
+import java.util.LinkedList;
+
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_C extends AbstractMagicItemTable implements MagicItemTable {
 
-    public MagicItemTableObject getItem(int number) {
+    public MagicItemTable_C() {
+        tableLetter = "C";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable();
+    }
+
+    @Override
+    public void getDefaultTable() {
+        addItem("Potion of superior healing", 15, TypeofTableItem.POTION, true);
+        addScroll(7, true, 4);
+        addItem("Ammunition", 5, TypeofTableItem.AMMO, true, 2);
+        addItem("Potion of clairvoyance", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of diminution", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of gaseous form", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of frost giant strength", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of stone giant strength", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of frost giant strength", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of heroism", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of invulnerability", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of mind reading", 5, TypeofTableItem.POTION, true);
+        addScroll(5, true, 5);
+        addItem("Elixir of health", 3, TypeofTableItem.POTION, true);
+        addItem("Oil of etherealness", 3, TypeofTableItem.OTHER, true);
+        addItem("Potion of fire giant strength", 3, TypeofTableItem.POTION, true);
+        addItem("Quaal's feather token", 3, TypeofTableItem.OTHER, true);
+        addItem("Scroll of protection", 3, TypeofTableItem.SCROLL, true);
+        addItem("Bag of beans", 2, TypeofTableItem.OTHER, true);
+        addItem("Bead of force", 2, TypeofTableItem.OTHER, true);
+        addItem("Chime of opening", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Decanter of endless water", 1, TypeofTableItem.OTHER, true);
+        addItem("Eyes of minute seeing", 1, TypeofTableItem.OTHER, true);
+        addItem("Folding boat", 1, TypeofTableItem.OTHER, true);
+        addItem("Heward's handy haversack", 1, TypeofTableItem.OTHER, true);
+        addItem("Horseshoes of speed", 1, TypeofTableItem.OTHER, true);
+        addItem("Neckless of fireballs", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Periapt of health", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Sending stones", 1, TypeofTableItem.OTHER, true);
+    }
+    /*public MagicItemTableObject getItem(int number) {
         MonsterType monsterType = new MonsterType();
 
         if (number < 16) {
@@ -106,5 +151,5 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table C)");
         magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }

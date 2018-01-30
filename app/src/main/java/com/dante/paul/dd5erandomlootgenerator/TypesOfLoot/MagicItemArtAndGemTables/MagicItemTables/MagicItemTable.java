@@ -9,5 +9,5 @@ public interface MagicItemTable {
 
     MagicItemTableObject getItem(int number);
 
-    void fillTable();
+    void getDefaultTable();
 }

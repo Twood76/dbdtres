@@ -87,7 +87,7 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
             generatedStrings.setItemType(typeOfItem);
             magItemTableObject = new MagicItemTableObject(generatedStrings);
             return magItemTableObject;
-        }else if(typeOfItem.equals(TypeofTableItem.AMMO)){
+        }else if(typeOfItem.equals(TypeofTableItem.AMMO) && table[number].getLevel()>0){
             generatedStrings.setName("Ammunition, +" + table[number].getLevel());
             generatedStrings.setMagicItemtable(tableLetter);
             generatedStrings.setItemType(typeOfItem);
@@ -95,13 +95,27 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
             return magItemTableObject;
         }else if(name.equals("Elemental gem")){
             generatedStrings.setName(elementalGemCreate());
+            generatedStrings.setMagicItemtable(tableLetter);
+            generatedStrings.setItemType(typeOfItem);
+            magItemTableObject = new MagicItemTableObject(generatedStrings);
+            return magItemTableObject;
         }
         else return table[number];
     }
 
     //TODO create for this specific object
     private String elementalGemCreate() {
-    return "";
+        int i = d.roll(4);
+        switch (i){
+            case(1):
+               return "Blue sapphire elemental gem";
+            case (2):
+                return "Yellow diamond elemental gem";
+            case (3):
+                return "Red corundum elemental gem";
+            default:
+                return "Emerald elemental gem";
+        }
     }
 
     protected String creatTableName(String letter){

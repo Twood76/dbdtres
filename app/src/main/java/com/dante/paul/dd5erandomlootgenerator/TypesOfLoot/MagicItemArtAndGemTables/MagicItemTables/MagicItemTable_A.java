@@ -1,24 +1,29 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeofTableItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
-import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpell;
-import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+import java.util.LinkedList;
 
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_A extends AbstractMagicItemTable implements MagicItemTable {
-    public MagicItemTable_A(int additionalRows) {
+    public MagicItemTable_A() {
         tableLetter = "A";
         tableName = creatTableName(tableLetter);
-        table = new MagicItemTableObject[100 + additionalRows];
-        fillTable();
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+            fillTable();
     }
 
-    @Override
-    public void fillTable(){
+
+
+    public void oldFillTable(){
         int counter = 0;
         generatedStrings = new GenerateItemStrings();
         generatedStrings.setName("Potion of healing");
@@ -81,6 +86,21 @@ public class MagicItemTable_A extends AbstractMagicItemTable implements MagicIte
             table[i].generatedStrings = generatedStrings;
         }
     }
+
+    @Override
+    public void getDefaultTable() {
+        addItem("Potion of healing", 50, TypeofTableItem.POTION, true);
+        addScroll(10, true, 0);
+        addItem("Potion of climbing",10,TypeofTableItem.POTION,true);
+        addScroll(20, true, 1);
+        addScroll(4, true, 2);
+        addItem("Potion of greater healing",4,TypeofTableItem.POTION,true);
+        addItem("Bag of holding",1,TypeofTableItem.OTHER,true);
+        addItem("Driftglobe",1,TypeofTableItem.OTHER,true);
+    }
+
+
+
 
     /*public MagicItemTableObject getItem(int number) {
 
