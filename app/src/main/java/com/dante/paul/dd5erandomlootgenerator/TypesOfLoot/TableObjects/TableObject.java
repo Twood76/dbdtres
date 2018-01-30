@@ -1,6 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects;
 
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeofTableItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
 
 /**
@@ -26,7 +27,7 @@ public abstract class TableObject {
         generatedStrings.setName(name);
     }
 
-    public String getLevel(){
+    public int getLevel(){
         return generatedStrings.getLevel();
     }
 
@@ -36,5 +37,11 @@ public abstract class TableObject {
 
     public String getItemTable(){
         return generatedStrings.getMagicItemtable();
+    }
+    public TypeofTableItem getTypeofTableItem(){
+        return generatedStrings.getItemType();
+    }
+    public boolean getResistance(){
+        return generatedStrings.hasResistance();
     }
 }

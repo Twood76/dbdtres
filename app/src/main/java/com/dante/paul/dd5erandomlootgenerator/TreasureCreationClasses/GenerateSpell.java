@@ -148,7 +148,7 @@ public class GenerateSpell {
             return generateSpellStrings;
     }
         scroll = spells.getSpell(level);
-        generateSpellStrings.level = "spell scroll (level " + level + ")";
+        generateSpellStrings.level = level;
         generateSpellStrings.name = scroll;
         generateSpellStrings.spellCLass = spellClass;
 

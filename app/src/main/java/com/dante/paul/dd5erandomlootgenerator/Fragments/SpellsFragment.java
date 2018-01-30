@@ -83,7 +83,7 @@ public class SpellsFragment extends Fragment{
         }
         String lootSummary ="Generated Spell";
         GenerateSpellStrings generatedSpellStrings = generateSpell.generateSpell();
-        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevel() + "\r\n  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable() + "\r\n";
+        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevelNameString() + "\r\n  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable() + "\r\n";
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 
