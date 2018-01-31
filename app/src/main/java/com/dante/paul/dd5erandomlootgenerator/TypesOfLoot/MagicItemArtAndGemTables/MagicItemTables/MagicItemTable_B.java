@@ -127,6 +127,8 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         addItem("Wand of secrets", 1, TypeofTableItem.WAND, true);
 
     }
+
+
     public MagicItemTableObject getItem(int number) {
         if (number < 16) {
             generatedStrings = new GenerateItemStrings();

@@ -1,17 +1,104 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeofTableItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+import java.util.LinkedList;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_H extends AbstractMagicItemTable implements MagicItemTable {
-    DamageType damageType = new DamageType();
+
+    public MagicItemTable_H() {
+        tableLetter = "H";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable();
+    }
+
+    @Override
+    public void getDefaultTable() {
+        addItem("Weapon (any), +3", 10, TypeofTableItem.WEAPON, true);
+        addItem("Amulet of the planes", 2, TypeofTableItem.JEWELRY, true);
+        addItem("Carpet of flying", 2, TypeofTableItem.OTHER, true);
+        addItem("Crystal ball (very rare version)", 2, TypeofTableItem.OTHER, true);
+        addItem("Ring of regeneration", 2, TypeofTableItem.RING, true);
+        addItem("Ring of shooting stars", 2, TypeofTableItem.RING, true);
+        addItem("Ring of telekinesis", 2, TypeofTableItem.RING, true);
+        addItem("Robe of scintillating colors", 2, TypeofTableItem.ROBE, true);
+        addItem("Robe of stars", 2, TypeofTableItem.ROBE, true);
+        addItem("Rod of absorption", 2, TypeofTableItem.ROD, true);
+        addItem("Rod of alertness", 2, TypeofTableItem.ROD, true);
+        addItem("Rod of security", 2, TypeofTableItem.ROD, true);
+        addItem("Rod of the pact keeper, +3", 2, TypeofTableItem.ROD, true);
+        addItem("Scimitar of speed", 2, TypeofTableItem.WEAPON, true);
+        addItem("Shield, +3", 2, TypeofTableItem.SHIELD, true);
+        addItem("Staff of fire", 2, TypeofTableItem.STAFF, true);
+        addItem("Staff of frost", 2, TypeofTableItem.STAFF, true);
+        addItem("Staff of power", 2, TypeofTableItem.STAFF, true);
+        addItem("Staff of striking", 2, TypeofTableItem.STAFF, true);
+        addItem("Staff of thunder and lightning", 2, TypeofTableItem.STAFF, true);
+        addItem("Sword of sharpness", 2, TypeofTableItem.WEAPON, true);
+        addItem("Wand of polymorph", 2, TypeofTableItem.WAND, true);
+        addItem("Wand of the war mage, +3", 2, TypeofTableItem.WAND, true);
+        addItem("Adamantine armor (half plate)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Adamantine armor (plate)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Animated shield", 1, TypeofTableItem.SHIELD, true);
+        addItem("Belt of fire giant strength", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Belt of frost (or stone) giant strength", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Armor, +1 breastplate", 1, TypeofTableItem.ARMOR, true);
+        addItem("Breastplate", 1, TypeofTableItem.ARMOR, true, true);
+        addItem("Candle of invocation", 1, TypeofTableItem.OTHER, true);
+        addItem("Armor, +2 chain mail", 1, TypeofTableItem.ARMOR, true);
+        addItem("Armor, +2 chain shirt", 1, TypeofTableItem.ARMOR, true);
+        addItem("Cloak of arachnida", 1, TypeofTableItem.CLOAK, true);
+        addItem("Dancing sword", 1, TypeofTableItem.WEAPON, true);
+        addItem("Demon armor", 1, TypeofTableItem.ARMOR, true);
+        addItem("Dragon scale mail", 1, TypeofTableItem.ARMOR, true);
+        addItem("Dwarven plate", 1, TypeofTableItem.ARMOR, true);
+        addItem("Dwarven thrower (war hammer)", 1, TypeofTableItem.WEAPON, true);
+        addItem("Efreeti bottle", 1, TypeofTableItem.OTHER, true);
+        addItem("Figurine of wondrous power (obsidian steed)", 1, TypeofTableItem.OTHER, true);
+        addItem("Frost brand", 1, TypeofTableItem.WEAPON, true);
+        addItem("Helm of brilliance", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Horn of Valhalla (bronze)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Anstruth harp)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Ioun stone (absorption)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (agility)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (fortitude)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (insight)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (intellect)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (leadership)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (strength)", 1, TypeofTableItem.OTHER, true);
+        addItem("Armor, +2 leather", 1, TypeofTableItem.ARMOR, true);
+        addItem("Manual of bodily health", 1, TypeofTableItem.OTHER, true);
+        addItem("Manual of gainful exercise", 1, TypeofTableItem.OTHER, true);
+        addItem("Manual of golems", 1, TypeofTableItem.OTHER, true);
+        addItem("Manual of quickness of action", 1, TypeofTableItem.OTHER, true);
+        addItem("Mirror of life trapping", 1, TypeofTableItem.OTHER, true);
+        addItem("Nine lives stealer (sword)", 1, TypeofTableItem.WEAPON, true);
+        addItem("Oathbow (longbow)", 1, TypeofTableItem.WEAPON, true);
+        addItem("Armor, +2 (scale mail)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Spellguard shield", 1, TypeofTableItem.SHIELD, true);
+        addItem("Armor, +1 (splint)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Splint Armor", 1, TypeofTableItem.ARMOR, true, true);
+        addItem("Armor, +1 (studded leather)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Studded leather", 1, TypeofTableItem.ARMOR, true, true);
+        addItem("Tome of clear thought", 1, TypeofTableItem.OTHER, true);
+        addItem("Tome of leadership and influence", 1, TypeofTableItem.OTHER, true);
+        addItem("Tome of understanding", 1, TypeofTableItem.OTHER, true);
+
+    }
+        DamageType damageType = new DamageType();
 
 
-    public MagicItemTableObject getItem(int number) {
+    /*public MagicItemTableObject getItem(int number) {
         generatedStrings = new GenerateItemStrings();
         if (number < 11) {
             generatedStrings.setName("Weapon (any), +3");
@@ -165,5 +252,5 @@ public class MagicItemTable_H extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table H)");
         magicItemTableObject.generatedStrings = generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }

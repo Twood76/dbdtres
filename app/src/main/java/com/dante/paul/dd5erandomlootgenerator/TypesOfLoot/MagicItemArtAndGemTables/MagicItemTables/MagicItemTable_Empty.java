@@ -14,5 +14,10 @@ public class MagicItemTable_Empty extends AbstractMagicItemTable implements Magi
     public MagicItemTableObject getItem(int number) {
         return null;
     }
+
+    @Override
+    public void getDefaultTable() {
+
+    }
 }
 

@@ -1,5 +1,7 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+import android.support.annotation.NonNull;
+
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeofTableItem;
@@ -41,7 +43,6 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
             generatedStrings.setName(getRow(item, table));
         return magicItemTableObject;
     }
-
     protected MagicItemTableObject getSpell(MagicItemTableObject magicItemTableObject){
         spells = new GenerateSpell(magicItemTableObject.getLevel());
         generatedStrings = new GenerateSpellStrings();
@@ -50,7 +51,6 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
         magItemTableObject = new MagicItemTableObject(generatedStrings);
         return magItemTableObject;
     }
-
     protected MagicItemTableObject getDamageResistence(MagicItemTableObject magicItemTableObject){
         generatedStrings = new GenerateItemStrings();
         generatedStrings.setMagicItemtable(tableName);
@@ -99,11 +99,70 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
             generatedStrings.setItemType(typeOfItem);
             magItemTableObject = new MagicItemTableObject(generatedStrings);
             return magItemTableObject;
+        }else if(name.equals("Figurine of wonderous power")){
+            generatedStrings.setName("Figurine of wonderous power (" + generateFigurine() + ")");
+            generatedStrings.setMagicItemtable(tableLetter);
+            generatedStrings.setItemType(typeOfItem);
+            magItemTableObject = new MagicItemTableObject(generatedStrings);
+            return magItemTableObject;
+        }else if(name.equals("Magic armor")){
+            generatedStrings.setName(magicArmor());
+            generatedStrings.setMagicItemtable(tableLetter);
+            generatedStrings.setItemType(typeOfItem);
+            magItemTableObject = new MagicItemTableObject(generatedStrings);
+            return magItemTableObject;
         }
         else return table[number];
     }
-
-    //TODO create for this specific object
+    @NonNull
+    private String magicArmor(){
+        int i = d.roll(12);
+        switch (i){
+            case 3:
+                return "Plate armor +2";
+            case 4:
+                return "Plate armor +2";
+            case 5:
+                return "Studded leather +3";
+            case 6:
+                return "Studded leather +3";
+            case 7:
+                return "Breastplate +3";
+            case 8:
+                return "Breastplate +3";
+            case 9:
+                return "Splint +3";
+            case 10:
+                return "Splint +3";
+            case 11:
+                return "Half plate +3";
+            case 12:
+                return "Plate +3";
+            default:
+                return "Half plate +2";
+        }
+    }
+    @NonNull
+    private String generateFigurine(){
+        int i  = d.roll(8);
+        switch(i){
+            case 1:
+                return "Bronze griffon";
+            case 2:
+                return "Ebony fly";
+            case 3:
+                return "Golden lions";
+            case 4:
+                return "Ivory goats";
+            case 5:
+                return "Marble elephant";
+            case 8:
+                return "Serpentine owl";
+            default:
+                return "Onyx dog";
+        }
+    };
+    @NonNull
     private String elementalGemCreate() {
         int i = d.roll(4);
         switch (i){
@@ -117,11 +176,9 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
                 return "Emerald elemental gem";
         }
     }
-
     protected String creatTableName(String letter){
         return"(Table "+ letter +")";
     }
-
     protected void addItem(String name, int numberOfThisItem, TypeofTableItem potion, boolean base) {
         TableItem item = new TableItem(name,numberOfThisItem*10, potion,base);
         tableItems.add(item);

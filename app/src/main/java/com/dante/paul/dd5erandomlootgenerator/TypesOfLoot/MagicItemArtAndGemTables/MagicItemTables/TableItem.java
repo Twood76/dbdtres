@@ -18,7 +18,7 @@ public class TableItem implements TableItemInterface {
 
     public TableItem(String name, int baseValue, TypeofTableItem typeOfItem, boolean base) {
         this.name = name;
-        this.baseValue = baseValue * 10;
+        this.baseValue = baseValue;
         this.currentValue = baseValue;
         this.typeOfItem = typeOfItem;
         this.base = base;

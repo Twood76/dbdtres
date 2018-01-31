@@ -49,18 +49,44 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         addItem("Wand of war mage, +1", 2, TypeofTableItem.WAND, true);
         addItem("Wand of web", 2, TypeofTableItem.WAND, true);
         addItem("Weapon of warning", 2, TypeofTableItem.WEAPON, true);
+        addItem("Adamantine armor (chain mail)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Adamantine armor (chain shirt)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Adamantine armor (scale mail)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Bag of tricks (gray)", 1, TypeofTableItem.OTHER, true);
+        addItem("Bag of tricks (rust)", 1, TypeofTableItem.OTHER, true);
+        addItem("Bag of tricks (tan)", 1, TypeofTableItem.OTHER, true);
+        addItem("Boots of winterlands", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Circlet of blasting", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Deck of illusions", 1, TypeofTableItem.OTHER, true);
+        addItem("Eversmoking bottle", 1, TypeofTableItem.OTHER, true);
+        addItem("Eyes of charming", 1, TypeofTableItem.OTHER, true);
+        addItem("Eyes of the eagle", 1, TypeofTableItem.OTHER, true);
+        addItem("Figurine of wonderous power (silver raven)", 1, TypeofTableItem.OTHER, true);
+        addItem("Gem of brightness", 1, TypeofTableItem.GEM, true);
+        addItem("Gloves of missile snaring", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Gloves of swimming and climbing", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Gloves of thievery", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Headband of intellect", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Helm of telepathy", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Instrument of the bards (Doss lute)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Fochlucan bandore)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Mac-Fuimidh cittern)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Medallion of thoughts", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Necklace of adaption", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Periapt of wound closure", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Pipes of haunting", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Pipes of sewers", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Ring of jumping", 1, TypeofTableItem.RING, true);
+        addItem("Ring of mind shielding", 1, TypeofTableItem.RING, true);
+        addItem("Ring of warmth", 1, TypeofTableItem.RING, true);
+        addItem("Ring of water walking", 1, TypeofTableItem.RING, true);
+        addItem("Quiver of Ehlonna", 1, TypeofTableItem.AMMO, true);
+        addItem("Stone of good luck", 1, TypeofTableItem.OTHER, true);
+        addItem("Wind fan", 1, TypeofTableItem.OTHER, true);
+        addItem("Winged boots", 1, TypeofTableItem.OTHERCLOTHING, true);
 
-
-
-        addScroll(30, true, 8);
-        addItem("Potion of storm giant strength", 25, TypeofTableItem.POTION, true);
-        addItem("Potion of supreme healing", 15, TypeofTableItem.POTION, true);
-        addScroll(15, true, 9);
-        addItem("Universal solvent", 8, TypeofTableItem.OTHER, true);
-        addItem("Arrow of slaying", 5, TypeofTableItem.AMMO, true);
-        addItem("Sovereign glue", 2, TypeofTableItem.OTHER, true);
     }
-    public MagicItemTableObject getItem(int number) {
+    /*public MagicItemTableObject getItem(int number) {
         generatedStrings = new GenerateItemStrings();
         if (number < 16) {
              generatedStrings.setName("Weapon (any), +1");
@@ -187,5 +213,5 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table F)");
         magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }
