@@ -1,15 +1,27 @@
 package com.dante.paul.dd5erandomlootgenerator;
 
+import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 
 public class LootGenerator extends AppCompatActivity {
 
@@ -51,14 +63,38 @@ public class LootGenerator extends AppCompatActivity {
 
             }
         });
+        Dice d = new Dice();
+        if(d.roll(3)==1) {
+            AlertDialog popup = callPremiumReminder();
+            popup.show();
+        }
     }
+    private AlertDialog callPremiumReminder() {
+        final TextView message = new TextView(this);
+        final SpannableString s =
+                new SpannableString(this.getText(R.string.dialog_message));
+        Linkify.addLinks(s, Linkify.WEB_URLS);
+        message.setText(s);
+        message.setTextColor(Color.WHITE);
+        message.setLinkTextColor(Color.BLUE);
+        message.setMovementMethod(LinkMovementMethod.getInstance());
 
+        return new AlertDialog.Builder(this, AlertDialog.THEME_TRADITIONAL)
+                .setTitle(R.string.dialog_title)
+                .setCancelable(true)
+                .setIcon(R.mipmap.ic_launcher)
+                .setPositiveButton(R.string.dialog_action_dismiss, null)
+                .setView(message)
+                .create();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_loot_generator, menu);
         return true;
     }
-    public boolean about(MenuItem item){
+
+
+public boolean about(MenuItem item){
         //handle click "about" in menu
         String aboutSummary, about;
         aboutSummary = "D&D 5e Loot Generator v1.9";
