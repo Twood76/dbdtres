@@ -1,6 +1,8 @@
 package com.dante.paul.dd5erandomlootgenerator.Fragments;
 
+
 import android.app.DialogFragment;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.LootList;
@@ -82,7 +83,6 @@ public class TreasureFragment extends Fragment{
                 lootSummary = "Challenge Level " + challengeRatingString + "\nHoard Treasure ";
                 lootSummary += " x" + iterations;
         }
-
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 
@@ -92,6 +92,7 @@ public class TreasureFragment extends Fragment{
         how.show(getActivity().getFragmentManager(), "tag");
 
     }
+
     private ChallengeRating getChallengeRating(String challengeRatingString) {
         ChallengeRating challengeRating;
         switch (challengeRatingString) {
