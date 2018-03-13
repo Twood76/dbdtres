@@ -107,13 +107,13 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
         } else if (number == 50) {
              generatedStrings.setName("Instrument of the bards (Cii lyre)");
         } else if (number == 51) {
-             generatedStrings.setName("loun stone (awareness)");
+             generatedStrings.setName("Ioun stone (awareness)");
         } else if (number == 52) {
-             generatedStrings.setName("loun stone (protection)");
+             generatedStrings.setName("Ioun stone (protection)");
         } else if (number == 53) {
-             generatedStrings.setName("loun stone (reserve)");
+             generatedStrings.setName("Ioun stone (reserve)");
         } else if (number == 54) {
-             generatedStrings.setName("loun stone (sustenance)");
+             generatedStrings.setName("Ioun stone (sustenance)");
         } else if (number == 55) {
              generatedStrings.setName("Iron bands of Bilarro");
         } else if (number == 56) {

@@ -104,11 +104,11 @@ public class MagicItemTable_I extends AbstractMagicItemTable implements MagicIte
         } else if (number == 85) {
              generatedStrings.setName("Instrument of the bards (Ollamh harp)");
         } else if (number == 86) {
-             generatedStrings.setName("loun stone (greater absorption)");
+             generatedStrings.setName("Ioun stone (greater absorption)");
         } else if (number == 87) {
-             generatedStrings.setName("loun stone (mastery)");
+             generatedStrings.setName("Ioun stone (mastery)");
         } else if (number == 88) {
-             generatedStrings.setName("loun stone (regeneration)");
+             generatedStrings.setName("Ioun stone (regeneration)");
         } else if (number == 89) {
              generatedStrings.setName("Plate armor of etherealness");
         } else if (number == 90) {

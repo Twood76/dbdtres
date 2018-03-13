@@ -104,19 +104,19 @@ public class MagicItemTable_H extends AbstractMagicItemTable implements MagicIte
         } else if (number == 76) {
             generatedStrings.setName("Instrument of the bards (Anstruth harp)");
         } else if (number == 77) {
-            generatedStrings.setName("loun stone (absorption)");
+            generatedStrings.setName("Ioun stone (absorption)");
         } else if (number == 78) {
-            generatedStrings.setName("loun stone (agility)");
+            generatedStrings.setName("Ioun stone (agility)");
         } else if (number == 79) {
-            generatedStrings.setName("loun stone (fortitude)");
+            generatedStrings.setName("Ioun stone (fortitude)");
         } else if (number == 80) {
-            generatedStrings.setName("loun stone (insight)");
+            generatedStrings.setName("Ioun stone (insight)");
         } else if (number == 81) {
-            generatedStrings.setName("loun stone (intellect)");
+            generatedStrings.setName("Ioun stone (intellect)");
         } else if (number == 82) {
-            generatedStrings.setName("loun stone (leadership)");
+            generatedStrings.setName("Ioun stone (leadership)");
         } else if (number == 83) {
-            generatedStrings.setName("loun stone (strength)");
+            generatedStrings.setName("Ioun stone (strength)");
         } else if (number == 84) {
             generatedStrings.setName("Armor, +2 leather");
         } else if (number == 85) {
