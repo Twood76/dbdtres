@@ -49,9 +49,6 @@ public class ItemsFragment extends Fragment {
             }
         });
 
-/*        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);*/
 
         return view;
     }

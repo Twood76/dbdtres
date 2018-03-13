@@ -1,6 +1,7 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium;
 
 import android.app.DialogFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.File;
 
 public class LootGenerator extends AppCompatActivity {
 
@@ -17,7 +20,7 @@ public class LootGenerator extends AppCompatActivity {
         setContentView(R.layout.activity_loot_generator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        setupSharedPreferences();
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -49,6 +52,18 @@ public class LootGenerator extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setupSharedPreferences() {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("LootGenPref",MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if(!sharedPreferences.contains("loaded"))
+            editor.putBoolean("loaded",false);
+        if(!sharedPreferences.contains("premium"))
+            editor.putBoolean("premium", false);
+
+        editor.commit();
     }
 
     @Override
