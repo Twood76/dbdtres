@@ -2,13 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.dante.paul.lootgeneratorfordnd5e"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 10
-        versionName "1.10"
+        versionCode 2
+        versionName "1.2"
     }
     buildTypes {
         release {
