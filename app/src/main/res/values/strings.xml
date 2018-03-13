@@ -54,6 +54,8 @@
     <string name="item_banner_ad">ca-app-pub-9108289994838354/2732995820</string>
     <string name="test_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
     <string name="txtCredits"><a href=" PayPal.Me/PDante">here</a></string>
+    <string name="premium_soon">An ad-free version will be available soon. Sorry for the
+        delay.</string>
     <string name="dialog_message">For an ad-free version of this app go to https://play.google.com/store/apps/details?id=com.dante.paul.lootgeneratorfordnd5epremium</string>
     <string name="premium_url"><a
         href="https://play.google.com/store/apps/details?id=com.dante.paul.lootgeneratorfordnd5epremium">Google Store</a></string>

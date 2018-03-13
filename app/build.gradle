@@ -6,8 +6,8 @@ android {
         applicationId "com.dante.paul.lootgeneratorfordnd5e"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 11
-        versionName "1.11"
+        versionCode 13
+        versionName "1.13"
     }
     buildTypes {
         release {
