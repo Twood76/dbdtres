@@ -1,6 +1,8 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses;
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.ClassOfItem;
+
+import java.util.HashSet;
 
 /**
  * Created by PaulD on 2015-12-04.
@@ -9,15 +11,24 @@ public abstract class AbstractGeneratedStrings {
     protected String level = "";
     protected String magicItemtable = "";
     protected String name = "";
-    protected TypeOfItem typeOfItem;
+    protected ClassOfItem classOfItem;
     protected String spellCLass = "";
+    protected HashSet<ClassOfItem> filters = new HashSet<>();
 
-    public TypeOfItem getTypeOfItem() {
-        return typeOfItem;
+    public boolean getFilters(ClassOfItem filter) {
+        return filters.contains(filter);
     }
 
-    public void setTypeOfItem(TypeOfItem typeOfItem) {
-        this.typeOfItem = typeOfItem;
+    public void setFilter(ClassOfItem filter) {
+        this.filters.add(filter);
+    }
+
+    public ClassOfItem getClassOfItem() {
+        return classOfItem;
+    }
+
+    public void setClassOfItem(ClassOfItem classOfItem) {
+        this.classOfItem = classOfItem;
     }
 
     public String getLevel() {
