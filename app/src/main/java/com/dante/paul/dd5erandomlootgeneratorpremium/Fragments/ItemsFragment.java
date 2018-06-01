@@ -16,6 +16,7 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.R;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItem;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.GenerateLootMessage;
 
+
 /**
  * Created by PaulD on 2015-12-10.
  */
@@ -48,10 +49,6 @@ public class ItemsFragment extends Fragment {
                 generateItem();
             }
         });
-
-/*        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);*/
 
         return view;
     }

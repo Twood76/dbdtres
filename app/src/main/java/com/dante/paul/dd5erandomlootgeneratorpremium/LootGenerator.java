@@ -1,6 +1,7 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium;
 
 import android.app.DialogFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -10,16 +11,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class LootGenerator extends AppCompatActivity {
-
+    public static boolean adVersion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //TODO set adVersion based on in-app billing status and delete the below line
+        adVersion = true;
         setContentView(R.layout.activity_loot_generator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
+        //TODO need to test shared preferences
+        setupSharedPreferences();
+        //TODO need to setup internal storage to save treasure
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Treasure"));
         tabLayout.addTab(tabLayout.newTab().setText("Items"));
@@ -28,7 +33,7 @@ public class LootGenerator extends AppCompatActivity {
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
+                (getSupportFragmentManager(), tabLayout.getTabCount(),adVersion);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -51,10 +56,30 @@ public class LootGenerator extends AppCompatActivity {
         });
     }
 
+    private void setupInternalStorage() {
+        //TODO grab existing treasure sets, if they exist
+        //TODO setup viewing and deleting old treasure sets (front and backend)
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_loot_generator, menu);
         return true;
+    }
+    private void setupSharedPreferences() {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("LootGenPref",MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        if(!sharedPreferences.contains("loaded"))
+            editor.putBoolean("loaded",false);
+        if(!sharedPreferences.contains("premium"))
+            editor.putBoolean("premium", false);
+        if(!sharedPreferences.contains("newestTreasure"))
+            editor.putInt("newestTreasure",1);
+        //TODO check with google for premium status
+        //TODO stop table loading if loaded, so also need to save tables... maybe. Need to see if
+        // this makes sense to do
+        editor.commit();
     }
     public boolean about(MenuItem item){
         //handle click "about" in menu
@@ -82,4 +107,8 @@ public class LootGenerator extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public boolean testLocal(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("LootGenPref",MODE_PRIVATE);
+        return sharedPreferences.contains("loaded");
+    }
 }

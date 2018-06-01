@@ -18,6 +18,7 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.R;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.Treasure;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.GenerateLootMessage;
 
+
 /**
  * Created by PaulD on 2015-12-10.
  */
@@ -25,6 +26,7 @@ public class TreasureFragment extends Fragment{
     Spinner challengeSpinner, iterationSpinner;
     RadioGroup typeOfEncounter;
     View view;
+    boolean adVersion;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.treasure, container, false);
@@ -52,9 +54,6 @@ public class TreasureFragment extends Fragment{
             }
         });
 
-/*        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);*/
     return view;
     }
 

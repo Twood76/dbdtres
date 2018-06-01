@@ -8,6 +8,6 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.ClassOfIt
 public class GenerateArtOrGemString extends AbstractGeneratedStrings {
 
     public GenerateArtOrGemString() {
-        typeOfItem = ClassOfItem.ARTORGEM;
+        classOfItem = ClassOfItem.ARTORGEM;
     }
 }

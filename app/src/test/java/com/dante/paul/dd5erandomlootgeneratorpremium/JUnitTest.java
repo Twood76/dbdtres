@@ -4,6 +4,7 @@ package com.dante.paul.dd5erandomlootgeneratorpremium;
  * Created by PaulD on 2015-12-01.
  */
 
+
 import com.dante.paul.dd5erandomlootgeneratorpremium.Dice.Dice;
 import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfEncounter;
@@ -13,11 +14,17 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAnd
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.HoardCoins;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.IndividualCoins;
 
+import android.content.SharedPreferences;
+import android.test.mock.MockContext;
+
+
+
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Set;
 
+import static android.content.Context.MODE_PRIVATE;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -116,5 +123,12 @@ public class JUnitTest {
         treasure.generateTreasure();
 
         System.out.println("End of huge Hoard Treasure");
+    }
+    @Test
+    public void testLocalStorage() throws Exception{
+        System.out.println("Local Storage");
+        LootGenerator lootGenerator = new LootGenerator();
+
+        assertTrue(lootGenerator.testLocal());
     }
 }

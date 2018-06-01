@@ -1,16 +1,49 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+
+import java.util.LinkedList;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_D extends AbstractMagicItemTable implements MagicItemTable {
 
-    public MagicItemTableObject getItem(int number) {
+    public MagicItemTable_D() {
+        tableLetter = "D";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable();
+    }
+
+    @Override
+    public void getDefaultTable() {
+        addItem("Potion of supreme healing", 20, TypeofTableItem.POTION, true);
+        addItem("Potion of invisibility", 10, TypeofTableItem.POTION, true);
+        addItem("Potion of speed", 10, TypeofTableItem.POTION, true);
+        addScroll(10, true, 6);
+        addScroll(7, true, 7);
+        addItem("Ammunition", 5, TypeofTableItem.AMMO, true, 3);
+        addItem("Oil of sharpness", 5, TypeofTableItem.OTHER, true);
+        addItem("Potion of flying", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of cloud giant strength", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of longevity", 5, TypeofTableItem.POTION, true);
+        addItem("Potion of vitality", 5, TypeofTableItem.POTION, true);
+        addScroll(5, true, 8);
+        addItem("Horseshoes of a zephyr", 3, TypeofTableItem.OTHER, true);
+        addItem("Nolzur's marvelous pigments", 3, TypeofTableItem.OTHER, true);
+        addItem("Bag of devouring", 1, TypeofTableItem.OTHER, true);
+        addItem("Portable hole", 1, TypeofTableItem.OTHER, true);
+    }
+    /*public MagicItemTableObject getItem(int number) {
 
         if (number < 21) {
             generatedStrings = new GenerateItemStrings();
@@ -67,5 +100,5 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table D)");
         magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }

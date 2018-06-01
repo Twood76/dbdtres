@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+
 import com.dante.paul.dd5erandomlootgeneratorpremium.R;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
@@ -23,6 +24,7 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.SpellTables.Ran
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.SpellTables.SorcererSpells;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.SpellTables.WarlockSpells;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.SpellTables.WizardSpells;
+
 
 
 public class SpellsFragment extends Fragment{
@@ -52,9 +54,6 @@ public class SpellsFragment extends Fragment{
             }
         });
 
-/*        AdView mAdView = (AdView) view.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);*/
         return view;
     }
     public void generateSpell() {
@@ -79,7 +78,7 @@ public class SpellsFragment extends Fragment{
         }
         String lootSummary ="Generated Spell";
         GenerateSpellStrings generatedSpellStrings = generateSpell.generateSpell();
-        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevel() + "\r\n  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable() + "\r\n";
+        String loot = generatedSpellStrings.getSpellCLass() + " " + generatedSpellStrings.getLevelNameString() + "\r\n  " + generatedSpellStrings.getName() + "\r\n" + generatedSpellStrings.getMagicItemtable() + "\r\n";
         DialogFragment how = new GenerateLootMessage();
         Bundle args = new Bundle();
 

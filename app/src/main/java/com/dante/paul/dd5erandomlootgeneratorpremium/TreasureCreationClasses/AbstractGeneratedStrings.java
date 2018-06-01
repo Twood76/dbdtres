@@ -1,6 +1,7 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses;
 
 import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.ClassOfItem;
+import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem;
 
 import java.util.HashSet;
 
@@ -8,20 +9,15 @@ import java.util.HashSet;
  * Created by PaulD on 2015-12-04.
  */
 public abstract class AbstractGeneratedStrings {
-    protected String level = "";
+    protected int level = -1;
     protected String magicItemtable = "";
     protected String name = "";
     protected ClassOfItem classOfItem;
     protected String spellCLass = "";
-    protected HashSet<ClassOfItem> filters = new HashSet<>();
 
-    public boolean getFilters(ClassOfItem filter) {
-        return filters.contains(filter);
-    }
+    protected ItemFilters filters = new ItemFilters();
+    protected boolean resistance;
 
-    public void setFilter(ClassOfItem filter) {
-        this.filters.add(filter);
-    }
 
     public ClassOfItem getClassOfItem() {
         return classOfItem;
@@ -31,11 +27,15 @@ public abstract class AbstractGeneratedStrings {
         this.classOfItem = classOfItem;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public String getLevelNameString(){
+        return "spell scroll (level " + level + ")";
+    }
+
+    public void setLevel(int level) {
         this.level = level;
     }
 
@@ -62,4 +62,16 @@ public abstract class AbstractGeneratedStrings {
     public void setSpellCLass(String spellCLass) {
         this.spellCLass = spellCLass;
     }
+
+    public boolean hasResistance() {
+        return resistance;
+    }
+
+    public void setHasResistance(boolean resistance) {
+        this.resistance = resistance;
+    }
+
+    public ItemFilters getFilters(){return filters;}
+
+    public void setFilters(ItemFilters filters){this.filters = filters;    }
 }

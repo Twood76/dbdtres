@@ -15,7 +15,7 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.Fragments.TreasureFragment;
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+    public PagerAdapter(FragmentManager fm, int NumOfTabs, boolean adVersion) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }

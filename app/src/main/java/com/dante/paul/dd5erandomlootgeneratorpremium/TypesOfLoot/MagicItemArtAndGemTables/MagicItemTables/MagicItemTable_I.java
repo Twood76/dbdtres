@@ -1,17 +1,89 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+
+import java.util.LinkedList;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_I extends AbstractMagicItemTable implements MagicItemTable {
+    public MagicItemTable_I() {
+        tableLetter = "I";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable();
+    }
+
+    @Override
+    public void getDefaultTable() {
+        addItem("Defender", 5, TypeofTableItem.WEAPON, true);
+        addItem("Hammer of thunderbolts", 5, TypeofTableItem.WEAPON, true);
+        addItem("Luck blade", 5, TypeofTableItem.WEAPON, true);
+        addItem("Sword of answering", 5, TypeofTableItem.WEAPON, true);
+        addItem("Holy avenger", 3, TypeofTableItem.WEAPON, true);
+        addItem("Ring of djinni summoning", 3, TypeofTableItem.RING, true);
+        addItem("Ring of invisibility", 3, TypeofTableItem.RING, true);
+        addItem("Ring of spell turning", 3, TypeofTableItem.RING, true);
+        addItem("Rod of lordly might", 3, TypeofTableItem.ROD, true);
+        addItem("Staff of the magi", 3, TypeofTableItem.STAFF, true);
+        addItem("Vorpal sword", 3, TypeofTableItem.WEAPON, true);
+        addItem("Belt of cloud giant strength", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Breastplate +2 ", 2, TypeofTableItem.ARMOR, true);
+        addItem("Chain mail +3", 2, TypeofTableItem.ARMOR, true);
+        addItem("Chain shirt +3", 2, TypeofTableItem.ARMOR, true);
+        addItem("Cloak of invisibility", 2, TypeofTableItem.CLOAK, true);
+        addItem("Crystal ball (legendary version)", 2, TypeofTableItem.OTHER, true);
+        addItem("Half plate + 1", 2, TypeofTableItem.ARMOR, true);
+        addItem("Iron flask", 2, TypeofTableItem.OTHER, true);
+        addItem("Leather armor +3", 2, TypeofTableItem.ARMOR, true);
+        addItem("Plate armor +1", 2, TypeofTableItem.ARMOR, true);
+        addItem("Robe of archmagi", 2, TypeofTableItem.ROBE, true);
+        addItem("Rod of resurrection", 2, TypeofTableItem.ROD, true);
+        addItem("Scale mail +1", 2, TypeofTableItem.ARMOR, true);
+        addItem("Scarab of protection", 2, TypeofTableItem.OTHER, true);
+        addItem("Splint mail +2", 2, TypeofTableItem.ARMOR, true);
+        addItem("Studded leather +2", 2, TypeofTableItem.ARMOR, true);
+        addItem("Well of many worlds", 2, TypeofTableItem.OTHER, true);
+        addItem("Magic armor", 1, TypeofTableItem.ARMOR, true);
+        addItem("Apparatus of Kwalish", 1, TypeofTableItem.OTHER, true);
+        addItem("Armor of invulnerability", 1, TypeofTableItem.ARMOR, true);
+        addItem("Belt of storm giant strength", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Cubic gate", 1, TypeofTableItem.OTHER, true);
+        addItem("Deck of many things", 1, TypeofTableItem.OTHER, true);
+        addItem("Efreeti chain", 1, TypeofTableItem.ARMOR, true);
+        addItem("Half plate", 1, TypeofTableItem.ARMOR, true, true);
+        addItem("Horn of Valhalla (iron)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Ollamh harp))", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Ioun stone (greater absorption)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (mastery)", 1, TypeofTableItem.OTHER, true);
+        addItem("Ioun stone (regeneration)", 1, TypeofTableItem.OTHER, true);
+        addItem("Plate armor of etherealness", 1, TypeofTableItem.ARMOR, true);
+        addItem("Plate armor", 1, TypeofTableItem.ARMOR, true, true);
+        addItem("Ring of air elemental command", 1, TypeofTableItem.RING, true);
+        addItem("Ring of earth elemental command", 1, TypeofTableItem.RING, true);
+        addItem("Ring of fire elemental command", 1, TypeofTableItem.RING, true);
+        addItem("Ring of three wishes", 1, TypeofTableItem.RING, true);
+        addItem("Ring of water elemental command", 1, TypeofTableItem.RING, true);
+        addItem("Sphere of annihilation", 1, TypeofTableItem.OTHER, true);
+        addItem("Talisman of pure good", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Talisman of the sphere", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Talisman of ultimate evil", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Tome of the stilled tongue", 1, TypeofTableItem.OTHER, true);
+    }
+
+
 
     DamageType damageType = new DamageType();
 
-    public MagicItemTableObject getItem(int number) {
+    /*public MagicItemTableObject getItem(int number) {
         generatedStrings = new GenerateItemStrings();
         if (number < 6) {
              generatedStrings.setName("Defender");
@@ -137,6 +209,6 @@ public class MagicItemTable_I extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table I)");
         magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }
 

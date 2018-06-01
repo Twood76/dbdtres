@@ -1,14 +1,93 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+
+import java.util.LinkedList;
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_F extends AbstractMagicItemTable implements MagicItemTable {
+    public MagicItemTable_F() {
+        tableLetter = "F";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable();
+    }
 
-    public MagicItemTableObject getItem(int number) {
+    @Override
+    public void getDefaultTable() {
+        addItem("Weapon (any), +1", 15, TypeofTableItem.WEAPON, true);
+        addItem("Shield, +1", 3, TypeofTableItem.SHIELD, true);
+        addItem("Sentinel shield", 3, TypeofTableItem.SHIELD, true);
+        addItem("Amulet of proof against detection and location", 2, TypeofTableItem.JEWELRY,
+                true);
+        addItem("Boots of elvenkind", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Boots of striding and springing", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Bracers of archery", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Brooch of shielding", 2, TypeofTableItem.JEWELRY, true);
+        addItem("Broom of flying", 2, TypeofTableItem.OTHER, true);
+        addItem("Cloak of elvenkind", 2, TypeofTableItem.CLOAK, true);
+        addItem("Cloak of protection", 2, TypeofTableItem.CLOAK, true);
+        addItem("Bracers of archery", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Gauntlets of ogre power", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Hat of disguise", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Javelin of lightning", 2, TypeofTableItem.WEAPON, true);
+        addItem("Pearl of power", 2, TypeofTableItem.GEM, true);
+        addItem("Rod of the pact keeper, + 1", 2, TypeofTableItem.ROD, true);
+        addItem("Slippers of spider climbing", 2, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Staff of the adder", 2, TypeofTableItem.STAFF, true);
+        addItem("Staff of the python", 2, TypeofTableItem.STAFF, true);
+        addItem("Sword of vengeance", 2, TypeofTableItem.WEAPON, true);
+        addItem("Trident of fish command", 2, TypeofTableItem.WEAPON, true);
+        addItem("Wand of magic missile", 2, TypeofTableItem.WAND, true);
+        addItem("Wand of war mage, +1", 2, TypeofTableItem.WAND, true);
+        addItem("Wand of web", 2, TypeofTableItem.WAND, true);
+        addItem("Weapon of warning", 2, TypeofTableItem.WEAPON, true);
+        addItem("Adamantine armor (chain mail)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Adamantine armor (chain shirt)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Adamantine armor (scale mail)", 1, TypeofTableItem.ARMOR, true);
+        addItem("Bag of tricks (gray)", 1, TypeofTableItem.OTHER, true);
+        addItem("Bag of tricks (rust)", 1, TypeofTableItem.OTHER, true);
+        addItem("Bag of tricks (tan)", 1, TypeofTableItem.OTHER, true);
+        addItem("Boots of winterlands", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Circlet of blasting", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Deck of illusions", 1, TypeofTableItem.OTHER, true);
+        addItem("Eversmoking bottle", 1, TypeofTableItem.OTHER, true);
+        addItem("Eyes of charming", 1, TypeofTableItem.OTHER, true);
+        addItem("Eyes of the eagle", 1, TypeofTableItem.OTHER, true);
+        addItem("Figurine of wonderous power (silver raven)", 1, TypeofTableItem.OTHER, true);
+        addItem("Gem of brightness", 1, TypeofTableItem.GEM, true);
+        addItem("Gloves of missile snaring", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Gloves of swimming and climbing", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Gloves of thievery", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Headband of intellect", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Helm of telepathy", 1, TypeofTableItem.OTHERCLOTHING, true);
+        addItem("Instrument of the bards (Doss lute)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Fochlucan bandore)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Instrument of the bards (Mac-Fuimidh cittern)", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Medallion of thoughts", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Necklace of adaption", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Periapt of wound closure", 1, TypeofTableItem.JEWELRY, true);
+        addItem("Pipes of haunting", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Pipes of sewers", 1, TypeofTableItem.INSTRUMENT, true);
+        addItem("Ring of jumping", 1, TypeofTableItem.RING, true);
+        addItem("Ring of mind shielding", 1, TypeofTableItem.RING, true);
+        addItem("Ring of warmth", 1, TypeofTableItem.RING, true);
+        addItem("Ring of water walking", 1, TypeofTableItem.RING, true);
+        addItem("Quiver of Ehlonna", 1, TypeofTableItem.AMMO, true);
+        addItem("Stone of good luck", 1, TypeofTableItem.OTHER, true);
+        addItem("Wind fan", 1, TypeofTableItem.OTHER, true);
+        addItem("Winged boots", 1, TypeofTableItem.OTHERCLOTHING, true);
+
+    }
+    /*public MagicItemTableObject getItem(int number) {
         generatedStrings = new GenerateItemStrings();
         if (number < 16) {
              generatedStrings.setName("Weapon (any), +1");
@@ -135,5 +214,5 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         generatedStrings.setMagicItemtable("(Table F)");
         magicItemTableObject.generatedStrings=generatedStrings;
         return magicItemTableObject;
-    }
+    }*/
 }

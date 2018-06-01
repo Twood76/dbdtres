@@ -8,3 +8,7 @@
 /captures
 .idea/encodings.xml
 app/app-release.apk
+app/debug/output.json
+app/release/output.json
+app/release/app-release.apk
+app/debug/app-debug.apk

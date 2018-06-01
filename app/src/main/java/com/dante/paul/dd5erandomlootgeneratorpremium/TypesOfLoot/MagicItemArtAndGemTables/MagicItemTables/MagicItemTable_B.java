@@ -1,16 +1,255 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+
+import java.util.LinkedList;
+
+import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.*;
+
 
 /**
  * Created by PaulD on 2015-11-26.
  */
 public class MagicItemTable_B extends AbstractMagicItemTable implements MagicItemTable {
-    DamageType damageType = new DamageType();
+
+
+    public MagicItemTable_B() {
+        tableLetter = "B";
+        tableName = creatTableName(tableLetter);
+        tableItems = new LinkedList<>();
+        if(!loaded()) {
+            getDefaultTable();
+        }
+        fillTable(defaultOrModifiedTableFilters());
+    }
+
+    public void oldfillTable(){
+        int counter = 0;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<15; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 15;
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<22; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 22;
+        generatedStrings.setName("Damage Resistence");
+        generatedStrings.setMagicItemtable(tableName);
+        for(int i = counter ;i<29; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 29;
+        generatedStrings.setName("Create Spell");
+        generatedStrings.setMagicItemtable("1");
+        for(int i = counter ;i<90; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 90;
+        generatedStrings.setName("Create Spell");
+        generatedStrings.setMagicItemtable("2");
+        for(int i = counter ;i<94; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 94;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Potion of greater healing");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<98; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 98;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Bag of holding");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<99; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+        counter = 99;
+        generatedStrings = new GenerateItemStrings();
+        generatedStrings.setName("Driftglobe");
+        generatedStrings.setMagicItemtable("(Table A)");
+        for(int i = counter ;i<100; i++){
+            table[i]= new MagicItemTableObject();
+            table[i].generatedStrings = generatedStrings;
+        }
+    }
+
+    @Override
+    public void getDefaultTable() {
+        ItemFilters temp = new ItemFilters();
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of greater healing", 15, temp
+               );
+        addItem("Potion of fire breath", 7, temp
+               );
+        addItem("Potion", 7, true, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(PHB);
+        temp.setFilter(BASE);
+        temp.setFilter(AMMO);
+        temp.setFilter(WEAPON);
+        temp.setFilter(OTHER);
+        addItem("Ammunition", 5, 1, temp
+        );
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of animal friendship", 5, temp
+               );
+        addItem("Potion of hill giant strength", 5, temp
+               );
+        addItem("Potion of growth", 5, temp
+               );
+        addItem("Potion of water breathing", 5, temp
+               );
+        addScroll(5, 2);
+        addScroll(5, 3);
+
+        temp = setBaseFilters();
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(OTHER);
+        addItem("Bag of holding",3,temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(TypeOfItem.OIL);
+        addItem("Keoghtom's ointment",3,temp
+               );
+
+        temp = setBaseFilters();
+        addItem("Oil of slipperiness",3,temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(DUST);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(OTHER);
+        addItem("Dust of disappearance",2,temp
+               );
+        addItem("Dust of dryness",2,temp
+               );
+        addItem("Dust of sneezing and choking",2,temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(GEM);
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Elemental gem",2, false, temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        temp.setFilter(OTHER);
+        addItem("Philter of love",2, temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Alchemy jug",1,temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(CLOTHING);
+        temp.setFilter(HEADGEAR);
+        temp.setFilter(WONDEROUS);
+        addItem("Cap of water breathing",1,temp);
+
+        temp.deleteFilter(HEADGEAR);
+        temp.setFilter(CLOAK);
+        addItem("Cloak of manta ray",1,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Driftglobe",1,temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(HEADGEAR);
+        temp.setFilter(WONDEROUS);
+        addItem("Goggles of night",1,temp
+               );
+        addItem("Helm of comprehending languages",1,
+                temp
+               );
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Immovable rod",1,temp
+               );
+
+        temp.setFilter(WONDEROUS);
+        addItem("Lantern of revealing",1,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Mariner's armor",1,temp);
+
+        temp.deleteFilter(MAGIC_ITEM);
+        addItem("Mithral armor",1,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        temp.setFilter(OTHER);
+        addItem("Potion of poison", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(RING);
+        temp.setFilter(JEWELRY);
+        addItem("Ring of swimming", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ROBE);
+        temp.setFilter(CLOTHING);
+        temp.setFilter(WONDEROUS);
+        addItem("Robe of useful items", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Rope of climbing", 1, temp);
+        addItem("Saddle of the cavalier", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WAND);
+        temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Wand of magic detection", 1,  temp);
+        addItem("Wand of secrets", 1,  temp);
+
+    }
 
 
     public MagicItemTableObject getItem(int number) {

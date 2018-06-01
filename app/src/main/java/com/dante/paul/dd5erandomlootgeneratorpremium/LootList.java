@@ -36,20 +36,20 @@ public class LootList {
     }
 
     private String printCoins (String treasure){
-        Set<String> keys = coins.keySet();
         treasure += "\r\n";
         treasure += "Coins: \r\n";
         if (coins.containsKey("cp"))
             treasure += coins.get("cp") + "cp" + "\r\n";
         if (coins.containsKey("sp"))
             treasure += coins.get("sp") + "sp" + "\r\n";
+        if (coins.containsKey("ep"))
+            treasure += coins.get("ep") + "ep" + "\r\n";
         if (coins.containsKey("gp"))
             treasure += coins.get("gp") + "gp" + "\r\n";
         if (coins.containsKey("pp"))
             treasure += coins.get("pp") + "pp" + "\r\n";
         return treasure;
     }
-
     private String printTreasure(Map storage, String treasure, String type) {
         treasure += "\r\n";
         treasure += type + "\r\n";
