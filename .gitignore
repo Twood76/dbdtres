@@ -12,3 +12,5 @@ app/debug/output.json
 app/release/output.json
 app/release/app-release.apk
 app/debug/app-debug.apk
+.idea/modules.xml
+.idea/modules.xml.orig

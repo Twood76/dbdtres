@@ -14,17 +14,13 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAnd
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.HoardCoins;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.IndividualCoins;
 
-import android.content.SharedPreferences;
-import android.test.mock.MockContext;
-
-
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Set;
 
-import static android.content.Context.MODE_PRIVATE;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 

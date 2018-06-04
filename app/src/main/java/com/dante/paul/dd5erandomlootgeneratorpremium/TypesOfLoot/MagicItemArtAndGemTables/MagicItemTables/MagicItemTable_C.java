@@ -1,14 +1,21 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.DamageTypesAndMonsterTypes.MonsterType;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
+
 
 
 import java.util.LinkedList;
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.INSTRUMENT;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.JEWELRY;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OIL;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.SCROLL;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WONDEROUS;
 
 /**
  * Created by PaulD on 2015-11-26.
@@ -22,40 +29,82 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         if(!loaded()) {
             getDefaultTable();
         }
-        fillTable();
+        fillTable(defaultOrModifiedTableFilters());
     }
 
     @Override
     public void getDefaultTable() {
-        addItem("Potion of superior healing", 15, TypeofTableItem.POTION, true);
-        addScroll(7, true, 4);
-        addItem("Ammunition", 5, TypeofTableItem.AMMO, true, 2);
-        addItem("Potion of clairvoyance", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of diminution", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of gaseous form", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of frost giant strength", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of stone giant strength", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of frost giant strength", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of heroism", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of invulnerability", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of mind reading", 5, TypeofTableItem.POTION, true);
-        addScroll(5, true, 5);
-        addItem("Elixir of health", 3, TypeofTableItem.POTION, true);
-        addItem("Oil of etherealness", 3, TypeofTableItem.OTHER, true);
-        addItem("Potion of fire giant strength", 3, TypeofTableItem.POTION, true);
-        addItem("Quaal's feather token", 3, TypeofTableItem.OTHER, true);
-        addItem("Scroll of protection", 3, TypeofTableItem.SCROLL, true);
-        addItem("Bag of beans", 2, TypeofTableItem.OTHER, true);
-        addItem("Bead of force", 2, TypeofTableItem.OTHER, true);
-        addItem("Chime of opening", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Decanter of endless water", 1, TypeofTableItem.OTHER, true);
-        addItem("Eyes of minute seeing", 1, TypeofTableItem.OTHER, true);
-        addItem("Folding boat", 1, TypeofTableItem.OTHER, true);
-        addItem("Heward's handy haversack", 1, TypeofTableItem.OTHER, true);
-        addItem("Horseshoes of speed", 1, TypeofTableItem.OTHER, true);
-        addItem("Neckless of fireballs", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Periapt of health", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Sending stones", 1, TypeofTableItem.OTHER, true);
+        ItemFilters temp = new ItemFilters();
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of superior healing", 15,   temp);
+
+
+        addScroll(7,4);
+
+        temp = setBaseFilters();
+        temp.setFilter(AMMO);
+        addItem("Ammunition", 5,  2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of clairvoyance", 5,temp);
+        addItem("Potion of diminution", 5,temp);
+        addItem("Potion of gaseous form", 5, temp);
+        addItem("Potion of frost giant strength", 5, temp);
+        addItem("Potion of stone giant strength", 5, temp);
+        addItem("Potion of frost giant strength", 5, temp);
+        addItem("Potion of heroism", 5, temp);
+        addItem("Potion of invulnerability", 5, temp);
+        addItem("Potion of mind reading", 5, temp);
+        addScroll(5, 5);
+        addItem("Elixir of health", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OIL);
+        temp.setFilter(OTHER);
+        addItem("Oil of etherealness", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of fire giant strength", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Quaal's feather token", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SCROLL);
+        addItem("Scroll of protection", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Bag of beans", 2, temp);
+        addItem("Bead of force", 2,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(INSTRUMENT);
+        temp.setFilter(WONDEROUS);
+        addItem("Chime of opening", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Decanter of endless water", 1, temp);
+        addItem("Eyes of minute seeing", 1, temp);
+        addItem("Folding boat", 1, temp);
+        addItem("Heward's handy haversack", 1, temp);
+        addItem("Horseshoes of speed", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        addItem("Neckless of fireballs", 1, temp);
+        addItem("Periapt of health", 1, temp);
+        addItem("Sending stones", 1, temp);
     }
     /*public MagicItemTableObject getItem(int number) {
         MonsterType monsterType = new MonsterType();
