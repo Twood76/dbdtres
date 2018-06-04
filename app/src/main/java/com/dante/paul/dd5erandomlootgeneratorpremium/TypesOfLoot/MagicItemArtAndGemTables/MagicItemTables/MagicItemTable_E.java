@@ -1,13 +1,14 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 
 import java.util.LinkedList;
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
 
 /**
  * Created by PaulD on 2015-11-26.
@@ -20,18 +21,32 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
         if(!loaded()) {
             getDefaultTable();
         }
-        fillTable();
+        fillTable(defaultOrModifiedTableFilters());
     }
 
     @Override
     public void getDefaultTable() {
-        addScroll(30, true, 8);
-        addItem("Potion of storm giant strength", 25, TypeofTableItem.POTION, true);
-        addItem("Potion of supreme healing", 15, TypeofTableItem.POTION, true);
-        addScroll(15, true, 9);
-        addItem("Universal solvent", 8, TypeofTableItem.OTHER, true);
-        addItem("Arrow of slaying", 5, TypeofTableItem.AMMO, true);
-        addItem("Sovereign glue", 2, TypeofTableItem.OTHER, true);
+        ItemFilters temp = new ItemFilters();
+
+        addScroll(30, 8);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of storm giant strength", 25, temp);
+        addItem("Potion of supreme healing", 15, temp);
+        addScroll(15, 9);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        addItem("Universal solvent", 8, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(AMMO);
+        addItem("Arrow of slaying", 5, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        addItem("Sovereign glue", 2, temp);
     }
     /*public MagicItemTableObject getItem(int number) {
 
