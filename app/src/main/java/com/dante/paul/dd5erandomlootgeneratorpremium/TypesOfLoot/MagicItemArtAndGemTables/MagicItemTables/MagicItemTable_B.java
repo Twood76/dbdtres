@@ -107,8 +107,6 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         addItem("Potion", 7, true, temp);
 
         temp = setBaseFilters();
-        temp.setFilter(PHB);
-        temp.setFilter(BASE);
         temp.setFilter(AMMO);
         temp.setFilter(WEAPON);
         temp.setFilter(OTHER);
@@ -138,11 +136,12 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(TypeOfItem.OIL);
+        temp.setFilter(OIL);
         addItem("Keoghtom's ointment",3,temp
                );
 
         temp = setBaseFilters();
+        temp.setFilter(OIL);
         addItem("Oil of slipperiness",3,temp
                );
 
@@ -150,6 +149,7 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
         temp.setFilter(DUST);
         temp.setFilter(WONDEROUS);
         temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
         addItem("Dust of disappearance",2,temp
                );
         addItem("Dust of dryness",2,temp

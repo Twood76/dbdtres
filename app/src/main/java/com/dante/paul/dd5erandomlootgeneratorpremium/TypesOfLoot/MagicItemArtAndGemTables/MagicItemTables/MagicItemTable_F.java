@@ -1,11 +1,34 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+import com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
+
 
 
 import java.util.LinkedList;
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ARMOR;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.BOOTS;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.CLOAK;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ENCHANTED;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.GEM;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.GLOVES;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.HEADGEAR;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.INSTRUMENT;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.JEWELRY;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.MAGIC_ITEM;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.RING;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ROD;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.SHIELD;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.STAFF;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.SWORD;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WAND;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WEAPON;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WONDEROUS;
 
 /**
  * Created by PaulD on 2015-11-26.
@@ -18,73 +41,241 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         if(!loaded()) {
             getDefaultTable();
         }
-        fillTable();
+        fillTable(defaultOrModifiedTableFilters());
     }
 
     @Override
     public void getDefaultTable() {
-        addItem("Weapon (any), +1", 15, TypeofTableItem.WEAPON, true);
-        addItem("Shield, +1", 3, TypeofTableItem.SHIELD, true);
-        addItem("Sentinel shield", 3, TypeofTableItem.SHIELD, true);
-        addItem("Amulet of proof against detection and location", 2, TypeofTableItem.JEWELRY,
-                true);
-        addItem("Boots of elvenkind", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Boots of striding and springing", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Bracers of archery", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Brooch of shielding", 2, TypeofTableItem.JEWELRY, true);
-        addItem("Broom of flying", 2, TypeofTableItem.OTHER, true);
-        addItem("Cloak of elvenkind", 2, TypeofTableItem.CLOAK, true);
-        addItem("Cloak of protection", 2, TypeofTableItem.CLOAK, true);
-        addItem("Bracers of archery", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Gauntlets of ogre power", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Hat of disguise", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Javelin of lightning", 2, TypeofTableItem.WEAPON, true);
-        addItem("Pearl of power", 2, TypeofTableItem.GEM, true);
-        addItem("Rod of the pact keeper, + 1", 2, TypeofTableItem.ROD, true);
-        addItem("Slippers of spider climbing", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Staff of the adder", 2, TypeofTableItem.STAFF, true);
-        addItem("Staff of the python", 2, TypeofTableItem.STAFF, true);
-        addItem("Sword of vengeance", 2, TypeofTableItem.WEAPON, true);
-        addItem("Trident of fish command", 2, TypeofTableItem.WEAPON, true);
-        addItem("Wand of magic missile", 2, TypeofTableItem.WAND, true);
-        addItem("Wand of war mage, +1", 2, TypeofTableItem.WAND, true);
-        addItem("Wand of web", 2, TypeofTableItem.WAND, true);
-        addItem("Weapon of warning", 2, TypeofTableItem.WEAPON, true);
-        addItem("Adamantine armor (chain mail)", 1, TypeofTableItem.ARMOR, true);
-        addItem("Adamantine armor (chain shirt)", 1, TypeofTableItem.ARMOR, true);
-        addItem("Adamantine armor (scale mail)", 1, TypeofTableItem.ARMOR, true);
-        addItem("Bag of tricks (gray)", 1, TypeofTableItem.OTHER, true);
-        addItem("Bag of tricks (rust)", 1, TypeofTableItem.OTHER, true);
-        addItem("Bag of tricks (tan)", 1, TypeofTableItem.OTHER, true);
-        addItem("Boots of winterlands", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Circlet of blasting", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Deck of illusions", 1, TypeofTableItem.OTHER, true);
-        addItem("Eversmoking bottle", 1, TypeofTableItem.OTHER, true);
-        addItem("Eyes of charming", 1, TypeofTableItem.OTHER, true);
-        addItem("Eyes of the eagle", 1, TypeofTableItem.OTHER, true);
-        addItem("Figurine of wonderous power (silver raven)", 1, TypeofTableItem.OTHER, true);
-        addItem("Gem of brightness", 1, TypeofTableItem.GEM, true);
-        addItem("Gloves of missile snaring", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Gloves of swimming and climbing", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Gloves of thievery", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Headband of intellect", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Helm of telepathy", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Instrument of the bards (Doss lute)", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Instrument of the bards (Fochlucan bandore)", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Instrument of the bards (Mac-Fuimidh cittern)", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Medallion of thoughts", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Necklace of adaption", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Periapt of wound closure", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Pipes of haunting", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Pipes of sewers", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Ring of jumping", 1, TypeofTableItem.RING, true);
-        addItem("Ring of mind shielding", 1, TypeofTableItem.RING, true);
-        addItem("Ring of warmth", 1, TypeofTableItem.RING, true);
-        addItem("Ring of water walking", 1, TypeofTableItem.RING, true);
-        addItem("Quiver of Ehlonna", 1, TypeofTableItem.AMMO, true);
-        addItem("Stone of good luck", 1, TypeofTableItem.OTHER, true);
-        addItem("Wind fan", 1, TypeofTableItem.OTHER, true);
-        addItem("Winged boots", 1, TypeofTableItem.OTHERCLOTHING, true);
+        ItemFilters temp = new ItemFilters();
+
+        temp = setBaseFilters();
+        temp.setFilter(WEAPON);
+        temp.setFilter(ENCHANTED);
+        addItem("Weapon (any), +1", 15, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SHIELD);
+        temp.setFilter(ENCHANTED);
+        addItem("Shield, +1", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SHIELD);
+        addItem("Sentinel shield", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Amulet of proof against detection and location", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BOOTS);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Boots of elvenkind", 2, temp);
+        addItem("Boots of striding and springing", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(GLOVES);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Bracers of archery", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Brooch of shielding", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Broom of flying", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(CLOAK);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Cloak of elvenkind", 2, temp);
+        addItem("Cloak of protection", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(GLOVES);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Bracers of archery", 2, temp);
+        addItem("Gauntlets of ogre power", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(HEADGEAR);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Hat of disguise", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WEAPON);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Javelin of lightning", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(GEM);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Pearl of power", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ROD);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(ENCHANTED);
+        addItem("Rod of the pact keeper, + 1", 2,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BOOTS);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Slippers of spider climbing", 2,temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(STAFF);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Staff of the adder", 2, temp);
+        addItem("Staff of the python", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SWORD);
+        temp.setFilter(WEAPON);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Sword of vengeance", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WEAPON);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Trident of fish command", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WAND);
+        addItem("Wand of magic missile", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WAND);
+        temp.setFilter(ENCHANTED);
+        addItem("Wand of war mage, +1", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WAND);
+        addItem("Wand of web", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(WEAPON);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Weapon of warning", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        addItem("Adamantine armor (chain mail)", 1, temp);
+        addItem("Adamantine armor (chain shirt)", 1, temp);
+        addItem("Adamantine armor (scale mail)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Bag of tricks (gray)", 1, temp);
+        addItem("Bag of tricks (rust)", 1, temp);
+        addItem("Bag of tricks (tan)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BOOTS);
+        temp.setFilter(WONDEROUS);
+        addItem("Boots of winterlands", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        addItem("Circlet of blasting", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Deck of illusions", 1, temp);
+        addItem("Eversmoking bottle", 1, temp);
+        addItem("Eyes of charming", 1, temp);
+        addItem("Eyes of the eagle", 1, temp);
+        addItem("Figurine of wonderous power (silver raven)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(GEM);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Gem of brightness", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(GLOVES);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Gloves of missile snaring", 1, temp);
+        addItem("Gloves of swimming and climbing", 1, temp);
+        addItem("Gloves of thievery", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(HEADGEAR);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Headband of intellect", 1, temp);
+        addItem("Helm of telepathy", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(INSTRUMENT);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Instrument of the bards (Doss lute)", 1, temp);
+        addItem("Instrument of the bards (Fochlucan bandore)", 1, temp);
+        addItem("Instrument of the bards (Mac-Fuimidh cittern)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Medallion of thoughts", 1,  temp);
+        addItem("Necklace of adaption", 1,  temp);
+        addItem("Periapt of wound closure", 1,  temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(INSTRUMENT);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Pipes of haunting", 1, temp);
+        addItem("Pipes of sewers", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(RING);
+        temp.setFilter(JEWELRY);
+        temp.setFilter(MAGIC_ITEM);
+        addItem("Ring of jumping", 1, temp);
+        addItem("Ring of mind shielding", 1, temp);
+        addItem("Ring of warmth", 1, temp);
+        addItem("Ring of water walking", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(AMMO);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Quiver of Ehlonna", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Stone of good luck", 1, temp);
+        addItem("Wind fan", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BOOTS);
+        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(WONDEROUS);
+        addItem("Winged boots", 1, temp);
 
     }
     /*public MagicItemTableObject getItem(int number) {
