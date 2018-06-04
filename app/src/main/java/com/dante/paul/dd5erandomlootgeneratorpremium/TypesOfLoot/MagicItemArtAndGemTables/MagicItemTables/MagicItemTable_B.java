@@ -100,10 +100,8 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(POTION);
-        addItem("Potion of greater healing", 15, temp
-               );
-        addItem("Potion of fire breath", 7, temp
-               );
+        addItem("Potion of greater healing", 15, temp);
+        addItem("Potion of fire breath", 7, temp);
         addItem("Potion", 7, true, temp);
 
         temp = setBaseFilters();
@@ -115,105 +113,83 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(POTION);
-        addItem("Potion of animal friendship", 5, temp
-               );
-        addItem("Potion of hill giant strength", 5, temp
-               );
-        addItem("Potion of growth", 5, temp
-               );
-        addItem("Potion of water breathing", 5, temp
-               );
+        addItem("Potion of animal friendship", 5, temp);
+        addItem("Potion of hill giant strength", 5, temp);
+        addItem("Potion of growth", 5, temp);
+        addItem("Potion of water breathing", 5, temp);
         addScroll(5, 2);
         addScroll(5, 3);
 
         temp = setBaseFilters();
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         temp.setFilter(OTHER);
-        addItem("Bag of holding",3,temp
-               );
+        addItem("Bag of holding",3,temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
         temp.setFilter(OIL);
-        addItem("Keoghtom's ointment",3,temp
-               );
+        addItem("Keoghtom's ointment",3,temp);
 
         temp = setBaseFilters();
         temp.setFilter(OIL);
-        addItem("Oil of slipperiness",3,temp
-               );
+        addItem("Oil of slipperiness",3,temp);
 
         temp = setBaseFilters();
         temp.setFilter(DUST);
         temp.setFilter(WONDEROUS);
         temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
-        addItem("Dust of disappearance",2,temp
-               );
-        addItem("Dust of dryness",2,temp
-               );
-        addItem("Dust of sneezing and choking",2,temp
-               );
+        addItem("Dust of disappearance",2,temp);
+        addItem("Dust of dryness",2,temp);
+        addItem("Dust of sneezing and choking",2,temp);
 
         temp = setBaseFilters();
         temp.setFilter(GEM);
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        addItem("Elemental gem",2, false, temp
-               );
+        addItem("Elemental gem",2, false, temp);
 
         temp = setBaseFilters();
         temp.setFilter(POTION);
         temp.setFilter(OTHER);
-        addItem("Philter of love",2, temp
-               );
+        addItem("Philter of love",2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        addItem("Alchemy jug",1,temp
-               );
+        addItem("Alchemy jug",1,temp);
 
         temp = setBaseFilters();
-        temp.setFilter(CLOTHING);
         temp.setFilter(HEADGEAR);
         temp.setFilter(WONDEROUS);
         addItem("Cap of water breathing",1,temp);
 
-        temp.deleteFilter(HEADGEAR);
+        temp = setBaseFilters();
         temp.setFilter(CLOAK);
-        addItem("Cloak of manta ray",1,temp);
+        temp.setFilter(WONDEROUS);
+        addItem("Cloak of the manta ray",1,temp);
 
         temp = setBaseFilters();
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        addItem("Driftglobe",1,temp
-               );
+        addItem("Driftglobe",1,temp);
 
         temp = setBaseFilters();
         temp.setFilter(HEADGEAR);
         temp.setFilter(WONDEROUS);
-        addItem("Goggles of night",1,temp
-               );
+        addItem("Goggles of night",1,temp);
         addItem("Helm of comprehending languages",1,
-                temp
-               );
+                temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
-        addItem("Immovable rod",1,temp
-               );
+        addItem("Immovable rod",1,temp);
 
         temp.setFilter(WONDEROUS);
         addItem("Lantern of revealing",1,temp);
 
         temp = setBaseFilters();
         temp.setFilter(ARMOR);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Mariner's armor",1,temp);
 
         temp.deleteFilter(MAGIC_ITEM);
@@ -221,7 +197,6 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(POTION);
-        temp.setFilter(OTHER);
         addItem("Potion of poison", 1, temp);
 
         temp = setBaseFilters();
@@ -231,21 +206,17 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(ROBE);
-        temp.setFilter(CLOTHING);
         temp.setFilter(WONDEROUS);
         addItem("Robe of useful items", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Rope of climbing", 1, temp);
         addItem("Saddle of the cavalier", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(WAND);
-        temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Wand of magic detection", 1,  temp);
         addItem("Wand of secrets", 1,  temp);
 

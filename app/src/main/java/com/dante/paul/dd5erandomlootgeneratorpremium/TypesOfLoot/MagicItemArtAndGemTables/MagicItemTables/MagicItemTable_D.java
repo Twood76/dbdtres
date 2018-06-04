@@ -9,8 +9,6 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.Ite
 import java.util.LinkedList;
 
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ENCHANTED;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.MAGIC_ITEM;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OIL;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
@@ -63,7 +61,6 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Horseshoes of a zephyr", 3, temp);
         addItem("Nolzur's marvelous pigments", 3, temp);
         addItem("Bag of devouring", 1, temp);

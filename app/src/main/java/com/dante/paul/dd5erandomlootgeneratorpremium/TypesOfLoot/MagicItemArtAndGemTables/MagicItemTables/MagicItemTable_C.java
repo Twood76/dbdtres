@@ -9,10 +9,8 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.Ite
 import java.util.LinkedList;
 
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ENCHANTED;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.INSTRUMENT;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.JEWELRY;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.MAGIC_ITEM;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OIL;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
@@ -75,7 +73,6 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Quaal's feather token", 3, temp);
 
         temp = setBaseFilters();
@@ -85,7 +82,6 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Bag of beans", 2, temp);
         addItem("Bead of force", 2,temp);
 
@@ -97,7 +93,6 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Decanter of endless water", 1, temp);
         addItem("Eyes of minute seeing", 1, temp);
         addItem("Folding boat", 1, temp);
@@ -107,7 +102,6 @@ public class MagicItemTable_C extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(JEWELRY);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Neckless of fireballs", 1, temp);
         addItem("Periapt of health", 1, temp);
         addItem("Sending stones", 1, temp);

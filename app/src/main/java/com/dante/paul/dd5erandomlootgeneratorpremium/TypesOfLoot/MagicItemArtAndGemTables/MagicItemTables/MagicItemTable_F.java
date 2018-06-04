@@ -12,15 +12,14 @@ import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.Ty
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ARMOR;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.BOOTS;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.CLOAK;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.CURSED;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ENCHANTED;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.GEM;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.GLOVES;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.HEADGEAR;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.INSTRUMENT;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.JEWELRY;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.MAGIC_ITEM;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
-import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.RING;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ROD;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.SHIELD;
@@ -65,92 +64,78 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(JEWELRY);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Amulet of proof against detection and location", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(BOOTS);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Boots of elvenkind", 2, temp);
         addItem("Boots of striding and springing", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(GLOVES);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Bracers of archery", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(JEWELRY);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Brooch of shielding", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Broom of flying", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(CLOAK);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Cloak of elvenkind", 2, temp);
         addItem("Cloak of protection", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(GLOVES);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Bracers of archery", 2, temp);
         addItem("Gauntlets of ogre power", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(HEADGEAR);
         temp.setFilter(WONDEROUS);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Hat of disguise", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(WEAPON);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Javelin of lightning", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(GEM);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Pearl of power", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(ROD);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(ENCHANTED);
         addItem("Rod of the pact keeper, + 1", 2,temp);
 
         temp = setBaseFilters();
         temp.setFilter(BOOTS);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Slippers of spider climbing", 2,temp);
 
         temp = setBaseFilters();
         temp.setFilter(STAFF);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Staff of the adder", 2, temp);
         addItem("Staff of the python", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(SWORD);
         temp.setFilter(WEAPON);
-        temp.setFilter(MAGIC_ITEM);
+        temp.setFilter(CURSED);
         addItem("Sword of vengeance", 2, temp);
 
         temp = setBaseFilters();
         temp.setFilter(WEAPON);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Trident of fish command", 2, temp);
 
         temp = setBaseFilters();
@@ -168,7 +153,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(WEAPON);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Weapon of warning", 2, temp);
 
         temp = setBaseFilters();
@@ -179,7 +163,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Bag of tricks (gray)", 1, temp);
         addItem("Bag of tricks (rust)", 1, temp);
@@ -197,7 +180,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Deck of illusions", 1, temp);
         addItem("Eversmoking bottle", 1, temp);
@@ -207,13 +189,11 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(GEM);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Gem of brightness", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(GLOVES);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Gloves of missile snaring", 1, temp);
         addItem("Gloves of swimming and climbing", 1, temp);
@@ -221,14 +201,12 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(HEADGEAR);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Headband of intellect", 1, temp);
         addItem("Helm of telepathy", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(INSTRUMENT);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Instrument of the bards (Doss lute)", 1, temp);
         addItem("Instrument of the bards (Fochlucan bandore)", 1, temp);
@@ -236,7 +214,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(JEWELRY);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Medallion of thoughts", 1,  temp);
         addItem("Necklace of adaption", 1,  temp);
@@ -244,7 +221,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(INSTRUMENT);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Pipes of haunting", 1, temp);
         addItem("Pipes of sewers", 1, temp);
@@ -252,7 +228,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(RING);
         temp.setFilter(JEWELRY);
-        temp.setFilter(MAGIC_ITEM);
         addItem("Ring of jumping", 1, temp);
         addItem("Ring of mind shielding", 1, temp);
         addItem("Ring of warmth", 1, temp);
@@ -260,20 +235,17 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(AMMO);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Quiver of Ehlonna", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Stone of good luck", 1, temp);
         addItem("Wind fan", 1, temp);
 
         temp = setBaseFilters();
         temp.setFilter(BOOTS);
-        temp.setFilter(MAGIC_ITEM);
         temp.setFilter(WONDEROUS);
         addItem("Winged boots", 1, temp);
 

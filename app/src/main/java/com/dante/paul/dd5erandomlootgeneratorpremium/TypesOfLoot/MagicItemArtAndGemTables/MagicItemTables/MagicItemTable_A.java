@@ -110,7 +110,6 @@ public class MagicItemTable_A extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(TypeOfItem.WONDEROUS);
         temp.setFilter(TypeOfItem.OTHER);
-        temp.setFilter(TypeOfItem.MAGIC_ITEM);
         addItem("Bag of holding",1, temp);
         addItem("Driftglobe",1, temp);
     }
