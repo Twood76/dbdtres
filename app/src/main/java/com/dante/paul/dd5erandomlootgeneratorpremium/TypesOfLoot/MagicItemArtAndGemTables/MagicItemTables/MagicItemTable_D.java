@@ -1,13 +1,18 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpell;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateSpellStrings;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
+
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
+
 
 
 import java.util.LinkedList;
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OIL;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WONDEROUS;
 
 /**
  * Created by PaulD on 2015-11-26.
@@ -21,27 +26,44 @@ public class MagicItemTable_D extends AbstractMagicItemTable implements MagicIte
         if(!loaded()) {
             getDefaultTable();
         }
-        fillTable();
+        fillTable(defaultOrModifiedTableFilters());
     }
 
     @Override
     public void getDefaultTable() {
-        addItem("Potion of supreme healing", 20, TypeofTableItem.POTION, true);
-        addItem("Potion of invisibility", 10, TypeofTableItem.POTION, true);
-        addItem("Potion of speed", 10, TypeofTableItem.POTION, true);
-        addScroll(10, true, 6);
-        addScroll(7, true, 7);
-        addItem("Ammunition", 5, TypeofTableItem.AMMO, true, 3);
-        addItem("Oil of sharpness", 5, TypeofTableItem.OTHER, true);
-        addItem("Potion of flying", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of cloud giant strength", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of longevity", 5, TypeofTableItem.POTION, true);
-        addItem("Potion of vitality", 5, TypeofTableItem.POTION, true);
-        addScroll(5, true, 8);
-        addItem("Horseshoes of a zephyr", 3, TypeofTableItem.OTHER, true);
-        addItem("Nolzur's marvelous pigments", 3, TypeofTableItem.OTHER, true);
-        addItem("Bag of devouring", 1, TypeofTableItem.OTHER, true);
-        addItem("Portable hole", 1, TypeofTableItem.OTHER, true);
+        ItemFilters temp = new ItemFilters();
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of supreme healing", 20, temp);
+        addItem("Potion of invisibility", 10,temp);
+        addItem("Potion of speed", 10, temp);
+        addScroll(10, 6);
+        addScroll(7, 7);
+
+        temp = setBaseFilters();
+        temp.setFilter(AMMO);
+        addItem("Ammunition", 5, 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OIL);
+        addItem("Oil of sharpness", 5, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
+        addItem("Potion of flying", 5, temp);
+        addItem("Potion of cloud giant strength", 5, temp);
+        addItem("Potion of longevity", 5, temp);
+        addItem("Potion of vitality", 5, temp);
+        addScroll(5,  8);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        addItem("Horseshoes of a zephyr", 3, temp);
+        addItem("Nolzur's marvelous pigments", 3, temp);
+        addItem("Bag of devouring", 1, temp);
+        addItem("Portable hole", 1, temp);
     }
     /*public MagicItemTableObject getItem(int number) {
 

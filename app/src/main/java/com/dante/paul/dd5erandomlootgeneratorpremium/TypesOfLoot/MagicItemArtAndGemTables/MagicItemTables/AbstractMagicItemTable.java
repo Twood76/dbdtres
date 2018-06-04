@@ -192,7 +192,7 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
                            ItemFilters filters) {
         TableItem item = new TableItem(name
                 , numberOfThisItem *10
-                , ClassOfItem.ARTORGEM
+                , ClassOfItem.ITEM
                 , filters);
 
         tableItems.add(item);
@@ -202,7 +202,7 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
         TableItem item = new TableItem(
                 name
                 ,numberOfThisItem*10
-                , ClassOfItem.ARTORGEM
+                , ClassOfItem.ITEM
                 , filters
                 , resistance);
         tableItems.add(item);
@@ -211,7 +211,7 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
     protected void addItem(String name, int numberOfThisItem, int level, ItemFilters filters) {
         TableItem item = new TableItem(name
                 ,numberOfThisItem*10
-                , ClassOfItem.ARTORGEM
+                , ClassOfItem.ITEM
                 , filters
                 , level);
         tableItems.add(item);
@@ -221,7 +221,7 @@ public abstract class AbstractMagicItemTable extends GenerateSpell {
     protected void addScroll(int numberOfThisItem, int level) {
         TableItem item = new TableItem("Create Spell"
                 ,numberOfThisItem*10
-                , ClassOfItem.ARTORGEM
+                , ClassOfItem.ITEM
                 , generatedStrings.getFilters()
                 ,level);
         tableItems.add(item);
