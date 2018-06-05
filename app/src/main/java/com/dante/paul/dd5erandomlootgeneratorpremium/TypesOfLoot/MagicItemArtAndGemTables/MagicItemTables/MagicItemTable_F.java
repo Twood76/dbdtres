@@ -130,7 +130,6 @@ public class MagicItemTable_F extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(SWORD);
-        temp.setFilter(WEAPON);
         temp.setFilter(CURSED);
         addItem("Sword of vengeance", 2, temp);
 

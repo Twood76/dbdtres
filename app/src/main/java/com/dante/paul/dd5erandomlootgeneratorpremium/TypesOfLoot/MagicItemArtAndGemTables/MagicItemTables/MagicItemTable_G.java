@@ -89,7 +89,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
         addItem("Belt of hill giant strength", 1, temp);
 
         temp = setBaseFilters();
-        temp.setFilter(WEAPON);
         temp.setFilter(AXE);
         addItem("Berserker axe", 1, temp);
 
@@ -170,7 +169,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(SWORD);
-        temp.setFilter(WEAPON);
         temp.setFilter(ENCHANTED);
         addItem("Dragon slayer (sword)", 1, temp);
 
@@ -181,7 +179,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(SWORD);
-        temp.setFilter(WEAPON);
         addItem("Flame tongue (sword)", 1, temp);
 
         temp = setBaseFilters();
@@ -192,7 +189,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
         temp = setBaseFilters();
         temp.setFilter(SWORD);
         temp.setFilter(AXE);
-        temp.setFilter(WEAPON);
         addItem("Dragon slayer (sword or axe)", 1, temp);
 
         temp = setBaseFilters();
@@ -213,7 +209,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(INSTRUMENT);
-        
         temp.setFilter(WONDEROUS);
         addItem("Instrument of the bards (Canaith mandolin)", 1, temp);
         addItem("Instrument of the bards (Cli lyre)", 1, temp);
@@ -331,7 +326,6 @@ public class MagicItemTable_G extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(SWORD);
-        temp.setFilter(WEAPON);
         addItem("Sun blade", 1, temp);
         addItem("Sword of life stealing", 1, temp);
         addItem("Sword of wounding", 1, temp);

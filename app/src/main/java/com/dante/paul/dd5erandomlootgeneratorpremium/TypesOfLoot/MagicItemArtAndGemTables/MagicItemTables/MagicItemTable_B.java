@@ -106,7 +106,6 @@ public class MagicItemTable_B extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(AMMO);
-        temp.setFilter(WEAPON);
         temp.setFilter(OTHER);
         addItem("Ammunition", 5, 1, temp
         );
