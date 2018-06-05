@@ -7,6 +7,7 @@ import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.Ite
 import java.util.LinkedList;
 
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.AMMO;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.LEGENDARY;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
 import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.POTION;
 
@@ -32,12 +33,17 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(POTION);
+        temp.setFilter(LEGENDARY);
         addItem("Potion of storm giant strength", 25, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(POTION);
         addItem("Potion of supreme healing", 15, temp);
         addScroll(15, 9);
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
+        temp.setFilter(LEGENDARY);
         addItem("Universal solvent", 8, temp);
 
         temp = setBaseFilters();
@@ -46,6 +52,7 @@ public class MagicItemTable_E extends AbstractMagicItemTable implements MagicIte
 
         temp = setBaseFilters();
         temp.setFilter(OTHER);
+        temp.setFilter(LEGENDARY);
         addItem("Sovereign glue", 2, temp);
     }
     /*public MagicItemTableObject getItem(int number) {

@@ -1,12 +1,30 @@
 package com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.MagicItemArtAndGemTables.MagicItemTables;
 
 
-import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.GenerateItemStrings;
+import com.dante.paul.dd5erandomlootgeneratorpremium.TreasureCreationClasses.ItemFilters;
 import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.DamageTypesAndMonsterTypes.DamageType;
-import com.dante.paul.dd5erandomlootgeneratorpremium.TypesOfLoot.TableObjects.MagicItemTableObject;
 
 
 import java.util.LinkedList;
+
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ARMOR;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.BELT;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.CLOAK;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ENCHANTED;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.HAMMER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.INSTRUMENT;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.IOUN;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.JEWELRY;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.LEGENDARY;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.OTHER;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.RING;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ROBE;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.ROD;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.STAFF;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.SWORD;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.TOME;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WEAPON;
+import static com.dante.paul.dd5erandomlootgeneratorpremium.EnumeratedClasses.TypeOfItem.WONDEROUS;
 
 /**
  * Created by PaulD on 2015-11-26.
@@ -19,64 +37,239 @@ public class MagicItemTable_I extends AbstractMagicItemTable implements MagicIte
         if(!loaded()) {
             getDefaultTable();
         }
-        fillTable();
+        fillTable(defaultOrModifiedTableFilters());
     }
 
     @Override
     public void getDefaultTable() {
-        addItem("Defender", 5, TypeofTableItem.WEAPON, true);
-        addItem("Hammer of thunderbolts", 5, TypeofTableItem.WEAPON, true);
-        addItem("Luck blade", 5, TypeofTableItem.WEAPON, true);
-        addItem("Sword of answering", 5, TypeofTableItem.WEAPON, true);
-        addItem("Holy avenger", 3, TypeofTableItem.WEAPON, true);
-        addItem("Ring of djinni summoning", 3, TypeofTableItem.RING, true);
-        addItem("Ring of invisibility", 3, TypeofTableItem.RING, true);
-        addItem("Ring of spell turning", 3, TypeofTableItem.RING, true);
-        addItem("Rod of lordly might", 3, TypeofTableItem.ROD, true);
-        addItem("Staff of the magi", 3, TypeofTableItem.STAFF, true);
-        addItem("Vorpal sword", 3, TypeofTableItem.WEAPON, true);
-        addItem("Belt of cloud giant strength", 2, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Breastplate +2 ", 2, TypeofTableItem.ARMOR, true);
-        addItem("Chain mail +3", 2, TypeofTableItem.ARMOR, true);
-        addItem("Chain shirt +3", 2, TypeofTableItem.ARMOR, true);
-        addItem("Cloak of invisibility", 2, TypeofTableItem.CLOAK, true);
-        addItem("Crystal ball (legendary version)", 2, TypeofTableItem.OTHER, true);
-        addItem("Half plate + 1", 2, TypeofTableItem.ARMOR, true);
-        addItem("Iron flask", 2, TypeofTableItem.OTHER, true);
-        addItem("Leather armor +3", 2, TypeofTableItem.ARMOR, true);
-        addItem("Plate armor +1", 2, TypeofTableItem.ARMOR, true);
-        addItem("Robe of archmagi", 2, TypeofTableItem.ROBE, true);
-        addItem("Rod of resurrection", 2, TypeofTableItem.ROD, true);
-        addItem("Scale mail +1", 2, TypeofTableItem.ARMOR, true);
-        addItem("Scarab of protection", 2, TypeofTableItem.OTHER, true);
-        addItem("Splint mail +2", 2, TypeofTableItem.ARMOR, true);
-        addItem("Studded leather +2", 2, TypeofTableItem.ARMOR, true);
-        addItem("Well of many worlds", 2, TypeofTableItem.OTHER, true);
-        addItem("Magic armor", 1, TypeofTableItem.ARMOR, true);
-        addItem("Apparatus of Kwalish", 1, TypeofTableItem.OTHER, true);
-        addItem("Armor of invulnerability", 1, TypeofTableItem.ARMOR, true);
-        addItem("Belt of storm giant strength", 1, TypeofTableItem.OTHERCLOTHING, true);
-        addItem("Cubic gate", 1, TypeofTableItem.OTHER, true);
-        addItem("Deck of many things", 1, TypeofTableItem.OTHER, true);
-        addItem("Efreeti chain", 1, TypeofTableItem.ARMOR, true);
-        addItem("Half plate", 1, TypeofTableItem.ARMOR, true, true);
-        addItem("Horn of Valhalla (iron)", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Instrument of the bards (Ollamh harp))", 1, TypeofTableItem.INSTRUMENT, true);
-        addItem("Ioun stone (greater absorption)", 1, TypeofTableItem.OTHER, true);
-        addItem("Ioun stone (mastery)", 1, TypeofTableItem.OTHER, true);
-        addItem("Ioun stone (regeneration)", 1, TypeofTableItem.OTHER, true);
-        addItem("Plate armor of etherealness", 1, TypeofTableItem.ARMOR, true);
-        addItem("Plate armor", 1, TypeofTableItem.ARMOR, true, true);
-        addItem("Ring of air elemental command", 1, TypeofTableItem.RING, true);
-        addItem("Ring of earth elemental command", 1, TypeofTableItem.RING, true);
-        addItem("Ring of fire elemental command", 1, TypeofTableItem.RING, true);
-        addItem("Ring of three wishes", 1, TypeofTableItem.RING, true);
-        addItem("Ring of water elemental command", 1, TypeofTableItem.RING, true);
-        addItem("Sphere of annihilation", 1, TypeofTableItem.OTHER, true);
-        addItem("Talisman of pure good", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Talisman of the sphere", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Talisman of ultimate evil", 1, TypeofTableItem.JEWELRY, true);
-        addItem("Tome of the stilled tongue", 1, TypeofTableItem.OTHER, true);
+        ItemFilters temp = new ItemFilters();
+
+        temp = setBaseFilters();
+        temp.setFilter(WEAPON);
+        temp.setFilter(LEGENDARY);
+        addItem("Defender", 5, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(HAMMER);
+        temp.setFilter(LEGENDARY);
+        addItem("Hammer of thunderbolts", 5, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SWORD);
+        temp.setFilter(LEGENDARY);
+        addItem("Luck blade", 5, temp);
+        addItem("Sword of answering", 5, temp);
+        addItem("Holy avenger", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(RING);
+        temp.setFilter(LEGENDARY);
+        addItem("Ring of djinni summoning", 3, temp);
+        addItem("Ring of invisibility", 3, temp);
+        addItem("Ring of spell turning", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ROD);
+        temp.setFilter(LEGENDARY);
+        addItem("Rod of lordly might", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(STAFF);
+        temp.setFilter(LEGENDARY);
+        addItem("Staff of the magi", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(SWORD);
+        temp.setFilter(LEGENDARY);
+        addItem("Vorpal sword", 3, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BELT);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Belt of cloud giant strength", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Breastplate +2 ", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        temp.setFilter(LEGENDARY);
+        addItem("Chain mail +3", 2, temp);
+        addItem("Chain shirt +3", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(CLOAK);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Cloak of invisibility", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Crystal ball (legendary version)", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Half plate + 1", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Iron flask", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        temp.setFilter(LEGENDARY);
+        addItem("Leather armor +3", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Plate armor +1", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ROBE);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Robe of the archmagi", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ROBE);
+        temp.setFilter(LEGENDARY);
+        addItem("Rod of resurrection", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Scale mail +1", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Scarab of protection", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Splint mail +2", 2, temp);
+        addItem("Studded leather +2", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Well of many worlds", 2, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(ENCHANTED);
+        addItem("Magic armor", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Apparatus of Kwalish", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(LEGENDARY);
+        addItem("Armor of invulnerability", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(BELT);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Belt of storm giant strength", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Cubic gate", 1, temp);
+        addItem("Deck of many things", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(LEGENDARY);
+        addItem("Efreeti chain", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        addItem("Half plate", 1, true, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Horn of Valhalla (iron)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(INSTRUMENT);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Instrument of the bards (Ollamh harp))", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Ioun stone (greater absorption)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(IOUN);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Ioun stone (mastery)", 1, temp);
+        addItem("Ioun stone (regeneration)", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        temp.setFilter(LEGENDARY);
+        addItem("Plate armor of etherealness", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(ARMOR);
+        addItem("Plate armor", 1, true, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(RING);
+        temp.setFilter(LEGENDARY);
+        addItem("Ring of air elemental command", 1, temp);
+        addItem("Ring of earth elemental command", 1, temp);
+        addItem("Ring of fire elemental command", 1, temp);
+        addItem("Ring of three wishes", 1, temp);
+        addItem("Ring of water elemental command", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(OTHER);
+        temp.setFilter(OTHER);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Sphere of annihilation", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(JEWELRY);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Talisman of pure good", 1, temp);
+        addItem("Talisman of the sphere", 1, temp);
+        addItem("Talisman of ultimate evil", 1, temp);
+
+        temp = setBaseFilters();
+        temp.setFilter(TOME);
+        temp.setFilter(WONDEROUS);
+        temp.setFilter(LEGENDARY);
+        addItem("Tome of the stilled tongue", 1, temp);
     }
 
 
