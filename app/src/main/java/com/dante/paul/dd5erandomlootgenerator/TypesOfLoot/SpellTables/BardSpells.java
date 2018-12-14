@@ -4,7 +4,6 @@ package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables;
  * Created by PaulD on 2015-11-30.
  */
 public class BardSpells extends AbstractSpells implements Spells {
-
     protected String[] level0 = {"Blade Ward", "Dancing Lights", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Prestidigitation", "True Strike", "Vicious Strike"};
     protected String[] level1 = {"Animal Friendship", "Bane", "Charm Person", "Comprehend Languages", "Cure Wounds", "Detect Magic", "Disguise Self", "Dissonant Whispers", "Faerie Fire", "Healing Word", "Heroism", "Identify", "Illusory Script", "Long Strider", "Silent Image", "Sleep", "Speak with Animals", "Tasha's Hideous Laughter", "Thunderwave", "Unseen Servant"};
     protected String[] level2 = {"Animal Messenger", "Blindness/Deafness", "Calm Emotions", "Cloud of Daggers", "Crown of Madness", "Detect thoughts", "Enhance Ability", "Enthrall", "Heat Metal", "Hold Person", "Invisibility", "Knock", "Lesser Restoration", "Locate Animals or Plants", "Locate Object", "Magic Mouth", "Phantasmal Force", "See Invisible", "Shatter", "Silence", "Suggestion", "Zone of Truth"};

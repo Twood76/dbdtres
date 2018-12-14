@@ -15,27 +15,34 @@ import java.util.TreeMap;
 
 /**
  * Created by PaulD on 2015-11-20.
+ * Object is a group of 4
  */
 public class LootList {
 
-    private Map<String, Integer> coins = new HashMap<>();
-    private Map<String, Integer> loot = new HashMap<>();
-    private Map<String, Integer> gems = new HashMap<>();
-    private Map<String, Integer> art = new HashMap<>();
+    private Map<String, Integer> coins;
+    private Map<String, Integer> loot;
+    private Map<String, Integer> gems;
+    private Map<String, Integer> art;
     private int numberOfItems = 0;
 
-    //Singleton pattern
-    private static volatile LootList list = new LootList();
+    //Singleton pattern to make sure there is only one list
+    private static volatile LootList list = null;
+
 
     private LootList() {
         loot = new Hashtable<>();
         coins = new Hashtable<>();
+        gems = new HashMap<>();
+        art = new HashMap<>();
     }
 
     public static LootList getInstance() {
+        if(list == null){
+            list = new LootList();
+        }
         return list;
     }
-
+    //generate the coin strings for the treasure
     private String printCoins (String treasure){
         treasure += "\r\n";
         treasure += "Coins: \r\n";
@@ -52,6 +59,7 @@ public class LootList {
         return treasure;
     }
 
+    //generate the item strings for the treasure
     private String printTreasure(Map storage, String treasure, String type) {
         treasure += "\r\n";
         treasure += type + "\r\n";
@@ -64,18 +72,19 @@ public class LootList {
     }
 
 
+    //calls and combines all the different treasure-types strings into one long string for display
     public String getTreasure() {
         LootList list = LootList.getInstance();
         String treasure;
         treasure = "";
         if (!list.getCoins().isEmpty())
-        treasure = printCoins(treasure);
+            treasure = printCoins(treasure);
         if (!list.getGems().isEmpty())
             treasure = printTreasure(getGems(), treasure, "Gemstones:");
         if (!list.getArt().isEmpty())
             treasure = printTreasure(getArt(), treasure, "Artwork:");
         if (!list.getLoot().isEmpty())
-        treasure = printTreasure(getLoot(),treasure, "Items:");
+            treasure = printTreasure(getLoot(), treasure, "Items:");
         return treasure;
     }
     public String getItems() {

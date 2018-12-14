@@ -14,6 +14,8 @@ public class ArtTypes extends ValuableItems {
     ArtTableObject artTableObject = new ArtTableObject();
     String artName = "";
     String valueString = "";
+    //Switch of the list of all the art items, based on value and then random number
+    //TODO Create objects for each value type to remove the need for nested switch statements
     @Override
     public ArtTableObject getItem(int value) {
         switch (value) {

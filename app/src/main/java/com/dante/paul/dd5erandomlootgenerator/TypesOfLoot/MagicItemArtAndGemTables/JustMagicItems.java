@@ -25,13 +25,14 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItems;
 
 /**
  * Created by pdante on 9/10/2016.
+ * Create individual magic items, rather than items to put into loot
  */
 public class JustMagicItems extends Loot implements MagicItems {
     protected MagicItemTable table;
     private Dice d = new Dice();
 
     public JustMagicItems(ChallengeRating challengeRating, int d100) {
-        super(challengeRating, d100, TypeOfEncounter.HORDE);
+        super(challengeRating, d100, TypeOfEncounter.HOARD);
     }
 
     @Override

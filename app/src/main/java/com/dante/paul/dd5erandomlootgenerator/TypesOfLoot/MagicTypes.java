@@ -27,6 +27,7 @@ public class MagicTypes extends ValuableItems {
 
 
     //TODO randomly generate spells of given level
+
     public MagicItemTableObject getItem(String table) {
         AbstractGeneratedStrings generatedStrings = new GenerateItemStrings();
         number = d.roll(100);

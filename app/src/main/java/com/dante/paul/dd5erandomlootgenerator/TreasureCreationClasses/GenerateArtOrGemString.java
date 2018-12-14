@@ -1,6 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
-import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ClassOfItem;
 
 /**
  * Created by PaulD on 2015-12-04.
@@ -8,6 +8,6 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
 public class GenerateArtOrGemString extends AbstractGeneratedStrings {
 
     public GenerateArtOrGemString() {
-        typeOfItem = TypeOfItem.ARTorGEM;
+        classOfItem = ClassOfItem.ARTorGEM;
     }
 }

@@ -22,7 +22,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
-
+// Class which extends FragmentActivity that is Base class for activities that use the support
+// library action bar features. Starts the app and controls tab selection.
 public class LootGenerator extends AppCompatActivity {
 
     @Override

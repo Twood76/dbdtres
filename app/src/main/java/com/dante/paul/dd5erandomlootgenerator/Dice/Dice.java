@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * Created by PaulD on 2015-11-20.
+ * Class creates a random numbers based on inputs of number range and number of numbers needed
  */
 public class Dice implements Roll {
     public Dice() {

@@ -1,23 +1,25 @@
 package com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses;
 
-import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ClassOfItem;
 
 /**
  * Created by PaulD on 2015-12-04.
+ * Abstract Class for classes that create strings that will go into the final loot list
  */
 public abstract class AbstractGeneratedStrings {
     protected String level = "";
     protected String magicItemtable = "";
     protected String name = "";
-    protected TypeOfItem typeOfItem;
+    protected ClassOfItem classOfItem;
     protected String spellCLass = "";
 
-    public TypeOfItem getTypeOfItem() {
-        return typeOfItem;
+
+    public ClassOfItem getClassOfItem() {
+        return classOfItem;
     }
 
-    public void setTypeOfItem(TypeOfItem typeOfItem) {
-        this.typeOfItem = typeOfItem;
+    public void setClassOfItem(ClassOfItem classOfItem) {
+        this.classOfItem = classOfItem;
     }
 
     public String getLevel() {

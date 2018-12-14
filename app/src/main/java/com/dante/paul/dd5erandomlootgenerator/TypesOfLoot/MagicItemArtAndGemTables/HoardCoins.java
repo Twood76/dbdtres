@@ -4,10 +4,6 @@ import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ChallengeRating;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfEncounter;
 import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypesOfCoins;
 import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.Coins;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables
-        .MagicItemTables.MagicItemTable;
-import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTables
-        .MagicItemTables.MagicItemTable_A;
 
 /**
  * Created by PaulD on 2015-11-23.
@@ -15,8 +11,9 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTabl
 public class HoardCoins extends Loot implements Coins {
 
     public HoardCoins(ChallengeRating challengeRating, int d100) {
-        super(challengeRating, d100, TypeOfEncounter.HORDE);
+        super(challengeRating, d100, TypeOfEncounter.HOARD);
     }
+    //Add coins to loot list, based on hoard status
     @Override
     public void createStuff() {
         int numberOfCoins;

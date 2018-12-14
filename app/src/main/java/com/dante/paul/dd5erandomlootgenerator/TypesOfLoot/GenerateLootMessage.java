@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 /**
  * Created by PaulD on 2015-12-03.
+ * Creates the Fragment that actually displays the loot message to the user
  */
 public class GenerateLootMessage extends DialogFragment {
     String lootMessage;

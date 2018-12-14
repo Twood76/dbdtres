@@ -1,6 +1,6 @@
 package com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects;
 
-import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.TypeOfItem;
+import com.dante.paul.dd5erandomlootgenerator.EnumeratedClasses.ClassOfItem;
 import com.dante.paul.dd5erandomlootgenerator.TreasureCreationClasses.AbstractGeneratedStrings;
 
 /**
@@ -15,12 +15,12 @@ public abstract class TableObject {
         return generatedStrings.getName();
     }
 
-    public TypeOfItem getItemType(){
-        return generatedStrings.getTypeOfItem();
+    public ClassOfItem getItemType(){
+        return generatedStrings.getClassOfItem();
     }
 
-    public void setItemType(TypeOfItem typeOfItem){
-        generatedStrings.setTypeOfItem(typeOfItem);
+    public void setItemType(ClassOfItem classOfItem){
+        generatedStrings.setClassOfItem(classOfItem);
     }
     public void setName(String name){
         generatedStrings.setName(name);

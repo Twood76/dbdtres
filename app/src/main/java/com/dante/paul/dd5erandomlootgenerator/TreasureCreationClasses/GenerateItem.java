@@ -9,6 +9,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.MagicItemArtAndGemTabl
 
 /**
  * Created by PaulD on 2015-12-03.
+ * Creates an item object for the loot
  */
 public class GenerateItem implements TreasureTable{
     protected ChallengeRating challengeRating;

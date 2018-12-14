@@ -100,7 +100,7 @@ public class JUnitTest {
         LootList list = LootList.getInstance();
         list.getCoins().clear();
         list.getLoot().clear();
-        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1);
+        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HOARD,1);
         treasure.generateTreasure();
         assertNotNull(list);
     }
@@ -112,7 +112,7 @@ public class JUnitTest {
         list.getCoins().clear();
         list.getLoot().clear();
 
-        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HORDE,1000);
+        Treasure treasure = new Treasure(ChallengeRating.ZERO, TypeOfEncounter.HOARD,1000);
         treasure.generateTreasure();
 
         System.out.println("End of huge Hoard Treasure");

@@ -20,6 +20,7 @@ import com.google.android.gms.ads.AdView;
 
 /**
  * Created by PaulD on 2015-12-10.
+ * Fragment for creating a single item
  */
 public class ItemsFragment extends Fragment {
     Spinner challengeSpinner, iterationSpinner;

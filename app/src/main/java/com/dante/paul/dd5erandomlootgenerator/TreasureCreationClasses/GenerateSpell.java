@@ -14,6 +14,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
 
 /**
  * Created by PaulD on 2015-11-30.
+ * Generates a spell for a spell scroll item
  */
 public class GenerateSpell {
     Dice d = new Dice();

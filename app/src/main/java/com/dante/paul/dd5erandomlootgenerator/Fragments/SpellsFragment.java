@@ -26,7 +26,7 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.SpellTables.WizardSpel
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-
+//Fragment for creating a single spell
 public class SpellsFragment extends Fragment{
     Spinner levelSpinner, classSpinner;
 

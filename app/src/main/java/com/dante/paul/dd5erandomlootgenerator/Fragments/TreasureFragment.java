@@ -23,6 +23,7 @@ import com.google.android.gms.ads.AdView;
 
 /**
  * Created by PaulD on 2015-12-10.
+ * Fragment for creating an entire treasure
  */
 public class TreasureFragment extends Fragment{
     Spinner challengeSpinner, iterationSpinner;
@@ -78,7 +79,7 @@ public class TreasureFragment extends Fragment{
                 lootSummary += " x" + iterations;
                 break;
             default:
-                treasure = new Treasure(challengeRating, TypeOfEncounter.HORDE, iterations);
+                treasure = new Treasure(challengeRating, TypeOfEncounter.HOARD, iterations);
                 treasure.generateTreasure();
                 lootSummary = "Challenge Level " + challengeRatingString + "\nHoard Treasure ";
                 lootSummary += " x" + iterations;

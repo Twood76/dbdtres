@@ -4,6 +4,7 @@ import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 
 /**
  * Created by PaulD on 2015-11-26.
+ * Class to add monster type to an item that needs to have a randomly selected monster type
  */
 public class MonsterType {
     Dice d = new Dice();

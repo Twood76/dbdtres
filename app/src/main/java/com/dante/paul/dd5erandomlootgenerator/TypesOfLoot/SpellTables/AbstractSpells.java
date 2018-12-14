@@ -4,14 +4,19 @@ import com.dante.paul.dd5erandomlootgenerator.Dice.Dice;
 
 /**
  * Created by PaulD on 2015-11-30.
+ * Abstract object for classes that will hold all the spells for a given class of character
  */
 public abstract class AbstractSpells {
+    //spells gets the spell list from the given class
     protected String[] spells;
     protected int number;
     Dice d = new Dice();
 
     public abstract String getSpell (int level);
     public abstract String[] getSpells(int level);
+
+    //method calls the getSpells method of the given class
+    //TODO move the spell selection into the getSpells method (maybe rename it getSpell)
     public String getSpell(int level, AbstractSpells abstractSpells) {
         switch (level) {
             case 0:

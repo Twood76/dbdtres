@@ -18,6 +18,7 @@ public class IndividualCoins extends Loot implements Coins {
         super(challengeRating, d100, TypeOfEncounter.INDIVIDUAL);
     }
 
+    //Add coins to loot list, based on non-hoard status
     @Override
     public void createStuff() {
         int numberOfCoins;

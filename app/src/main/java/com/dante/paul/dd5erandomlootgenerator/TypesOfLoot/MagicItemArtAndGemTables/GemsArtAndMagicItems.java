@@ -28,9 +28,12 @@ public class GemsArtAndMagicItems extends Loot implements MagicItems {
     private Dice d = new Dice();
 
     public GemsArtAndMagicItems(ChallengeRating challengeRating, int d100) {
-        super(challengeRating, d100, TypeOfEncounter.HORDE);
+        super(challengeRating, d100, TypeOfEncounter.HOARD);
     }
 
+    //Gets items from proper tables based on challenge rating and if statements
+    //TODO Break into challenge rating based GemsArtAndMagicItems Classes
+    //TODO implement array-based calls rather than if/then/else
     @Override
     public MagicItemTable createStuff() {
         switch (challenge) {

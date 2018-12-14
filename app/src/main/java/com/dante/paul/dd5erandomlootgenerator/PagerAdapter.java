@@ -11,6 +11,7 @@ import com.dante.paul.dd5erandomlootgenerator.Fragments.TreasureFragment;
 
 /**
  * Created by PaulD on 2015-12-10.
+ * Used for flipping left or right between fragments
  */
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;

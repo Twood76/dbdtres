@@ -15,6 +15,8 @@ public class GemTypes extends ValuableItems {
     String gemName = "";
     String valueString = "";
 
+    //Switch of the list of all the gem items, based on value and then random number
+    //TODO Create objects for each value type to remove the need for nested switch statements
     @Override
     public GemTableObject getItem(int value) {
         int option;

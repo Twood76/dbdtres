@@ -7,6 +7,8 @@ import com.dante.paul.dd5erandomlootgenerator.TypesOfLoot.TableObjects.MagicItem
 
 /**
  * Created by PaulD on 2015-12-03.
+ * Parent Class for all the Magic Item Tables. Specific table classes currently hold all the
+ * items of that table
  */
 public abstract class AbstractMagicItemTable extends GenerateSpell {
     protected Dice d = new Dice();
